@@ -1064,6 +1064,95 @@
     }
     .wa-fab:hover { transform: scale(1.08); }
 
+    /* ============ SPOTLIGHT GLOW (cursor-following on cards) ============ */
+    /* Hue range: base 38 + spread 22 = 38–60 (warm gold to bright amber) */
+    [data-glow] {
+      --glow-base: 38;
+      --glow-spread: 22;
+      --glow-size: 320;
+      --glow-spotlight-size: calc(var(--glow-size) * 1px);
+      --glow-hue: calc(var(--glow-base) + (var(--xp, 0.5) * var(--glow-spread)));
+      position: relative;
+      isolation: isolate;
+    }
+    [data-glow]::before,
+    [data-glow]::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      opacity: 0;
+      transition: opacity .35s ease;
+      z-index: 1;
+    }
+    /* Inner spotlight wash */
+    [data-glow]::after {
+      background-image: radial-gradient(
+        var(--glow-spotlight-size) var(--glow-spotlight-size) at
+        calc(var(--x, 50) * 1px) calc(var(--y, 50) * 1px),
+        hsl(var(--glow-hue, 45) 80% 55% / 0.13), transparent 70%
+      );
+    }
+    /* Border glow (1.5px gold ring following cursor) */
+    [data-glow]::before {
+      padding: 1.5px;
+      background-image: radial-gradient(
+        calc(var(--glow-spotlight-size) * 0.8) calc(var(--glow-spotlight-size) * 0.8) at
+        calc(var(--x, 50) * 1px) calc(var(--y, 50) * 1px),
+        hsl(var(--glow-hue, 45) 90% 62% / 1), transparent 75%
+      );
+      filter: brightness(1.3);
+      -webkit-mask:
+        linear-gradient(#000, #000) content-box,
+        linear-gradient(#000, #000);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#000, #000) content-box,
+        linear-gradient(#000, #000);
+      mask-composite: exclude;
+    }
+    [data-glow]:hover::before,
+    [data-glow]:hover::after { opacity: 1; }
+
+    /* Light cards on cream sections need different opacity to show subtle gold trail */
+    .feature-card[data-glow]::after {
+      background-image: radial-gradient(
+        var(--glow-spotlight-size) var(--glow-spotlight-size) at
+        calc(var(--x, 50) * 1px) calc(var(--y, 50) * 1px),
+        hsl(var(--glow-hue, 45) 75% 50% / 0.10), transparent 70%
+      );
+    }
+    .faq-item[data-glow]::after {
+      background-image: radial-gradient(
+        calc(var(--glow-spotlight-size) * 0.8) calc(var(--glow-spotlight-size) * 0.8) at
+        calc(var(--x, 50) * 1px) calc(var(--y, 50) * 1px),
+        hsl(var(--glow-hue, 45) 75% 50% / 0.08), transparent 70%
+      );
+    }
+
+    /* ============ CTA GRADIENT HALO (gold→amber→copper) ============ */
+    .btn-gold { isolation: isolate; }
+    .btn-gold::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      z-index: -1;
+      border-radius: 999px;
+      background: linear-gradient(110deg, var(--gold-bright) 0%, var(--amber) 35%, var(--copper) 65%, var(--gold) 100%);
+      filter: blur(16px);
+      opacity: 0.45;
+      transition: opacity .5s ease, filter .5s ease;
+      pointer-events: none;
+    }
+    .btn-gold:hover::after {
+      opacity: 0.85;
+      filter: blur(22px);
+    }
+
     /* ============ REVEAL ============ */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
     .reveal.in { opacity: 1; transform: none; }
@@ -1245,7 +1334,7 @@
       </div>
 
       <div class="feature-grid">
-        <div class="feature-card">
+        <div class="feature-card" data-glow>
           <span class="pulso-letter">P</span>
           <div class="feature-ico-wrap">
             <div class="feature-ico">
@@ -1255,7 +1344,7 @@
           <h3>Presença</h3>
           <p>Autoridade digital visível — Meta Ads de reconhecimento, criativos para Instagram e orientação de pauta. O paciente precisa te achar antes de pedir indicação.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-glow>
           <span class="pulso-letter">U</span>
           <div class="feature-ico-wrap">
             <div class="feature-ico">
@@ -1265,7 +1354,7 @@
           <h3>Urgência</h3>
           <p>Gatilho de decisão do paciente — prova social, copy dor+solução e autoridade em stories. Confiança suficiente para marcar hoje, não depois.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-glow>
           <span class="pulso-letter">L</span>
           <div class="feature-ico-wrap">
             <div class="feature-ico">
@@ -1275,7 +1364,7 @@
           <h3>Lead</h3>
           <p>Captura estruturada — Google Ads de intenção direta, landing page otimizada e WhatsApp como destino qualificado. Fluxo previsível, não aleatório.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-glow>
           <span class="pulso-letter">S</span>
           <div class="feature-ico-wrap">
             <div class="feature-ico">
@@ -1285,7 +1374,7 @@
           <h3>Sistema</h3>
           <p>Treinamento da secretária, scripts de atendimento no WhatsApp e CRM Kommo implementado em 45 dias. O elo que mais quebra em funis médicos — dentro do pacote.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-glow>
           <span class="pulso-letter">O</span>
           <div class="feature-ico-wrap">
             <div class="feature-ico">
@@ -1295,7 +1384,7 @@
           <h3>Otimização</h3>
           <p>Relatório mensal com custo por lead, taxa de agendamento e ROI. Escalar o que gera resultado. Cortar o que não gera. Decisão com dado — não com achismo.</p>
         </div>
-        <div class="feature-card dark">
+        <div class="feature-card dark" data-glow>
           <div class="feature-ico-wrap">
             <div class="feature-ico">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1319,27 +1408,27 @@
       </div>
 
       <div class="howit-grid">
-        <div class="step">
+        <div class="step" data-glow>
           <div class="step-num">01</div>
           <h3>Diagnóstico gratuito</h3>
           <p>Call de 30 a 45 minutos analisando presença atual, funil e gargalo operacional real.</p>
         </div>
-        <div class="step">
+        <div class="step" data-glow>
           <div class="step-num">02</div>
           <h3>Setup em 45 dias</h3>
           <p>Landing page, Google Meu Negócio, criativos, campanhas Meta e Google, CRM Kommo instalados.</p>
         </div>
-        <div class="step">
+        <div class="step" data-glow>
           <div class="step-num">03</div>
           <h3>Treinamento da equipe</h3>
           <p>Secretária com script pronto de WhatsApp e duas calls de acompanhamento para converter bem.</p>
         </div>
-        <div class="step">
+        <div class="step" data-glow>
           <div class="step-num">04</div>
           <h3>Operação contínua</h3>
           <p>Campanhas ativas, conteúdo semanal, remarketing de leads que não agendaram e gestão ativa.</p>
         </div>
-        <div class="step">
+        <div class="step" data-glow>
           <div class="step-num">05</div>
           <h3>Relatório e escala</h3>
           <p>Análise mensal de custo por lead, taxa de agendamento e ROI. Escalar o que funciona.</p>
@@ -1417,35 +1506,35 @@
         <h2>Respostas diretas,<br>sem <em>enrolação.</em></h2>
       </div>
 
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Em quanto tempo vejo resultado?</summary>
         <div class="faq-answer">Primeiros sinais em <strong>30 dias</strong> (estrutura instalada, primeiros leads). Saltos operacionais em <strong>60 a 90 dias</strong>. Posicionamento regional consolidado entre <strong>6 e 12 meses</strong>. Um cirurgião nosso saiu de 2 para mais de 6 cirurgias em um mês. Outro virou referência regional em 8 meses.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Quanto custa o serviço?</summary>
         <div class="faq-answer">O investimento começa em <strong>R$5.000 por mês no total</strong> — R$3.000 de gestão mais R$2.000 de verba de tráfego paga diretamente à plataforma de anúncios. Contrato mínimo recomendado: <strong>90 dias</strong>, que é o ciclo completo de setup → ajuste → escala.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Vocês atendem qualquer especialidade?</summary>
         <div class="faq-answer">Priorizamos especialistas com demanda privada consistente: <strong>ortopedia, gastroenterologia, proctologia, dermatologia, urologia, ginecologia, cirurgia do aparelho digestivo, bariátrica e medicina da dor</strong>. Clínica geral e pediatria avaliamos caso a caso no diagnóstico.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>E se minha secretária não souber converter?</summary>
         <div class="faq-answer">O <strong>treinamento da secretária está dentro do pacote</strong>. Inclui call inicial, scripts prontos para WhatsApp e duas calls de acompanhamento. Se ela não colaborar, conversamos diretamente com ela e com você — sem secretária convertendo, nenhum funil funciona.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Tem contrato de fidelidade?</summary>
         <div class="faq-answer">Recomendamos <strong>90 dias como ciclo mínimo</strong>. É o tempo necessário para a estrutura rodar, gerar dados e entrar em otimização. Contratos mais curtos raramente chegam no salto operacional.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Em que vocês se diferenciam de uma agência comum?</summary>
         <div class="faq-answer">Agência comum vende <strong>posts, criativos e tráfego separadamente</strong>. Aqui o pacote inclui também o treinamento da secretária, scripts de WhatsApp e CRM. Resolvemos a conversão — não só a atração.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Vocês respeitam o CFM e a publicidade médica?</summary>
         <div class="faq-answer">Sim. Todo o conteúdo e criativos seguem o <strong>Código de Ética Médica</strong> e a <strong>Resolução CFM 1.974/2011</strong>. Nada de promessa de resultado, antes/depois invasivo ou sensacionalismo clínico.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" data-glow>
         <summary>Vocês atendem médicos fora do Pará?</summary>
         <div class="faq-answer">Sim, <strong>atendemos o Brasil inteiro</strong>. Operação remota: gravação de vídeos pelo próprio médico com kit orientado, calls de treinamento online, CRM e campanhas geridas à distância. Nosso time está em Redenção/PA, nossos clientes em várias cidades.</div>
       </details>
@@ -1461,7 +1550,7 @@
       </div>
 
       <div class="cases-grid">
-        <article class="case-card">
+        <article class="case-card" data-glow>
           <span class="case-tag">Curto prazo</span>
           <div class="case-stars">★★★★★</div>
           <p class="case-quote">"Paciente meu, antigo, que estava <strong>2 anos longe do consultório</strong> me falou que só veio por causa do Instagram. A procura por cirurgias também aumentou."</p>
@@ -1471,7 +1560,7 @@
           </div>
         </article>
 
-        <article class="case-card">
+        <article class="case-card" data-glow>
           <span class="case-tag">Médio prazo</span>
           <div class="case-stars">★★★★★</div>
           <p class="case-quote">"De 2 para <span class="case-num">6+ cirurgias</span> em um único mês. O paciente chega convicto, já educado pelo conteúdo, pronto pra marcar."</p>
@@ -1481,7 +1570,7 @@
           </div>
         </article>
 
-        <article class="case-card">
+        <article class="case-card" data-glow>
           <span class="case-tag">Longo prazo</span>
           <div class="case-stars">★★★★★</div>
           <p class="case-quote">"Hoje sou reconhecido como <strong>o melhor médico da dor da região</strong>. A reputação não foi declarada — foi instalada, pilar por pilar, em 8 meses."</p>
@@ -1514,7 +1603,7 @@
 
       <div class="benefits-stage" id="benStage">
         <div class="benefits-track">
-          <div class="benefit-card">
+          <div class="benefit-card" data-glow>
             <h3>Foco exclusivo</h3>
             <p>Nenhum outro setor atendido simultaneamente. A equipe estuda ortopedia, gastro, procto, derma, uro, gineco e suas particularidades — conteúdo que fala a língua do médico.</p>
             <div class="benefit-impact">
@@ -1525,7 +1614,7 @@
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card" data-glow>
             <h3>Método proprietário</h3>
             <p>O P.U.L.S.O não é framework emprestado de agência B2B. Foi desenhado especificamente para médicos especialistas que faturam acima de R$80k/mês.</p>
             <div class="benefit-impact">
@@ -1536,7 +1625,7 @@
               <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card" data-glow>
             <h3>Secretária treinada</h3>
             <p>Call inicial + duas calls de acompanhamento + scripts prontos pra WhatsApp. O elo que mais quebra em funis médicos está dentro do pacote — e não como custo extra.</p>
             <div class="benefit-impact">
@@ -1547,7 +1636,7 @@
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card" data-glow>
             <h3>CRM em 45 dias</h3>
             <p>Implementamos o Kommo no início, treinamos o uso e entregamos pronto para operar. Sem CRM não dá pra medir ROI real nem acompanhar a jornada do lead.</p>
             <div class="benefit-impact">
@@ -1558,7 +1647,7 @@
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card" data-glow>
             <h3>Relatório mensal</h3>
             <p>Custo por lead, taxa de conversão no WhatsApp, consultas agendadas, ROI. Sem dashboards bonitos que não explicam nada — só os indicadores que pagam a conta.</p>
             <div class="benefit-impact">
@@ -1569,7 +1658,7 @@
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 6 5-8"/></svg>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card" data-glow>
             <h3>Time dedicado</h3>
             <p>Fundador, sócio, prospecção, operação e social media. Cinco pessoas, nenhum freelancer pulando entre contas — atendimento consistente do início ao fim.</p>
             <div class="benefit-impact">
@@ -1786,6 +1875,30 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Spotlight cursor on cards (per-element pointer tracking)
+    (function () {
+      const glowEls = document.querySelectorAll('[data-glow]');
+      if (!glowEls.length || matchMedia('(hover: none)').matches) return;
+      let raf = null, lastX = 0, lastY = 0;
+      function update() {
+        glowEls.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (lastX < r.left - 80 || lastX > r.right + 80 || lastY < r.top - 80 || lastY > r.bottom + 80) return;
+          const x = lastX - r.left;
+          const y = lastY - r.top;
+          el.style.setProperty('--x', x.toFixed(1));
+          el.style.setProperty('--y', y.toFixed(1));
+          el.style.setProperty('--xp', (x / Math.max(r.width, 1)).toFixed(3));
+          el.style.setProperty('--yp', (y / Math.max(r.height, 1)).toFixed(3));
+        });
+        raf = null;
+      }
+      document.addEventListener('pointermove', (e) => {
+        lastX = e.clientX; lastY = e.clientY;
+        if (!raf) raf = requestAnimationFrame(update);
+      }, { passive: true });
+    })();
 
     // Modal
     const modalBd = document.getElementById('modalBd');
