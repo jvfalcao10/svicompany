@@ -1134,23 +1134,46 @@
       );
     }
 
-    /* ============ CTA GRADIENT HALO (gold→amber→copper) ============ */
-    .btn-gold { isolation: isolate; }
+    /* ============ CTA — sheen interno discreto (sem halo borrado) ============ */
+    .btn-gold {
+      isolation: isolate;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Diagonal sheen que cruza o botão no hover (efeito "polido") */
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -120%;
+      width: 60%; height: 100%;
+      background: linear-gradient(100deg,
+        transparent 20%,
+        rgba(255,255,255,0.55) 50%,
+        transparent 80%
+      );
+      transform: skewX(-18deg);
+      transition: left 0.7s var(--ease);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .btn-gold:hover::before { left: 140%; }
+
+    /* Glow sutil dourado SÓ no hover (não no default), apertado e elegante */
     .btn-gold::after {
       content: '';
       position: absolute;
-      inset: -8px;
+      inset: 0;
       z-index: -1;
-      border-radius: 999px;
-      background: linear-gradient(110deg, var(--gold-bright) 0%, var(--amber) 35%, var(--copper) 65%, var(--gold) 100%);
-      filter: blur(16px);
-      opacity: 0.45;
-      transition: opacity .5s ease, filter .5s ease;
+      border-radius: inherit;
+      box-shadow: 0 0 0 0 rgba(232,154,28,0);
+      transition: box-shadow .35s ease;
       pointer-events: none;
     }
     .btn-gold:hover::after {
-      opacity: 0.85;
-      filter: blur(22px);
+      box-shadow:
+        0 0 0 1px rgba(240,199,68,0.4),
+        0 8px 20px rgba(232,154,28,0.35),
+        0 0 24px rgba(212,168,44,0.4);
     }
 
     /* ============ REVEAL ============ */
@@ -1442,7 +1465,7 @@
     <div class="quantified-i">
       <div class="pill-eyebrow">Impacto real</div>
       <h2>Em números,<br><em>traduzido.</em></h2>
-      <p class="quantified-small">O que os três clientes ativos da SVI Doctor estão vivendo agora — curto, médio e longo prazo.</p>
+      <p class="quantified-small">Os números que o método P.U.L.S.O entrega na prática — em curto, médio e longo prazo, com clientes ativos hoje.</p>
 
       <div class="float-stat fs-1">
         <div class="fs-num"><em>0</em></div>
