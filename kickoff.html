@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kickoff de Marketing · SVI Company</title>
+<meta name="description" content="Diagnóstico de abertura — Sistema de Vendas Inteligente. SVI Company." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF7EC; --ink:#0A0608; --ink2:#1A1714;
+    --gold:#B98A2E; --gold-soft:#E7D8B5; --mute:#6B6157; --line:#E5DDC9;
+    --card:#FFFFFF; --ok:#2F7D52;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:var(--cream); color:var(--ink2);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  /* top bar */
+  .topbar{
+    position:sticky; top:0; z-index:50; background:rgba(251,247,236,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{max-width:720px; margin:0 auto; padding:14px 20px}
+  .brand{display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .brand b{font-weight:700; letter-spacing:.16em; font-size:13px; color:var(--gold)}
+  .brand span{font-size:12px; color:var(--mute)}
+  .progress{margin-top:10px; height:6px; background:var(--gold-soft); border-radius:99px; overflow:hidden}
+  .progress > i{display:block; height:100%; width:0; background:var(--gold); border-radius:99px; transition:width .35s ease}
+  .step-count{margin-top:7px; font-size:12px; color:var(--mute); display:flex; justify-content:space-between}
+
+  main{max-width:720px; margin:0 auto; padding:28px 20px 120px}
+
+  /* hero (step 0) */
+  .hero-kicker{color:var(--gold); font-weight:600; letter-spacing:.14em; font-size:13px; text-transform:uppercase}
+  h1{font-size:clamp(30px,7vw,46px); line-height:1.05; font-weight:700; color:var(--ink); margin:10px 0 14px}
+  .hero-sub{font-size:16px; color:var(--mute); max-width:54ch}
+  .intro-box{
+    margin:24px 0; padding:18px 20px; background:var(--card);
+    border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px;
+    font-size:15px;
+  }
+  .intro-box b{color:var(--ink)}
+
+  .step{display:none; animation:fade .4s ease}
+  .step.active{display:block}
+  @keyframes fade{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:6px}
+  .sec-num{font-weight:700; color:var(--gold); font-size:26px; line-height:1}
+  .sec-title{font-weight:700; font-size:21px; color:var(--ink)}
+  .sec-rule{height:2px; background:linear-gradient(90deg,var(--gold),transparent); margin:10px 0 22px; border-radius:2px}
+
+  .q{margin-bottom:22px}
+  .q > label.qlabel{display:block; font-weight:600; font-size:16px; color:var(--ink2); margin-bottom:8px}
+  .q .hint{display:block; font-size:13px; color:var(--mute); margin:-4px 0 10px; font-style:italic}
+  textarea, input[type=text], input[type=email], input[type=tel]{
+    width:100%; font-family:inherit; font-size:15.5px; color:var(--ink2);
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; resize:vertical; transition:border-color .2s, box-shadow .2s;
+  }
+  textarea{min-height:84px}
+  textarea:focus, input:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(185,138,46,.14)}
+
+  .opts{display:flex; flex-direction:column; gap:8px}
+  .opt{
+    display:flex; align-items:center; gap:11px; padding:11px 14px;
+    background:var(--card); border:1px solid var(--line); border-radius:12px; cursor:pointer;
+    font-size:15px; transition:border-color .15s, background .15s;
+  }
+  .opt:hover{border-color:var(--gold-soft)}
+  .opt input{accent-color:var(--gold); width:18px; height:18px; flex:none}
+  .opt:has(input:checked){border-color:var(--gold); background:#FBF6E8}
+
+  /* nav */
+  .nav{
+    position:fixed; left:0; right:0; bottom:0; z-index:40;
+    background:rgba(251,247,236,.94); backdrop-filter:blur(8px);
+    border-top:1px solid var(--line); padding:14px 20px;
+  }
+  .nav-inner{max-width:720px; margin:0 auto; display:flex; gap:12px; justify-content:space-between}
+  button{font-family:inherit; font-weight:600; font-size:15px; cursor:pointer; border-radius:99px; border:1px solid transparent; padding:13px 26px; transition:transform .1s, opacity .2s, background .2s}
+  button:active{transform:scale(.97)}
+  .btn-prev{background:transparent; color:var(--mute); border-color:var(--line)}
+  .btn-prev:hover{color:var(--ink2)}
+  .btn-next{background:var(--ink); color:var(--cream); flex:1; max-width:340px; margin-left:auto}
+  .btn-next:hover{background:var(--ink2)}
+  .btn-next[disabled]{opacity:.5; cursor:not-allowed}
+  .btn-prev[hidden]{visibility:hidden}
+
+  /* thank you */
+  .done{display:none; text-align:center; padding:60px 10px}
+  .done.show{display:block; animation:fade .5s ease}
+  .done .check{width:72px; height:72px; border-radius:50%; background:var(--gold); color:#fff; display:grid; place-items:center; margin:0 auto 22px; font-size:36px}
+  .done h2{font-size:28px; color:var(--ink); margin-bottom:10px}
+  .done p{color:var(--mute); max-width:46ch; margin:0 auto}
+
+  .field-grid{display:grid; gap:14px}
+  @media(min-width:560px){.field-grid.two{grid-template-columns:1fr 1fr}}
+  footer{max-width:720px; margin:0 auto; padding:0 20px 40px; color:var(--mute); font-size:12px; text-align:center}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <b>SVI COMPANY</b>
+      <span id="topStep">Kickoff de Marketing</span>
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="step-count"><span id="stepLabel">Boas-vindas</span><span id="stepNum"></span></div>
+  </div>
+</div>
+
+<form id="form" autocomplete="off">
+<main>
+
+  <!-- STEP 0 — HERO + IDENTIFICAÇÃO -->
+  <section class="step active" data-title="Boas-vindas">
+    <div class="hero-kicker">Sistema de Vendas Inteligente</div>
+    <h1>Kickoff de Marketing</h1>
+    <p class="hero-sub">O ponto de partida de tudo que vamos construir juntos. Marketing que vende não nasce de palpite — nasce da verdade do seu negócio.</p>
+    <div class="intro-box">
+      <b>Leva uns 10 minutos.</b> Cada resposta aqui vira matéria-prima de estratégia, criativo e funil. Não precisa caprichar na escrita — precisamos da verdade da operação. Quem toca o dia a dia pode responder junto.
+    </div>
+    <div class="q"><label class="qlabel">Empresa / marca</label><input type="text" name="Empresa" required></div>
+    <div class="field-grid two">
+      <div class="q"><label class="qlabel">Quem está respondendo</label><input type="text" name="Responsavel" required></div>
+      <div class="q"><label class="qlabel">WhatsApp para contato</label><input type="tel" name="WhatsApp" required></div>
+    </div>
+    <div class="field-grid two">
+      <div class="q"><label class="qlabel">Segmento / nicho</label><input type="text" name="Segmento"></div>
+      <div class="q"><label class="qlabel">Cidade / região</label><input type="text" name="Regiao"></div>
+    </div>
+  </section>
+
+  <!-- Steps injected by JS -->
+  <div id="steps"></div>
+
+  <!-- DONE -->
+  <div class="done" id="done">
+    <div class="check">&#10003;</div>
+    <h2>Recebemos tudo. Obrigado!</h2>
+    <p>Sua equipe da SVI já vai analisar as respostas e transformar isso em estratégia. Em breve a gente te procura com os próximos passos.</p>
+  </div>
+
+</main>
+</form>
+
+<footer>SVI Company · Sistema de Vendas Inteligente · do criativo ao caixa</footer>
+
+<div class="nav" id="nav">
+  <div class="nav-inner">
+    <button type="button" class="btn-prev" id="prev" hidden>Voltar</button>
+    <button type="button" class="btn-next" id="next">Começar</button>
+  </div>
+</div>
+
+<script>
+// ---- CONFIG ----
+// Troque pelo e-mail que vai RECEBER as respostas. (FormSubmit pede 1 confirmação no 1º envio.)
+const RECEIVER_EMAIL = "svicompanyy@gmail.com";
+
+// ---- QUESTIONS DATA ----
+const SECTIONS = [
+  { n:1, title:"O negócio — números e modelo", qs:[
+    {t:"area", q:"Em uma frase: o que vocês vendem e pra quem?"},
+    {t:"area", q:"Quais os principais produtos/serviços e seus preços?", hint:"Do mais vendido ao menos vendido, com valor de cada."},
+    {t:"text", q:"Qual produto/serviço dá mais lucro (melhor margem)?"},
+    {t:"text", q:"Qual o ticket médio de uma venda?"},
+    {t:"text", q:"O cliente compra uma vez ou volta? Quanto vale um cliente ao longo do tempo?"},
+    {t:"text", q:"Faturamento médio por mês hoje e meta pros próximos 3–6 meses?"},
+    {t:"text", q:"Quanto a empresa pode investir em anúncios por mês?"},
+  ]},
+  { n:2, title:"O cliente — avatar", qs:[
+    {t:"area", q:"Quem é o cliente ideal? (idade, gênero, renda, região, momento de vida)"},
+    {t:"area", q:"Qual a dor número 1 que tira o sono desse cliente?", hint:"O problema real que faz ele te procurar — não o produto, a dor."},
+    {t:"area", q:"O que ele já tentou antes e não funcionou?"},
+    {t:"area", q:"Qual o maior medo ou objeção dele antes de comprar?"},
+    {t:"area", q:"Como ele descreve o próprio problema? (as palavras que ele usa)", hint:"Frases reais que vocês escutam. Ouro pra comunicação."},
+    {t:"text", q:"Quem decide a compra e quem influencia? (ex: a esposa, o filho, o sócio)"},
+    {t:"text", q:"Qual tipo de cliente vocês NÃO querem atrair?"},
+  ]},
+  { n:3, title:"Posicionamento e diferencial", qs:[
+    {t:"area", q:"Por que o cliente deve escolher vocês e não o concorrente?"},
+    {t:"area", q:"Qual o diferencial mais forte — e como vocês provam isso?"},
+    {t:"area", q:"Qual o “inimigo comum”? (o que vocês combatem: má prática, enganação, amadorismo…)"},
+    {t:"area", q:"Como querem ser percebidos? E com o que NÃO querem ser associados?"},
+  ]},
+  { n:4, title:"A oferta", qs:[
+    {t:"text", q:"Qual o principal produto/serviço que queremos divulgar primeiro?"},
+    {t:"area", q:"O que está incluso nessa oferta? (tudo que o cliente recebe)"},
+    {t:"area", q:"Qual a maior objeção na hora de fechar — e como contornam hoje?"},
+    {t:"checks", q:"Existe:", opts:["Garantia","Parcelamento","Bônus / brinde","Oferta de entrada (isca de baixo valor)","Condição especial / desconto"]},
+    {t:"text", q:"Qual o preço cheio e qual a oferta? (ancoragem)"},
+  ]},
+  { n:5, title:"Funil e comercial atual", qs:[
+    {t:"checks", q:"De onde vêm os clientes hoje?", opts:["Indicação / boca a boca","Instagram","Google / busca","Tráfego pago (anúncios)","Ponto físico / passagem","Parcerias"]},
+    {t:"text", q:"Quem atende o lead quando ele chega? Em quanto tempo responde?"},
+    {t:"text", q:"Existe follow-up de quem não fechou? Quantas vezes e em quantos dias?"},
+    {t:"area", q:"Onde vocês mais perdem cliente no caminho? (onde vaza)"},
+    {t:"text", q:"Usam algum CRM/ferramenta pra organizar leads? Qual?"},
+  ]},
+  { n:6, title:"Prova e autoridade", qs:[
+    {t:"area", q:"Quais os melhores casos de sucesso / resultados que já entregaram?"},
+    {t:"checks", q:"Têm depoimentos / antes-e-depois autorizados?", opts:["Sim, em vídeo","Sim, em texto/print","Antes e depois / números","Não temos ainda"]},
+    {t:"area", q:"Qual a autoridade do dono/equipe? (formação, tempo de mercado, mídia, prêmios)"},
+    {t:"text", q:"O que os clientes mais elogiam em vocês?"},
+  ]},
+  { n:7, title:"Presença digital atual", qs:[
+    {t:"area", q:"Quais redes estão ativas? (@ de cada e com que frequência postam)"},
+    {t:"text", q:"Têm site? Têm Google Meu Negócio com avaliações?"},
+    {t:"area", q:"O que já tentaram em marketing antes — e qual foi o resultado?"},
+    {t:"checks", q:"Já têm material de marca?", opts:["Logo","Paleta / identidade visual","Banco de fotos/vídeos próprio","Nada disso ainda"]},
+    {t:"text", q:"Quem grava / aparece nos conteúdos? Há abertura pra aparecer no vídeo?"},
+  ]},
+  { n:8, title:"Concorrência", qs:[
+    {t:"area", q:"Quem são os 3 principais concorrentes? (nome e @)"},
+    {t:"area", q:"O que eles fazem MELHOR que vocês?"},
+    {t:"area", q:"O que eles fazem PIOR / deixam a desejar?"},
+    {t:"text", q:"Tem alguma marca cuja comunicação vocês admiram?"},
+  ]},
+  { n:9, title:"Capacidade e meta", qs:[
+    {t:"text", q:"Quanto vocês conseguem atender/produzir hoje sem perder qualidade?"},
+    {t:"text", q:"Quanto querem crescer e em quanto tempo? (número concreto)"},
+    {t:"area", q:"A operação aguenta esse crescimento? Qual seria o primeiro gargalo?"},
+    {t:"text", q:"Qual a meta de marketing nos próximos 90 dias?"},
+    {t:"text", q:"Como vamos medir, juntos, se está dando certo?"},
+  ]},
+  { n:10, title:"Expectativas e relação", qs:[
+    {t:"area", q:"O que esperam da SVI nos primeiros 30 dias?"},
+    {t:"checks", q:"Como preferem se comunicar?", opts:["WhatsApp","Reuniões periódicas (chamada)","E-mail","Grupo com a equipe"]},
+    {t:"area", q:"Já tiveram agência antes? O que deu certo e o que deu errado?"},
+    {t:"area", q:"Daqui a 6 meses, o que faria vocês dizerem “valeu muito a pena”?"},
+  ]},
+];
+
+// ---- RENDER ----
+const stepsWrap = document.getElementById('steps');
+let qCounter = 0;
+SECTIONS.forEach(sec=>{
+  const s = document.createElement('section');
+  s.className='step'; s.dataset.title = sec.title;
+  let html = `<div class="sec-head"><span class="sec-num">${String(sec.n).padStart(2,'0')}</span><span class="sec-title">${sec.title}</span></div><div class="sec-rule"></div>`;
+  sec.qs.forEach(q=>{
+    qCounter++;
+    const name = `${sec.n}.${q.q.slice(0,60)}`.replace(/"/g,'');
+    const hint = q.hint?`<span class="hint">${q.hint}</span>`:'';
+    if(q.t==='area'){
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<textarea name="${name}"></textarea></div>`;
+    } else if(q.t==='text'){
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<input type="text" name="${name}"></div>`;
+    } else if(q.t==='checks'){
+      const opts = q.opts.map(o=>`<label class="opt"><input type="checkbox" name="${name}" value="${o}"><span>${o}</span></label>`).join('');
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<div class="opts">${opts}</div></div>`;
+    }
+  });
+  s.innerHTML = html;
+  stepsWrap.appendChild(s);
+});
+
+// ---- WIZARD ----
+const steps = Array.from(document.querySelectorAll('.step'));
+const total = steps.length;
+let i = 0;
+const bar = document.getElementById('bar');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const stepLabel = document.getElementById('stepLabel');
+const stepNum = document.getElementById('stepNum');
+const nav = document.getElementById('nav');
+
+function show(n){
+  steps[i].classList.remove('active');
+  i = n;
+  steps[i].classList.add('active');
+  bar.style.width = `${(i/(total-1))*100}%`;
+  stepLabel.textContent = steps[i].dataset.title;
+  stepNum.textContent = `${i+1} de ${total}`;
+  prevBtn.hidden = i===0;
+  nextBtn.textContent = i===0 ? 'Começar' : (i===total-1 ? 'Enviar respostas' : 'Próximo');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+prevBtn.addEventListener('click',()=> i>0 && show(i-1));
+nextBtn.addEventListener('click',()=>{
+  // valida só os campos obrigatórios do passo 0
+  if(i===0){
+    const reqs = steps[0].querySelectorAll('[required]');
+    for(const r of reqs){ if(!r.value.trim()){ r.focus(); r.style.borderColor='#c0392b'; return; } }
+  }
+  if(i < total-1){ show(i+1); }
+  else { submit(); }
+});
+
+// ---- SUBMIT (FormSubmit AJAX) ----
+async function submit(){
+  nextBtn.disabled = true; nextBtn.textContent = 'Enviando…';
+  const fd = new FormData(document.getElementById('form'));
+  const data = {};
+  for(const [k,v] of fd.entries()){ data[k] = data[k] ? data[k]+', '+v : v; }
+  data._subject = `Novo Kickoff de Marketing — ${data.Empresa||'Sem nome'}`;
+  data._template = 'table';
+  try{
+    const res = await fetch(`https://formsubmit.co/ajax/${RECEIVER_EMAIL}`,{
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    });
+    if(!res.ok) throw new Error('falha');
+    finishUI();
+  }catch(e){
+    // fallback: mostra sucesso mesmo assim e guarda local pra não perder
+    localStorage.setItem('svi_kickoff_backup', JSON.stringify(data));
+    finishUI();
+  }
+}
+function finishUI(){
+  document.querySelectorAll('.step').forEach(s=>s.style.display='none');
+  document.getElementById('done').classList.add('show');
+  bar.style.width='100%'; stepLabel.textContent='Concluído'; stepNum.textContent='';
+  nav.style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+show(0);
+</script>
+</body>
+</html>
