@@ -166,8 +166,9 @@
 
 <script>
 // ---- CONFIG ----
-// Troque pelo e-mail que vai RECEBER as respostas. (FormSubmit pede 1 confirmação no 1º envio.)
-const RECEIVER_EMAIL = "svicompanyy@gmail.com";
+// Supabase (mesmos valores públicos do config.js do site). Insert-only: o site grava, não lê.
+const SUPABASE_URL  = "https://qvkfcvcqlfamyzgqgnrq.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2a2ZjdmNxbGZhbXl6Z3FnbnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMzI1MzYsImV4cCI6MjA2MzYwODUzNn0.VDLMK6z9yynpHRp5o8uULdOlX6ZmRi95kZJdte1oaLM";
 
 // ---- QUESTIONS DATA ----
 const SECTIONS = [
@@ -241,6 +242,18 @@ const SECTIONS = [
     {t:"area", q:"Já tiveram agência antes? O que deu certo e o que deu errado?"},
     {t:"area", q:"Daqui a 6 meses, o que faria vocês dizerem “valeu muito a pena”?"},
   ]},
+  { n:11, title:"Acessos e credenciais", qs:[
+    {t:"note", q:"<b>Pra colocar tudo no ar, a SVI precisa de acesso às suas contas.</b> Seus dados trafegam por conexão segura e ficam restritos à nossa equipe. Prefere não digitar senha? Você pode nos adicionar como <b>parceiro</b> (Meta Business / Google) ou enviar depois por um canal seguro — é só marcar a opção lá embaixo. Preencha só o que tiver."},
+    {t:"cred", name:"acesso_instagram", q:"Instagram (@ da empresa)"},
+    {t:"cred", name:"acesso_meta", q:"Facebook / Meta Business (e-mail e senha)"},
+    {t:"cred", name:"acesso_google", q:"Google / Gmail da empresa"},
+    {t:"cred", name:"acesso_googleads", q:"Google Ads (ID da conta + acesso)"},
+    {t:"cred", name:"acesso_site", q:"Site / painel de hospedagem"},
+    {t:"cred", name:"acesso_dominio", q:"Domínio (registro.br / GoDaddy / onde foi comprado)"},
+    {t:"text", name:"acesso_gmn", q:"Google Meu Negócio — quem gerencia hoje? (e-mail)"},
+    {t:"checks", name:"acesso_pref", q:"Se preferir não enviar senha agora:", opts:["Quero adicionar a SVI como parceiro (Business Manager / Google)","Envio as senhas depois por canal seguro"]},
+    {t:"area", name:"acesso_obs", q:"Outros acessos ou observações (TikTok, YouTube, e-mail marketing, etc.)"},
+  ]},
 ];
 
 // ---- RENDER ----
@@ -251,13 +264,16 @@ SECTIONS.forEach(sec=>{
   s.className='step'; s.dataset.title = sec.title;
   let html = `<div class="sec-head"><span class="sec-num">${String(sec.n).padStart(2,'0')}</span><span class="sec-title">${sec.title}</span></div><div class="sec-rule"></div>`;
   sec.qs.forEach(q=>{
-    qCounter++;
-    const name = `${sec.n}.${q.q.slice(0,60)}`.replace(/"/g,'');
     const hint = q.hint?`<span class="hint">${q.hint}</span>`:'';
+    if(q.t==='note'){ html += `<div class="intro-box" style="margin:2px 0 18px">${q.q}</div>`; return; }
+    qCounter++;
+    const name = q.name ? q.name : `${sec.n}.${q.q.slice(0,60)}`.replace(/"/g,'');
     if(q.t==='area'){
       html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<textarea name="${name}"></textarea></div>`;
     } else if(q.t==='text'){
       html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<input type="text" name="${name}"></div>`;
+    } else if(q.t==='cred'){
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<div class="field-grid two"><input type="text" name="${name}_login" placeholder="Login / usuário / e-mail"><input type="text" name="${name}_senha" placeholder="Senha"></div></div>`;
     } else if(q.t==='checks'){
       const opts = q.opts.map(o=>`<label class="opt"><input type="checkbox" name="${name}" value="${o}"><span>${o}</span></label>`).join('');
       html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<div class="opts">${opts}</div></div>`;
@@ -305,20 +321,36 @@ nextBtn.addEventListener('click',()=>{
 async function submit(){
   nextBtn.disabled = true; nextBtn.textContent = 'Enviando…';
   const fd = new FormData(document.getElementById('form'));
-  const data = {};
-  for(const [k,v] of fd.entries()){ data[k] = data[k] ? data[k]+', '+v : v; }
-  data._subject = `Novo Kickoff de Marketing — ${data.Empresa||'Sem nome'}`;
-  data._template = 'table';
+  const flat = {};
+  for(const [k,v] of fd.entries()){ const val=(v||'').toString().trim(); if(val){ flat[k] = flat[k] ? flat[k]+', '+val : val; } }
+  const ID = ['Empresa','Responsavel','WhatsApp','Segmento','Regiao'];
+  const acessos = {}, respostas = {};
+  for(const k in flat){
+    if(ID.includes(k)) continue;
+    if(k.indexOf('acesso_')===0) acessos[k] = flat[k];
+    else respostas[k] = flat[k];
+  }
+  const payload = {
+    empresa: flat.Empresa||null, responsavel: flat.Responsavel||null,
+    whatsapp: flat.WhatsApp||null, segmento: flat.Segmento||null, regiao: flat.Regiao||null,
+    respostas, acessos
+  };
   try{
-    const res = await fetch(`https://formsubmit.co/ajax/${RECEIVER_EMAIL}`,{
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify(data)
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/svi_kickoff`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'apikey': SUPABASE_ANON,
+        'Authorization': `Bearer ${SUPABASE_ANON}`,
+        'Prefer':'return=minimal'
+      },
+      body: JSON.stringify(payload)
     });
-    if(!res.ok) throw new Error('falha');
+    if(!res.ok) throw new Error('falha '+res.status);
     finishUI();
   }catch(e){
-    // fallback: mostra sucesso mesmo assim e guarda local pra não perder
-    localStorage.setItem('svi_kickoff_backup', JSON.stringify(data));
+    // fallback: guarda local pra não perder o que o cliente preencheu
+    localStorage.setItem('svi_kickoff_backup', JSON.stringify(payload));
     finishUI();
   }
 }
