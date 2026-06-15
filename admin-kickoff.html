@@ -52,6 +52,10 @@
   .cred{background:#FBF6E8;border:1px solid var(--gold-soft);border-radius:10px;padding:6px 12px;display:inline-block;font-size:14px;margin:3px 6px 3px 0}
   .actions{display:flex;gap:10px;flex-wrap:wrap}
   .hidden{display:none}
+  .tabs{display:flex;gap:8px;margin-bottom:18px}
+  .tab-btn{background:transparent;color:var(--mute);border:1px solid var(--line);padding:8px 20px;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;transition:.15s}
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
   @media print{
     body{background:#fff}
     .top,.actions,.btn-ghost,#listView{display:none !important}
@@ -81,6 +85,11 @@
       <button class="btn-ghost" id="logoutBtn">Sair</button>
     </div>
 
+    <div class="tabs">
+      <button class="tab-btn active" data-table="svi_kickoff">Marketing</button>
+      <button class="tab-btn" data-table="svi_kickoff_crm">CRM</button>
+    </div>
+
     <div id="listView">
       <div class="count" id="count"></div>
       <div class="grid" id="grid"></div>
@@ -101,7 +110,7 @@ const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
 const $ = id => document.getElementById(id);
-let rows = [];
+let rows = [], TABLE = "svi_kickoff";
 
 function fmtDate(s){ try{ const d=new Date(s); return d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}); }catch(e){ return s; } }
 function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
@@ -122,9 +131,14 @@ $('loginBtn').addEventListener('click', async ()=>{
 $('password').addEventListener('keydown', e=>{ if(e.key==='Enter') $('loginBtn').click(); });
 $('logoutBtn').addEventListener('click', async ()=>{ await sb.auth.signOut(); location.reload(); });
 $('backBtn').addEventListener('click', ()=>{ $('detailView').classList.add('hidden'); $('listView').classList.remove('hidden'); });
+document.querySelectorAll('.tab-btn').forEach(b=> b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); TABLE=b.dataset.table;
+  $('detailView').classList.add('hidden'); $('listView').classList.remove('hidden'); load();
+}));
 
 async function load(){
-  const { data, error } = await sb.from('svi_kickoff').select('*').order('created_at',{ascending:false});
+  const { data, error } = await sb.from(TABLE).select('*').order('created_at',{ascending:false});
   if(error){ $('grid').innerHTML = `<p style="color:#c0392b">Erro ao carregar: ${esc(error.message)}. Confirme que seu usuário tem permissão de leitura.</p>`; return; }
   rows = data||[];
   $('count').textContent = `${rows.length} kickoff(s) recebido(s)`;
@@ -167,7 +181,7 @@ function openDetail(i){
 
 async function del(id){
   if(!confirm('Apagar este kickoff? Essa ação não pode ser desfeita.')) return;
-  const { error } = await sb.from('svi_kickoff').delete().eq('id', id);
+  const { error } = await sb.from(TABLE).delete().eq('id', id);
   if(error){ alert('Erro ao apagar: '+error.message+'\n\nSe disser permissão, rode de novo o supabase_kickoff.sql (tem a policy de delete).'); return; }
   $('detailView').classList.add('hidden'); $('listView').classList.remove('hidden'); load();
 }
