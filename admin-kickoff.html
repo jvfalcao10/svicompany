@@ -155,6 +155,7 @@ function openDetail(i){
       </div>
       <div class="actions">
         <button class="btn-gold" onclick="window.print()">Exportar PDF</button>
+        <button class="btn-ghost" style="color:#c0392b;border-color:#e3b4b0" onclick="del('${esc(r.id)}')">Apagar</button>
       </div>
     </div>
     <div class="sec"><h4>Respostas do diagnóstico</h4>${respHtml}</div>
@@ -162,6 +163,13 @@ function openDetail(i){
   `;
   $('listView').classList.add('hidden'); $('detailView').classList.remove('hidden');
   window.scrollTo({top:0});
+}
+
+async function del(id){
+  if(!confirm('Apagar este kickoff? Essa ação não pode ser desfeita.')) return;
+  const { error } = await sb.from('svi_kickoff').delete().eq('id', id);
+  if(error){ alert('Erro ao apagar: '+error.message+'\n\nSe disser permissão, rode de novo o supabase_kickoff.sql (tem a policy de delete).'); return; }
+  $('detailView').classList.add('hidden'); $('listView').classList.remove('hidden'); load();
 }
 
 boot();
