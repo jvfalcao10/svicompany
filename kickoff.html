@@ -39,9 +39,13 @@
   main{max-width:720px; margin:0 auto; padding:28px 20px 120px}
 
   /* hero (step 0) */
-  .hero-kicker{color:var(--gold); font-weight:600; letter-spacing:.14em; font-size:13px; text-transform:uppercase}
-  h1{font-size:clamp(30px,7vw,46px); line-height:1.05; font-weight:700; color:var(--ink); margin:10px 0 14px}
-  .hero-sub{font-size:16px; color:var(--mute); max-width:54ch}
+  .hero-kicker{color:var(--gold); font-weight:600; letter-spacing:.14em; font-size:13px; text-transform:uppercase; text-align:center}
+  h1{font-size:clamp(30px,7vw,46px); line-height:1.05; font-weight:700; color:var(--ink); margin:10px 0 14px; text-align:center}
+  .hero-sub{font-size:16px; color:var(--mute); max-width:54ch; text-align:center; margin:0 auto}
+  /* tela de boas-vindas: tudo centralizado e equilibrado */
+  .step-hero .qlabel{text-align:center}
+  .step-hero input{text-align:center}
+  .step-hero .intro-box{text-align:center; border-left:1px solid var(--line); border-top:3px solid var(--gold)}
   .intro-box{
     margin:24px 0; padding:18px 20px; background:var(--card);
     border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px;
@@ -85,15 +89,15 @@
     background:rgba(251,247,236,.94); backdrop-filter:blur(8px);
     border-top:1px solid var(--line); padding:14px 20px;
   }
-  .nav-inner{max-width:720px; margin:0 auto; display:flex; gap:12px; justify-content:space-between}
+  .nav-inner{max-width:720px; margin:0 auto; display:flex; gap:12px; justify-content:center; align-items:center}
   button{font-family:inherit; font-weight:600; font-size:15px; cursor:pointer; border-radius:99px; border:1px solid transparent; padding:13px 26px; transition:transform .1s, opacity .2s, background .2s}
   button:active{transform:scale(.97)}
   .btn-prev{background:transparent; color:var(--mute); border-color:var(--line)}
   .btn-prev:hover{color:var(--ink2)}
-  .btn-next{background:var(--ink); color:var(--cream); flex:1; max-width:340px; margin-left:auto}
+  .btn-next{background:var(--ink); color:var(--cream); flex:1; max-width:360px}
   .btn-next:hover{background:var(--ink2)}
   .btn-next[disabled]{opacity:.5; cursor:not-allowed}
-  .btn-prev[hidden]{visibility:hidden}
+  .btn-prev[hidden]{display:none}
 
   /* thank you */
   .done{display:none; text-align:center; padding:60px 10px}
@@ -124,7 +128,7 @@
 <main>
 
   <!-- STEP 0 — HERO + IDENTIFICAÇÃO -->
-  <section class="step active" data-title="Boas-vindas">
+  <section class="step step-hero active" data-title="Boas-vindas">
     <div class="hero-kicker">Sistema de Vendas Inteligente</div>
     <h1>Kickoff de Marketing</h1>
     <p class="hero-sub">O ponto de partida de tudo que vamos construir juntos. Marketing que vende não nasce de palpite — nasce da verdade do seu negócio.</p>
