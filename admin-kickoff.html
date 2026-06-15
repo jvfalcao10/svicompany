@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Painel · Kickoffs · SVI Company</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EC;--ink:#0A0608;--ink2:#1A1714;--gold:#B98A2E;--gold-soft:#E7D8B5;--mute:#6B6157;--line:#E5DDC9;--card:#FFFFFF;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink2);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 20px 80px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .brand b{font-weight:700;letter-spacing:.16em;font-size:13px;color:var(--gold)}
+  .brand span{display:block;font-size:18px;font-weight:700;color:var(--ink)}
+  button{font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;border-radius:99px;border:1px solid transparent;padding:10px 18px;transition:.15s}
+  .btn-dark{background:var(--ink);color:var(--cream)} .btn-dark:hover{background:var(--ink2)}
+  .btn-ghost{background:transparent;color:var(--mute);border-color:var(--line)} .btn-ghost:hover{color:var(--ink)}
+  .btn-gold{background:var(--gold);color:#fff}
+
+  /* login */
+  .login{max-width:380px;margin:9vh auto 0;text-align:center}
+  .login .kick{color:var(--gold);font-weight:600;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+  .login h1{font-size:30px;color:var(--ink);margin:8px 0 6px}
+  .login p{color:var(--mute);font-size:14px;margin-bottom:22px}
+  input{width:100%;font-family:inherit;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+  input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(185,138,46,.14)}
+  .err{color:#c0392b;font-size:13px;min-height:18px;margin-bottom:6px}
+
+  /* list */
+  .count{font-size:13px;color:var(--mute);margin-bottom:14px}
+  .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;cursor:pointer;transition:.15s}
+  .item:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .item h3{font-size:17px;color:var(--ink);margin-bottom:3px}
+  .item .who{font-size:13px;color:var(--mute)}
+  .item .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;color:var(--mute)}
+  .tag{background:var(--gold-soft);color:#7a5a17;border-radius:99px;padding:2px 9px;font-weight:600;font-size:11px}
+
+  /* detail */
+  .detail{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+  .detail .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+  .detail h2{font-size:26px;color:var(--ink)}
+  .detail .who{color:var(--mute);font-size:14px;margin-bottom:18px}
+  .sec{margin-top:22px}
+  .sec h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:12px}
+  .row{margin-bottom:12px}
+  .row .k{font-size:13px;font-weight:600;color:var(--ink2)}
+  .row .v{font-size:15px;color:var(--ink2);white-space:pre-wrap}
+  .row .v.empty{color:#b9b2a5;font-style:italic}
+  .cred{background:#FBF6E8;border:1px solid var(--gold-soft);border-radius:10px;padding:6px 12px;display:inline-block;font-size:14px;margin:3px 6px 3px 0}
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .hidden{display:none}
+  @media print{
+    body{background:#fff}
+    .top,.actions,.btn-ghost,#listView{display:none !important}
+    .detail{border:none;padding:0}
+    .wrap{padding:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- LOGIN -->
+  <div id="loginView" class="login">
+    <div class="kick">SVI Company · Interno</div>
+    <h1>Painel de Kickoffs</h1>
+    <p>Acesso restrito à equipe SVI.</p>
+    <input type="email" id="email" placeholder="E-mail" autocomplete="username">
+    <input type="password" id="password" placeholder="Senha" autocomplete="current-password">
+    <div class="err" id="loginErr"></div>
+    <button class="btn-dark" id="loginBtn" style="width:100%">Entrar</button>
+  </div>
+
+  <!-- APP -->
+  <div id="appView" class="hidden">
+    <div class="top">
+      <div class="brand"><b>SVI COMPANY</b><span>Painel de Kickoffs</span></div>
+      <button class="btn-ghost" id="logoutBtn">Sair</button>
+    </div>
+
+    <div id="listView">
+      <div class="count" id="count"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <div id="detailView" class="hidden">
+      <div style="margin-bottom:16px"><button class="btn-ghost" id="backBtn">← Voltar</button></div>
+      <div class="detail" id="detail"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL  = "https://qvkfcvcqlfamyzgqgnrq.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2a2ZjdmNxbGZhbXl6Z3FnbnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMzI1MzYsImV4cCI6MjA2MzYwODUzNn0.VDLMK6z9yynpHRp5o8uULdOlX6ZmRi95kZJdte1oaLM";
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+const $ = id => document.getElementById(id);
+let rows = [];
+
+function fmtDate(s){ try{ const d=new Date(s); return d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}); }catch(e){ return s; } }
+function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+async function boot(){
+  const { data:{ session } } = await sb.auth.getSession();
+  if(session){ showApp(); } else { $('loginView').classList.remove('hidden'); }
+}
+function showApp(){ $('loginView').classList.add('hidden'); $('appView').classList.remove('hidden'); load(); }
+
+$('loginBtn').addEventListener('click', async ()=>{
+  $('loginErr').textContent=''; $('loginBtn').textContent='Entrando…'; $('loginBtn').disabled=true;
+  const { error } = await sb.auth.signInWithPassword({ email:$('email').value.trim(), password:$('password').value });
+  $('loginBtn').textContent='Entrar'; $('loginBtn').disabled=false;
+  if(error){ $('loginErr').textContent = 'E-mail ou senha inválidos.'; return; }
+  showApp();
+});
+$('password').addEventListener('keydown', e=>{ if(e.key==='Enter') $('loginBtn').click(); });
+$('logoutBtn').addEventListener('click', async ()=>{ await sb.auth.signOut(); location.reload(); });
+$('backBtn').addEventListener('click', ()=>{ $('detailView').classList.add('hidden'); $('listView').classList.remove('hidden'); });
+
+async function load(){
+  const { data, error } = await sb.from('svi_kickoff').select('*').order('created_at',{ascending:false});
+  if(error){ $('grid').innerHTML = `<p style="color:#c0392b">Erro ao carregar: ${esc(error.message)}. Confirme que seu usuário tem permissão de leitura.</p>`; return; }
+  rows = data||[];
+  $('count').textContent = `${rows.length} kickoff(s) recebido(s)`;
+  $('grid').innerHTML = rows.map((r,i)=>`
+    <div class="item" data-i="${i}">
+      <h3>${esc(r.empresa||'(sem nome)')}</h3>
+      <div class="who">${esc(r.responsavel||'—')}${r.segmento?(' · '+esc(r.segmento)):''}</div>
+      <div class="meta"><span>${fmtDate(r.created_at)}</span><span class="tag">${esc(r.status||'novo')}</span></div>
+    </div>`).join('');
+  document.querySelectorAll('.item').forEach(el=> el.addEventListener('click',()=>openDetail(+el.dataset.i)));
+}
+
+function kv(k,v){ const empty=!v; return `<div class="row"><div class="k">${esc(k)}</div><div class="v ${empty?'empty':''}">${empty?'—':esc(v)}</div></div>`; }
+
+function openDetail(i){
+  const r = rows[i];
+  const resp = r.respostas||{}, ac = r.acessos||{};
+  const respHtml = Object.keys(resp).length ? Object.entries(resp).map(([k,v])=>kv(k.replace(/^\d+\./,'').trim(), v)).join('') : '<div class="row"><div class="v empty">Sem respostas.</div></div>';
+  const acHtml = Object.keys(ac).length ? Object.entries(ac).map(([k,v])=>{
+      const label = k.replace('acesso_','').replace(/_/g,' ');
+      return `<span class="cred"><b>${esc(label)}:</b> ${esc(v)}</span>`;
+    }).join('') : '<div class="row"><div class="v empty">Nenhum acesso informado.</div></div>';
+  $('detail').innerHTML = `
+    <div class="head">
+      <div>
+        <h2>${esc(r.empresa||'(sem nome)')}</h2>
+        <div class="who">${esc(r.responsavel||'—')} · ${esc(r.whatsapp||'')} · ${esc(r.segmento||'')} ${r.regiao?('· '+esc(r.regiao)):''}<br>${fmtDate(r.created_at)}</div>
+      </div>
+      <div class="actions">
+        <button class="btn-gold" onclick="window.print()">Exportar PDF</button>
+      </div>
+    </div>
+    <div class="sec"><h4>Respostas do diagnóstico</h4>${respHtml}</div>
+    <div class="sec"><h4>Acessos e credenciais</h4>${acHtml}</div>
+  `;
+  $('listView').classList.add('hidden'); $('detailView').classList.remove('hidden');
+  window.scrollTo({top:0});
+}
+
+boot();
+</script>
+</body>
+</html>

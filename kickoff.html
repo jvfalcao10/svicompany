@@ -351,6 +351,16 @@ async function submit(){
       body: JSON.stringify(payload)
     });
     if(!res.ok) throw new Error('falha '+res.status);
+    // Notificação (sem credenciais) — avisa a equipe que chegou kickoff novo
+    fetch('https://formsubmit.co/ajax/svicompanyy@gmail.com',{
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify({
+        _subject:`Novo Kickoff — ${payload.empresa||'sem nome'}`,
+        Empresa:payload.empresa||'', Responsavel:payload.responsavel||'',
+        WhatsApp:payload.whatsapp||'', Segmento:payload.segmento||'',
+        Aviso:'Kickoff preenchido. Veja as respostas e os acessos no painel: svicompany.com.br/admin-kickoff'
+      })
+    }).catch(()=>{});
     finishUI();
   }catch(e){
     // fallback: guarda local pra não perder o que o cliente preencheu
