@@ -48,8 +48,8 @@
   .step-hero .intro-box{text-align:center; border-left:1px solid var(--line); border-top:3px solid var(--gold)}
   .intro-box{
     margin:24px 0; padding:18px 20px; background:var(--card);
-    border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px;
-    font-size:15px;
+    border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:14px;
+    font-size:15px; text-align:center;
   }
   .intro-box b{color:var(--ink)}
 
@@ -57,14 +57,14 @@
   .step.active{display:block}
   @keyframes fade{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
 
-  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:6px}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:6px; justify-content:center; text-align:center}
   .sec-num{font-weight:700; color:var(--gold); font-size:26px; line-height:1}
   .sec-title{font-weight:700; font-size:21px; color:var(--ink)}
-  .sec-rule{height:2px; background:linear-gradient(90deg,var(--gold),transparent); margin:10px 0 22px; border-radius:2px}
+  .sec-rule{height:3px; width:120px; background:var(--gold); margin:10px auto 22px; border-radius:2px}
 
   .q{margin-bottom:22px}
-  .q > label.qlabel{display:block; font-weight:600; font-size:16px; color:var(--ink2); margin-bottom:8px}
-  .q .hint{display:block; font-size:13px; color:var(--mute); margin:-4px 0 10px; font-style:italic}
+  .q > label.qlabel{display:block; font-weight:600; font-size:16px; color:var(--ink2); margin-bottom:8px; text-align:center}
+  .q .hint{display:block; font-size:13px; color:var(--mute); margin:-4px 0 10px; font-style:italic; text-align:center}
   textarea, input[type=text], input[type=email], input[type=tel]{
     width:100%; font-family:inherit; font-size:15.5px; color:var(--ink2);
     background:var(--card); border:1px solid var(--line); border-radius:12px;
@@ -73,11 +73,11 @@
   textarea{min-height:84px}
   textarea:focus, input:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(185,138,46,.14)}
 
-  .opts{display:flex; flex-direction:column; gap:8px}
+  .opts{display:flex; flex-direction:column; gap:8px; align-items:center}
   .opt{
-    display:flex; align-items:center; gap:11px; padding:11px 14px;
+    display:flex; align-items:center; gap:11px; padding:11px 14px; width:100%; max-width:480px;
     background:var(--card); border:1px solid var(--line); border-radius:12px; cursor:pointer;
-    font-size:15px; transition:border-color .15s, background .15s;
+    font-size:15px; transition:border-color .15s, background .15s; text-align:left;
   }
   .opt:hover{border-color:var(--gold-soft)}
   .opt input{accent-color:var(--gold); width:18px; height:18px; flex:none}
