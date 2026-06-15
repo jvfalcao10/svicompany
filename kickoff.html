@@ -351,14 +351,13 @@ async function submit(){
       body: JSON.stringify(payload)
     });
     if(!res.ok) throw new Error('falha '+res.status);
-    // Notificação (sem credenciais) — avisa a equipe que chegou kickoff novo
-    fetch('https://formsubmit.co/ajax/svicompanyy@gmail.com',{
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+    // Aciona a Sofia (n8n): cria task de estratégia no ClickUp + avisa o João no WhatsApp.
+    // Só o resumo — nenhuma credencial trafega aqui.
+    fetch('https://n8n-n8n-start.wrqknp.easypanel.host/webhook/kickoff-svi',{
+      method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
-        _subject:`Novo Kickoff — ${payload.empresa||'sem nome'}`,
-        Empresa:payload.empresa||'', Responsavel:payload.responsavel||'',
-        WhatsApp:payload.whatsapp||'', Segmento:payload.segmento||'',
-        Aviso:'Kickoff preenchido. Veja as respostas e os acessos no painel: svicompany.com.br/admin-kickoff'
+        empresa:payload.empresa||'', responsavel:payload.responsavel||'',
+        whatsapp:payload.whatsapp||'', segmento:payload.segmento||'', regiao:payload.regiao||''
       })
     }).catch(()=>{});
     finishUI();
