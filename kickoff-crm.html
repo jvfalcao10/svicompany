@@ -220,18 +220,28 @@ const SECTIONS = [
     {t:"area", q:"Qual a maior dor ou perda de tempo do comercial hoje que você queria resolver?"},
     {t:"text", q:"Tem alguma mensagem/etapa que vocês repetem o tempo todo na mão?"},
   ]},
-  { n:9, title:"Equipe e integrações", qs:[
+  { n:9, title:"Atendente de IA (agente)", qs:[
+    {t:"text", q:"A IA deve atender sozinha ou só triar/qualificar e passar pro vendedor?", hint:"Atendente completo x SDR que entrega o lead pronto."},
+    {t:"area", q:"O que a IA PODE resolver — e o que ela NUNCA deve responder ou decidir sozinha?", hint:"Ex: pode tirar dúvida e agendar; nunca dá preço final, desconto ou diagnóstico."},
+    {t:"text", q:"Quando a IA deve passar pro humano? (gatilhos)", hint:"Cliente irritado, pediu pessoa, assunto sensível…"},
+    {t:"text", q:"Qual o tom/jeito da IA? Tem um nome pra ela?", hint:"Formal, próximo, bem-humorado…"},
+    {t:"area", q:"Têm FAQ / tabela de preços / políticas / respostas prontas que a IA possa usar de base?"},
+    {t:"text", q:"A IA pode agendar direto? Em qual agenda/ferramenta?"},
+    {t:"text", q:"A IA atende 24/7 ou só fora do horário comercial?"},
+    {t:"text", q:"No começo: a IA responde direto ao cliente ou sugere a resposta pra equipe aprovar?"},
+  ]},
+  { n:10, title:"Equipe e integrações", qs:[
     {t:"text", q:"Quantas pessoas vão usar o CRM? Quem (nomes/funções)?"},
     {t:"text", q:"Nível da equipe com tecnologia? (tranquilo / precisa de treino)"},
     {t:"checks", q:"O que precisa estar conectado ao CRM?", opts:["WhatsApp","Instagram","Meta Ads","Site / formulário","Agenda","Financeiro","Telefonia"]},
     {t:"text", q:"Usam mais de um número de WhatsApp? Quais e de quem?"},
   ]},
-  { n:10, title:"Metas e medição", qs:[
+  { n:11, title:"Metas e medição", qs:[
     {t:"text", q:"Qual a meta de vendas (ou de conversão) que querem bater?"},
     {t:"area", q:"O que hoje você NÃO consegue medir e gostaria de ver? (ex: quantos leads viram venda)"},
     {t:"text", q:"Daqui a 90 dias, o que faria você dizer que o CRM valeu a pena?"},
   ]},
-  { n:11, title:"Acessos e credenciais", qs:[
+  { n:12, title:"Acessos e credenciais", qs:[
     {t:"note", q:"<b>Pra montar e conectar o CRM, a SVI precisa de alguns acessos.</b> Tudo trafega por conexão segura e fica restrito à nossa equipe. Prefere não digitar senha? Marque a opção no fim que a gente combina o acesso. Preencha só o que tiver."},
     {t:"cred", name:"acesso_crm", q:"CRM atual (se já tiver — qual e login)"},
     {t:"cred", name:"acesso_whatsapp", q:"WhatsApp Business / API (número + acesso)"},
