@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Onboarding de Cliente · SVI Company</title>
+<style>
+  :root{ --gold:#C8A04F; --gold-soft:#E3CF9E; --ink:#161616; --graphite:#1f1f1f;
+    --card:#242424; --line:#3a3a3a; --muted:#9a9a9a; --bg:#0E0E0E; --ok:#3FB37F; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);
+    color:#f2f2f2;min-height:100vh;padding:24px 16px;display:flex;justify-content:center;}
+  .wrap{width:100%;max-width:520px;}
+  .brand{text-align:center;margin-bottom:22px;}
+  .brand img{height:54px;}
+  .brand .sub{font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:8px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px;}
+  h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+  h1 .g{color:var(--gold);}
+  .lead{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:22px;}
+  label{display:block;font-size:12.5px;font-weight:600;margin:16px 0 6px;color:#e8e8e8;}
+  label .req{color:var(--gold);}
+  .hint{font-size:11px;color:var(--muted);font-weight:400;margin-top:3px;}
+  input,select{width:100%;background:#1a1a1a;border:1px solid var(--line);border-radius:10px;
+    padding:13px 14px;color:#fff;font-size:15px;outline:none;transition:border .15s;}
+  input:focus,select:focus{border-color:var(--gold);}
+  input::placeholder{color:#6a6a6a;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .btn{width:100%;margin-top:26px;background:var(--gold);color:#161616;border:none;border-radius:12px;
+    padding:16px;font-size:16px;font-weight:800;cursor:pointer;transition:transform .1s,opacity .15s;}
+  .btn:active{transform:scale(.99);}
+  .btn:disabled{opacity:.6;cursor:not-allowed;}
+  .foot{text-align:center;font-size:11px;color:var(--muted);margin-top:18px;}
+  .ok-screen,.err{display:none;text-align:center;padding:18px 0;}
+  .ok-screen .ic{font-size:46px;}
+  .ok-screen h2{font-size:20px;margin:10px 0 6px;}
+  .ok-screen p{font-size:13.5px;color:var(--muted);line-height:1.5;}
+  .err{color:#ff8a8a;font-size:13px;margin-top:14px;}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid #16161644;border-top-color:#161616;
+    border-radius:50%;animation:s .7s linear infinite;vertical-align:-3px;margin-right:8px;}
+  @keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <img src="https://raw.githubusercontent.com/jvfalcao10/svicompany/main/logo-branca.png"
+           onerror="this.style.display='none'" alt="SVI">
+      <div class="sub">Onboarding de Cliente</div>
+    </div>
+
+    <div class="card">
+      <form id="form">
+        <h1>Novo <span class="g">cliente</span> fechado 🚀</h1>
+        <p class="lead">Preenche os dados pra Sofia gerar o contrato, postar as boas-vindas no grupo e te mandar o link de assinatura no seu WhatsApp.</p>
+
+        <label>Razão social / Nome do cliente <span class="req">*</span></label>
+        <input name="cliente_razao_social" required placeholder="Ex: Carlotinha Comercio de Veiculos LTDA">
+
+        <div class="grid">
+          <div>
+            <label>CNPJ <span class="req">*</span></label>
+            <input name="cliente_cnpj" required placeholder="00.000.000/0001-00">
+          </div>
+          <div>
+            <label>E-mail <span class="req">*</span></label>
+            <input name="cliente_email" type="email" required placeholder="cliente@email.com">
+          </div>
+        </div>
+
+        <label>Endereço <span class="req">*</span></label>
+        <input name="cliente_endereco" required placeholder="Rua, nº, bairro — Cidade/UF">
+
+        <div class="grid">
+          <div>
+            <label>Valor mensal (R$) <span class="req">*</span></label>
+            <input name="valor_mensal" required inputmode="decimal" placeholder="2.500,00">
+          </div>
+          <div>
+            <label>Dia de pagamento <span class="req">*</span></label>
+            <input name="dia_pagamento" required inputmode="numeric" value="25">
+          </div>
+        </div>
+
+        <label>Duração do contrato (meses) <span class="req">*</span></label>
+        <input name="duracao_meses" required inputmode="numeric" value="6">
+
+        <label>Grupo do WhatsApp <span class="hint" style="display:inline">(opcional)</span></label>
+        <input name="grupo_whatsapp" placeholder="Cole o link de convite OU o ID @g.us">
+        <div class="hint">Se preencher, a Sofia já posta as boas-vindas + kickoff no grupo. Se deixar em branco, ela te manda o texto no PV pra você colar.</div>
+
+        <button class="btn" type="submit" id="btn">Gerar contrato e disparar</button>
+        <div class="err" id="err"></div>
+      </form>
+
+      <div class="ok-screen" id="ok">
+        <div class="ic">✅</div>
+        <h2>Disparado!</h2>
+        <p>A Sofia tá gerando o contrato e vai te mandar o link de assinatura no seu WhatsApp em instantes. Pode fechar essa página.</p>
+      </div>
+    </div>
+
+    <div class="foot">SVI Company · uso interno</div>
+  </div>
+
+<script>
+  // >>> TROCAR pela URL de produção do webhook n8n <<<
+  const WEBHOOK_URL = "https://n8n-n8n-start.wrqknp.easypanel.host/webhook/onboarding-cliente";
+
+  const form = document.getElementById('form');
+  const btn  = document.getElementById('btn');
+  const err  = document.getElementById('err');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    err.style.display = 'none';
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spin"></span>Enviando...';
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.origem = 'onboarding-form';
+    data.enviado_em = new Date().toISOString();
+
+    try {
+      const r = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      form.style.display = 'none';
+      document.getElementById('ok').style.display = 'block';
+    } catch (ex) {
+      err.textContent = 'Não consegui enviar (' + ex.message + '). Confere a conexão e tenta de novo.';
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Gerar contrato e disparar';
+    }
+  });
+</script>
+</body>
+</html>
