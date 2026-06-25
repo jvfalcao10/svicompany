@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>CRM PROURO — Mapa de Apresentação</title>
+<style>
+  html,body{margin:0;height:100%;background:#0A0608;font-family:'DM Sans',system-ui,sans-serif}
+  .markmap{display:block;width:100%;height:100vh;
+    --markmap-text-color:#FFFFFF;
+    --markmap-circle-open-bg:#0A0608;
+    --markmap-highlight-bg:rgba(185,138,46,.22);}
+  /* texto branco, traços e círculos dourados (paleta SVI) */
+  .markmap text{fill:#FFFFFF !important;font-weight:600}
+  .markmap-foreign,.markmap-foreign *{color:#FFFFFF !important}
+  .markmap-link{stroke:#B98A2E !important;stroke-opacity:1 !important}
+  .markmap-node>circle,.markmap circle{stroke:#B98A2E !important;fill:#0A0608 !important}
+  .brand{position:fixed;top:14px;left:20px;z-index:10;color:#B98A2E;font-weight:700;letter-spacing:.18em;font-size:13px}
+  .brand span{display:block;color:#6B6157;font-weight:500;letter-spacing:.05em;font-size:11px;margin-top:2px}
+</style></head>
+<body>
+<div class="brand">SVI · PROURO<span>Sistema de Vendas Inteligente — o CRM</span></div>
+<div class="markmap"><script type="text/template">
+---
+markmap:
+  color: ["#B98A2E"]
+  colorFreezeLevel: 1
+  initialExpandLevel: 2
+  paddingX: 28
+  spacingVertical: 10
+---
+
+# CRM PROURO
+
+## Captação · paciente novo
+- Boas-vindas automática
+- Qualificação
+- Follow-up D1 · D3 · D7
+
+## Triagem
+- Direciona pela agenda
+- Encaixe ou horário marcado
+
+## Confirmação de Consulta
+- Confirma 24h antes
+- Lembrete no dia
+- Reduz a falta
+
+## Exames & Resultados
+- Organiza o exame
+- Volta com o resultado
+
+## Jornada Cirúrgica
+- Acolhe o medo
+- Cadência D0 · D3 · D7 · D14
+- Pré-op + agendamento
+
+## Retorno & Acompanhamento
+- Crônico: próstata / PSA
+- Lembrete de retorno
+
+## Convênio
+- Guia e autorização
+
+## Pós-consulta
+- Acompanhamento
+- Avaliação no Google
+
+## Pós-cirúrgico
+- Recuperação
+- Sinais de alerta
+
+## Reativação · base parada
+- Régua D0 · D3 · D7 · D14
+- Recupera quem sumiu
+
+## Quem alimenta = a recepção
+- Move o card
+- Marca a etiqueta (tag)
+- O sistema dispara as mensagens
+</script></div>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+</body></html>
