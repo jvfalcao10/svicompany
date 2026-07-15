@@ -32,31 +32,57 @@ Sim. A SVI trabalha educação e autoridade dentro das regras de publicidade mé
 ## Blog de marketing médico (conteúdo de referência)
 Artigos que respondem as principais dúvidas de marketing médico. Índice: https://svicompany.com.br/blog
 
-Fundamentos e decisão:
-- Marketing médico, o guia completo: https://svicompany.com.br/blog/marketing-medico
-- Marketing médico vale a pena: https://svicompany.com.br/blog/marketing-medico-vale-a-pena
+Fundamentos:
+- Marketing médico: o que é e como funciona de verdade: https://svicompany.com.br/blog/marketing-medico
+
+Decisão:
+- Marketing médico vale a pena?: https://svicompany.com.br/blog/marketing-medico-vale-a-pena
+
+Captação:
+- Como Atrair Pacientes Particulares Sem Depender de Convênio: https://svicompany.com.br/blog/como-atrair-pacientes-particulares
 - Como conseguir mais pacientes: https://svicompany.com.br/blog/como-conseguir-mais-pacientes
-- Como lotar a agenda do consultório com previsibilidade: https://svicompany.com.br/blog/agenda-cheia-consultorio
 
-Ser encontrado (Google e IA):
-- Como o médico aparece no Google e na IA (SEO + AEO): https://svicompany.com.br/blog/medico-aparecer-google-e-ia
-- Instagram para médicos: https://svicompany.com.br/blog/instagram-para-medicos
-- Google Meu Negócio para médicos: https://svicompany.com.br/blog/google-meu-negocio-para-medicos
-- Tráfego pago para médicos: https://svicompany.com.br/blog/trafego-pago-para-medicos
+Comercial:
+- Agência de marketing médico: como escolher a certa: https://svicompany.com.br/blog/agencia-de-marketing-medico
+- Marketing para Clínica Médica: Presença, Agenda e Comercial Juntos: https://svicompany.com.br/blog/marketing-para-clinica-medica
+- Quanto custa o marketing médico?: https://svicompany.com.br/blog/quanto-custa-marketing-medico
 
-Comercial e método:
-- Agência de marketing médico, como escolher: https://svicompany.com.br/blog/agencia-de-marketing-medico
-- Quanto custa o marketing médico: https://svicompany.com.br/blog/quanto-custa-marketing-medico
-- CRM para clínica médica, onde o faturamento vaza: https://svicompany.com.br/blog/crm-para-clinica-medica
-- Marketing médico e o CFM, o que pode e o que não pode: https://svicompany.com.br/blog/marketing-medico-cfm
+Ser encontrado:
+- Como um médico aparece no Google e no ChatGPT: https://svicompany.com.br/blog/medico-aparecer-google-e-ia
+- SEO para médicos: como aparecer no Google e ser recomendado por IA: https://svicompany.com.br/blog/seo-para-medicos
 
-Marketing por especialidade:
-- Ortopedista: https://svicompany.com.br/blog/marketing-para-ortopedista
-- Dermatologista: https://svicompany.com.br/blog/marketing-para-dermatologista
-- Ginecologista: https://svicompany.com.br/blog/marketing-para-ginecologista
-- Pediatra: https://svicompany.com.br/blog/marketing-para-pediatra
-- Cirurgião: https://svicompany.com.br/blog/marketing-para-cirurgiao
-- Urologista: https://svicompany.com.br/blog/marketing-para-urologista
+Canais:
+- Google Meu Negócio para médicos: guia completo da ficha: https://svicompany.com.br/blog/google-meu-negocio-para-medicos
+- Instagram para médicos: como usar sem virar propaganda: https://svicompany.com.br/blog/instagram-para-medicos
+- Site para médico: por que é a base da sua presença digital: https://svicompany.com.br/blog/site-para-medico
+
+Mídia:
+- Tráfego pago para médicos: vale a pena e como fazer certo: https://svicompany.com.br/blog/trafego-pago-para-medicos
+
+Inteligência:
+- CRM para clínica médica: onde o faturamento vaza: https://svicompany.com.br/blog/crm-para-clinica-medica
+
+Previsibilidade:
+- Como lotar a agenda do consultório sem depender de indicação: https://svicompany.com.br/blog/agenda-cheia-consultorio
+
+Especialidades:
+- Marketing para Cardiologista: Construindo Confiança Antes do Susto: https://svicompany.com.br/blog/marketing-para-cardiologista
+- Marketing para Cirurgião Plástico: Autoridade e Segurança Dentro do CFM: https://svicompany.com.br/blog/marketing-para-cirurgiao-plastico
+- Marketing para Cirurgião: Construindo Confiança na Jornada Mais Longa da Medicina: https://svicompany.com.br/blog/marketing-para-cirurgiao
+- Marketing para Dermatologista: Autoridade Clínica em Meio ao Ruído da Estética: https://svicompany.com.br/blog/marketing-para-dermatologista
+- Marketing para Endocrinologista: A Voz da Verdade em Meio ao Modismo das Canetas Emagrecedoras: https://svicompany.com.br/blog/marketing-para-endocrinologista
+- Marketing para Gastroenterologista: Tirando o Paciente do Modo &#x27;Já Aprendi a Conviver com Isso&#x27;: https://svicompany.com.br/blog/marketing-para-gastroenterologista
+- Marketing para Ginecologista: a Confiança Digital que Leva a Paciente até Você: https://svicompany.com.br/blog/marketing-para-ginecologista
+- Marketing para Neurologista: Construindo Confiança Antes do Diagnóstico: https://svicompany.com.br/blog/marketing-para-neurologista
+- Marketing para Nutrólogo: Autoridade Científica no Emagrecimento Saudável: https://svicompany.com.br/blog/marketing-para-nutrologo
+- Marketing para Oftalmologista: Presença Digital que Une Rotina e Cirurgia: https://svicompany.com.br/blog/marketing-para-oftalmologista
+- Marketing para Ortopedista: Presença Digital para Quem Convive com a Dor: https://svicompany.com.br/blog/marketing-para-ortopedista
+- Marketing para Pediatra: a Referência que a Mãe Procura na Hora Certa: https://svicompany.com.br/blog/marketing-para-pediatra
+- Marketing para Psiquiatra: Acolhimento Digital para Quem Ainda Não Deu o Primeiro Passo: https://svicompany.com.br/blog/marketing-para-psiquiatra
+- Marketing para Urologista: Superando o Tabu que Afasta o Homem da Consulta: https://svicompany.com.br/blog/marketing-para-urologista
+
+Ética e CFM:
+- Marketing médico e o CFM: o que pode e o que não pode: https://svicompany.com.br/blog/marketing-medico-cfm
 
 ## Contato e links
 - Página da frente médica: https://svicompany.com.br/marketingmedico
