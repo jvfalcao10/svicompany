@@ -1,8 +1,10 @@
-# SVI Doctor — robots.txt
+# SVI Company — robots.txt
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin.html
+Disallow: /admin-kickoff
+Disallow: /admin-kickoff.html
 Disallow: /obrigado
 Disallow: /obrigado.html
 Disallow: /obrigado-conteudo
@@ -10,11 +12,10 @@ Disallow: /obrigado-conteudo.html
 Disallow: /config.js
 Disallow: /vercel.json
 
-# AI Search bots — explicitly allowed (we want to be cited by ChatGPT/Perplexity/Claude/Gemini)
+# AI Search bots — explicitamente permitidos (queremos ser citados por ChatGPT/Perplexity/Claude/Gemini)
 User-agent: GPTBot
 Allow: /
 Disallow: /admin
-Disallow: /obrigado
 
 User-agent: ChatGPT-User
 Allow: /
@@ -52,4 +53,8 @@ User-agent: Applebot
 Allow: /
 Disallow: /admin
 
-Sitemap: https://lp.svidoctor.com.br/sitemap.xml
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+
+Sitemap: https://svicompany.com.br/sitemap.xml
