@@ -90,6 +90,21 @@
         <input name="grupo_whatsapp" placeholder="Cole o link de convite OU o ID @g.us">
         <div class="hint">Se preencher, a Sofia já posta as boas-vindas + kickoff no grupo. Se deixar em branco, ela te manda o texto no PV pra você colar.</div>
 
+        <div class="hint" style="margin-top:18px;font-weight:600">Condição especial / preço escalonado (opcional)</div>
+        <div class="row">
+          <div>
+            <label>Valor de referência (R$) <span class="hint" style="display:inline">(opcional)</span></label>
+            <input name="valor_referencia" inputmode="decimal" placeholder="Ex: 2.500,00 (valor cheio)">
+          </div>
+          <div>
+            <label>Verba de anúncio inicial (R$) <span class="hint" style="display:inline">(opcional)</span></label>
+            <input name="verba_anuncio" inputmode="decimal" placeholder="Ex: 600,00">
+          </div>
+        </div>
+        <label>Escalonamento <span class="hint" style="display:inline">(opcional)</span></label>
+        <input name="escalonamento" placeholder="Ex: meses 1-3 R$1.500, 4-6 R$1.800, 7-12 R$2.000">
+        <div class="hint">Preencha só se o cliente tiver preço especial/escalonado. Aparece como cláusula no contrato. No "Valor mensal" acima ponha o valor do 1º período.</div>
+
         <button class="btn" type="submit" id="btn">Gerar contrato e disparar</button>
         <div class="err" id="err"></div>
       </form>
