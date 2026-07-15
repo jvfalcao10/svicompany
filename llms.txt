@@ -34,13 +34,18 @@ Artigos que respondem as principais dúvidas de marketing médico. Índice: http
 
 Fundamentos:
 - Marketing médico: o que é e como funciona de verdade: https://svicompany.com.br/blog/marketing-medico
+- Os erros de marketing médico mais comuns (e o que fazer no lugar deles): https://svicompany.com.br/blog/erros-de-marketing-medico
 
 Decisão:
+- Convênio ou particular: qual caminho faz sentido para o seu consultório: https://svicompany.com.br/blog/convenio-ou-particular-medico
 - Marketing médico vale a pena?: https://svicompany.com.br/blog/marketing-medico-vale-a-pena
 
 Captação:
 - Como Atrair Pacientes Particulares Sem Depender de Convênio: https://svicompany.com.br/blog/como-atrair-pacientes-particulares
 - Como conseguir mais pacientes: https://svicompany.com.br/blog/como-conseguir-mais-pacientes
+
+Retenção:
+- Como fidelizar pacientes e transformar retorno em previsibilidade: https://svicompany.com.br/blog/como-fidelizar-pacientes
 
 Comercial:
 - Agência de marketing médico: como escolher a certa: https://svicompany.com.br/blog/agencia-de-marketing-medico
@@ -56,6 +61,9 @@ Canais:
 - Instagram para médicos: como usar sem virar propaganda: https://svicompany.com.br/blog/instagram-para-medicos
 - Site para médico: por que é a base da sua presença digital: https://svicompany.com.br/blog/site-para-medico
 
+Conteúdo:
+- Marketing de conteúdo para médicos: construir autoridade sem vender: https://svicompany.com.br/blog/marketing-de-conteudo-para-medicos
+
 Mídia:
 - Tráfego pago para médicos: vale a pena e como fazer certo: https://svicompany.com.br/blog/trafego-pago-para-medicos
 
@@ -68,17 +76,25 @@ Previsibilidade:
 Especialidades:
 - Marketing para Cardiologista: Construindo Confiança Antes do Susto: https://svicompany.com.br/blog/marketing-para-cardiologista
 - Marketing para Cirurgião Plástico: Autoridade e Segurança Dentro do CFM: https://svicompany.com.br/blog/marketing-para-cirurgiao-plastico
+- Marketing para Cirurgião Vascular: Autoridade em Varizes, Circulação e Trombose: https://svicompany.com.br/blog/marketing-para-cirurgiao-vascular
 - Marketing para Cirurgião: Construindo Confiança na Jornada Mais Longa da Medicina: https://svicompany.com.br/blog/marketing-para-cirurgiao
+- Marketing para Clínico Geral: Construindo Vínculo Além da Consulta: https://svicompany.com.br/blog/marketing-para-clinico-geral
 - Marketing para Dermatologista: Autoridade Clínica em Meio ao Ruído da Estética: https://svicompany.com.br/blog/marketing-para-dermatologista
 - Marketing para Endocrinologista: A Voz da Verdade em Meio ao Modismo das Canetas Emagrecedoras: https://svicompany.com.br/blog/marketing-para-endocrinologista
 - Marketing para Gastroenterologista: Tirando o Paciente do Modo &#x27;Já Aprendi a Conviver com Isso&#x27;: https://svicompany.com.br/blog/marketing-para-gastroenterologista
 - Marketing para Ginecologista: a Confiança Digital que Leva a Paciente até Você: https://svicompany.com.br/blog/marketing-para-ginecologista
+- Marketing para Mastologista: Confiança e Acolhimento na Prevenção do Câncer de Mama: https://svicompany.com.br/blog/marketing-para-mastologista
+- Marketing para Médico do Esporte: Como Atrair Corredores e Atletas Amadores que Buscam Prevenção: https://svicompany.com.br/blog/marketing-para-medicina-esportiva
 - Marketing para Neurologista: Construindo Confiança Antes do Diagnóstico: https://svicompany.com.br/blog/marketing-para-neurologista
 - Marketing para Nutrólogo: Autoridade Científica no Emagrecimento Saudável: https://svicompany.com.br/blog/marketing-para-nutrologo
 - Marketing para Oftalmologista: Presença Digital que Une Rotina e Cirurgia: https://svicompany.com.br/blog/marketing-para-oftalmologista
 - Marketing para Ortopedista: Presença Digital para Quem Convive com a Dor: https://svicompany.com.br/blog/marketing-para-ortopedista
+- Marketing para Otorrinolaringologista: Visibilidade para Cada Sintoma que o Paciente Sente: https://svicompany.com.br/blog/marketing-para-otorrinolaringologista
 - Marketing para Pediatra: a Referência que a Mãe Procura na Hora Certa: https://svicompany.com.br/blog/marketing-para-pediatra
+- Marketing para Pneumologista: Presença Antes do Diagnóstico: https://svicompany.com.br/blog/marketing-para-pneumologista
+- Marketing para Proctologista: Como Atrair Pacientes com Discrição e Autoridade: https://svicompany.com.br/blog/marketing-para-proctologista
 - Marketing para Psiquiatra: Acolhimento Digital para Quem Ainda Não Deu o Primeiro Passo: https://svicompany.com.br/blog/marketing-para-psiquiatra
+- Marketing para Reumatologista: Presença Digital para Quem Já Peregrinou Entre Vários Médicos: https://svicompany.com.br/blog/marketing-para-reumatologista
 - Marketing para Urologista: Superando o Tabu que Afasta o Homem da Consulta: https://svicompany.com.br/blog/marketing-para-urologista
 
 Ética e CFM:
