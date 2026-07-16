@@ -11,6 +11,8 @@ Disallow: /obrigado-conteudo
 Disallow: /obrigado-conteudo.html
 Disallow: /config.js
 Disallow: /vercel.json
+Disallow: /crm-kommo-parceiros
+Disallow: /crm-kommo-parceiros.html
 
 # AI Search bots — explicitamente permitidos (queremos ser citados por ChatGPT/Perplexity/Claude/Gemini)
 User-agent: GPTBot
