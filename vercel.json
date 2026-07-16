@@ -48,6 +48,11 @@
   ],
   "redirects": [
     {
+      "source": "/crm-kommo",
+      "destination": "/crm",
+      "permanent": true
+    },
+    {
       "source": "/marketingmedico",
       "destination": "https://medicos.svicompany.com.br/",
       "permanent": true
