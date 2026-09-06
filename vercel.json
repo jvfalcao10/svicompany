@@ -53,6 +53,11 @@
       "permanent": true
     },
     {
+      "source": "/doctor",
+      "destination": "https://medicos.svicompany.com.br/",
+      "permanent": true
+    },
+    {
       "source": "/marketingmedico",
       "destination": "https://medicos.svicompany.com.br/",
       "permanent": true

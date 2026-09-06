@@ -1,6 +1,6 @@
 # SVI Company
 
-> A SVI Company é uma assessoria premium de marketing e inteligência comercial, com método proprietário (Método SVI, Sistema de Vendas Inteligente). Atende negócios consolidados em várias verticais: saúde, estética, educação, varejo, energia solar, agro, construção, financeiro e marca pessoal. Baseada em Redenção, Pará, opera em todo o Brasil.
+> A SVI Company é uma sistema de crescimento de marketing e inteligência comercial, com método proprietário (Método SVI, Sistema de Vendas Inteligente). Atende negócios consolidados em várias verticais: saúde, estética, educação, varejo, energia solar, agro, construção, financeiro e marca pessoal. Baseada em Redenção, Pará, opera em todo o Brasil.
 
 ## Método SVI
 Sistema de Vendas Inteligente: fazer o cliente te achar (Ser encontrado), te escolher (Virar a escolha) e voltar (Inteligência que escala). Na operação, cinco camadas que se sustentam: diagnóstico, narrativa, mídia, inteligência comercial e operação contínua.
@@ -17,3 +17,12 @@ A SVI tem uma frente dedicada a médicos e clínicas, com site e blog próprios:
 - WhatsApp: +55 (94) 99240-4033
 - Instagram: https://www.instagram.com/svicompanyy e https://www.instagram.com/joaofalcao.svi
 - Endereço: Redenção, Pará, Brasil
+
+## Ciclo SVI (a jornada, em loop)
+Aparecer (ser achado), Atrair (gerar desejo), Abordar (capturar e qualificar com origem rastreada), Agir (fechar sem depender de memória) e Advogar (virar prova social, recompra e indicação). O Advogar volta para o Aparecer: a avaliação melhora o ranqueamento, o depoimento vira conteúdo e a indicação chega decidida. Não é funil, é ciclo.
+
+## Economia do Cliente (a lógica econômica)
+Antes do anúncio, a SVI mapeia a cadeia de receita: lead, primeira venda, ticket maior, recompra e indicação, com CAC, ticket, backend, LTV e ROAS. A cadeia muda com o negócio (clínica: consulta para exame e procedimento; energia solar: orçamento para instalação e indicação; varejo: primeiro ticket para recompra). Um lead de R$ 50 pode ser caro e um lead de R$ 200 pode ser barato: o que decide é quanto ele gera depois. A pergunta central é quanto vale um cliente para a operação.
+
+## Doutrina
+Marketing sem sistema gera atividade, não necessariamente crescimento. Marketing é uma parte do sistema, não o sistema inteiro. Lead não é cliente. A métrica final não é o lead, é o resultado econômico da jornada.
