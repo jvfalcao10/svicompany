@@ -1,0 +1,97 @@
+{
+  "brand": "Movido pela SVI",
+  "handle": "@joaofalcao.svi",
+  "slides": [
+    {
+      "type": "cover",
+      "avatar": "../../images/founder-joao.jpg",
+      "headline": "Você não perde paciente pelo preço. Perde pelo *relógio.*",
+      "kicker": "O que acontece com o lead que espera 1 hora no WhatsApp."
+    },
+    {
+      "type": "story",
+      "lead": "Médico me mostra o tráfego e pergunta por que a agenda não enche. Aí eu abro o WhatsApp da clínica e a resposta tá lá: paciente no vácuo.",
+      "paragraphs": [
+        "Todo mundo olha o custo do lead. Quase ninguém olha o tempo que esse lead fica esperando a primeira resposta.",
+        "E é aí que o dinheiro do anúncio vira estatística: o paciente chamou, esperou, e marcou com outro."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "O paciente que te chama já chamou mais dois",
+      "subtitle": "Ninguém pesquisa um médico só. Ele manda mensagem pra 2, 3 clínicas ao mesmo tempo.",
+      "stat": "78%",
+      "statline": "dos clientes fecham com quem responde *primeiro* — e no consultório não é diferente.",
+      "paragraphs": [
+        "Não é o currículo que decide a primeira consulta. É quem chegou primeiro na conversa."
+      ]
+    },
+    {
+      "type": "compare",
+      "title": "A corrida invisível",
+      "subtitle": "O mesmo lead, dois destinos diferentes",
+      "left": {
+        "label": "Resposta em 5 min",
+        "rows": ["paciente ainda no celular", "dor fresca na cabeça", "conversa fluida", "agenda fechada na hora"],
+        "conclusion": "Até 21x mais chance de qualificar",
+        "foot": "estudo clássico de lead response (InsideSales)"
+      },
+      "right": {
+        "label": "Resposta em 1h+",
+        "rows": ["paciente já seguiu o dia", "já falou com concorrente", "responde seco ou some", "\"vou ver e te aviso\""],
+        "conclusion": "Lead frio no caminho",
+        "foot": "e a culpa cai no \"tráfego ruim\""
+      }
+    },
+    {
+      "type": "text",
+      "title": "E o pior: paciente chama fora do horário",
+      "subtitle": "O lead não respeita o expediente da secretária.",
+      "paragraphs": [
+        "Boa parte das mensagens chega à noite, no almoço e no fim de semana — exatamente quando ninguém está olhando o WhatsApp da clínica.",
+        "Sua secretária trabalha 8 horas. Seu anúncio roda 24. Essa conta não fecha sozinha."
+      ]
+    },
+    {
+      "type": "step",
+      "num": "01",
+      "label": "Primeira resposta",
+      "title": "Ninguém pode esperar você abrir o WhatsApp.",
+      "paragraphs": [
+        "Configure uma primeira resposta imediata que acolhe e já qualifica: nome, convênio ou particular, e o que o paciente procura.",
+        "Não é sobre parecer robô. É sobre o paciente saber que foi visto em segundos."
+      ]
+    },
+    {
+      "type": "step",
+      "num": "02",
+      "label": "IA no comercial",
+      "title": "O plantão que não dorme: agente de IA no WhatsApp.",
+      "paragraphs": [
+        "Um agente bem treinado responde em segundos, qualifica, tira dúvida e encaminha o agendamento — às 22h de domingo também.",
+        "A secretária entra no que é humano: confirmar, acolher e segurar a agenda."
+      ]
+    },
+    {
+      "type": "step",
+      "num": "03",
+      "label": "Métrica certa",
+      "title": "Meça o tempo de resposta como você mede o custo por lead.",
+      "paragraphs": [
+        "Tempo até a primeira resposta é métrica de gestão, não detalhe operacional. Coloque no relatório semanal do consultório.",
+        "Meta de operação madura: primeira resposta em menos de 5 minutos, em qualquer horário."
+      ]
+    },
+    {
+      "type": "punch",
+      "headline": "Anota o que eu tô falando: quem controla o relógio do WhatsApp controla a agenda do consultório.",
+      "sub": "Tráfego enche a caixa de entrada. Resposta rápida enche a agenda."
+    },
+    {
+      "type": "final",
+      "title": "Quer saber em quanto tempo a sua clínica responde de verdade?",
+      "under": "A gente roda esse raio-x no comercial de consultório todo mês — e o número sempre assusta.",
+      "cta": "Comente *\"RELÓGIO\"* e eu te mando no direct"
+    }
+  ]
+}

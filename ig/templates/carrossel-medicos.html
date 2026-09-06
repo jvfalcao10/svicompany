@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel SVI Médicos — Template</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F0EBDF;
+    --cream-card:#FFFFFF;
+    --ink:#141311;
+    --ink-soft:#3A362E;
+    --gold:#A8863F;
+    --gold-light:#D0B870;
+    --gold-pale:#E8D49A;
+    --gold-grad:linear-gradient(160deg,#E8D49A 0%,#C7A75C 45%,#8A6D22 100%);
+    --dark:#0B0A08;
+    --dark-2:#15100A;
+    --cream-on-dark:#F6F1E6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#333;font-family:'DM Sans',system-ui,sans-serif}
+
+  .slide{
+    width:1080px;height:1350px;position:relative;overflow:hidden;
+    margin:24px auto;display:flex;flex-direction:column;
+  }
+
+  /* ---------- header comum ---------- */
+  .hd{
+    position:absolute;top:0;left:0;right:0;z-index:5;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:64px 80px 0;
+    font-weight:600;font-size:28px;letter-spacing:.01em;
+  }
+  .slide.light .hd{color:#8D8574}
+  .slide.dark .hd{color:#CFC8B8}
+
+  /* ---------- fundos ---------- */
+  .slide.light{background:var(--cream);color:var(--ink)}
+  .slide.dark{background:var(--dark);color:var(--cream-on-dark)}
+  .dark .bgfx{position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(90% 60% at 18% 88%, rgba(201,148,52,.30) 0%, rgba(201,148,52,0) 60%),
+      radial-gradient(70% 50% at 85% 12%, rgba(120,90,40,.22) 0%, rgba(120,90,40,0) 65%),
+      radial-gradient(120% 90% at 50% 45%, #201A10 0%, #0B0A08 70%);
+  }
+  .dark .vignette{position:absolute;inset:0;z-index:1;
+    background:radial-gradient(120% 110% at 50% 42%, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%)}
+  .grain{position:absolute;inset:0;z-index:2;opacity:.5;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .bgphoto{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .bgphoto::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(8,7,5,.45) 0%,rgba(8,7,5,.15) 38%,rgba(8,7,5,.82) 78%,rgba(8,7,5,.95) 100%)}
+
+  /* ---------- tipografia ---------- */
+  .display{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.028em;line-height:.98;text-transform:uppercase}
+  em,.g{font-style:normal;color:var(--gold-light)}
+  .light em,.light .g{color:var(--gold)}
+  .u{background-image:linear-gradient(var(--gold-light),var(--gold-light));background-repeat:no-repeat;background-size:100% 5px;background-position:0 100%;padding-bottom:8px}
+
+  /* ---------- COVER (dark) ---------- */
+  .cover{justify-content:flex-end}
+  .cover .wrap{position:relative;z-index:4;padding:0 72px 96px;text-align:center}
+  .chip{display:inline-flex;align-items:center;gap:16px;margin-bottom:40px;
+    font-weight:700;font-size:32px;color:#fff}
+  .chip img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.85)}
+  .chip .check{width:34px;height:34px;border-radius:50%;background:#3897F0;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:900}
+  .cover h1{font-size:92px;color:#fff}
+  .cover .kicker{margin-top:44px;font-weight:700;font-size:33px;letter-spacing:.045em;text-transform:uppercase;color:var(--cream-on-dark)}
+  .cover .kicker .arrow{color:var(--gold-light);margin-right:10px}
+
+  /* ---------- STORY (dark) ---------- */
+  .story{justify-content:flex-end}
+  .story .wrap{position:relative;z-index:4;padding:0 84px 110px}
+  .story .lead{font-weight:700;font-size:52px;line-height:1.22;color:var(--cream-on-dark);margin-bottom:40px;letter-spacing:-.01em}
+  .story p{font-weight:400;font-size:34px;line-height:1.42;color:#DDD5C4;margin-top:26px}
+
+  /* ---------- TEXT (cream) ---------- */
+  .text .wrap{position:relative;z-index:4;padding:200px 96px 0;text-align:center;display:flex;flex-direction:column;align-items:center;flex:1}
+  .text h2{font-size:78px;max-width:860px}
+  .text .rule{width:120px;height:5px;background:var(--gold-light);margin:52px auto 0;border-radius:3px}
+  .text .sub{margin-top:44px;font-weight:500;font-size:37px;line-height:1.4;color:var(--ink-soft);max-width:840px}
+  .text .stat{margin-top:64px;font-family:'Archivo',sans-serif;font-weight:900;font-size:230px;line-height:1;letter-spacing:-.03em;
+    background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text .statline{margin-top:28px;font-weight:600;font-size:36px;line-height:1.4;color:var(--ink);max-width:800px}
+  .text .body{margin-top:56px;font-weight:400;font-size:34px;line-height:1.45;color:var(--ink-soft);max-width:820px}
+
+  /* ---------- COMPARE (cream) ---------- */
+  .compare .wrap{position:relative;z-index:4;padding:150px 80px 0;text-align:center;flex:1;display:flex;flex-direction:column}
+  .compare h2{font-size:76px}
+  .compare .rule{width:120px;height:5px;background:var(--gold-light);margin:36px auto 0;border-radius:3px}
+  .compare .sub{margin-top:30px;font-weight:500;font-size:33px;line-height:1.4;color:var(--ink-soft)}
+  .cols{display:grid;grid-template-columns:1fr 110px 1fr;align-items:start;margin-top:52px;text-align:center}
+  .vs{font-family:'Archivo',sans-serif;font-weight:900;font-size:52px;color:var(--gold);padding-top:300px}
+  .col .label{background:var(--ink);color:#fff;font-weight:700;font-size:28px;letter-spacing:.06em;text-transform:uppercase;padding:24px 12px;margin-bottom:22px}
+  .col .row{background:var(--cream-card);font-weight:400;font-size:29px;color:var(--ink);padding:21px 12px;margin-top:9px;min-height:96px;display:flex;align-items:center;justify-content:center}
+  .col .down{margin:26px 0 22px;font-size:42px;color:var(--gold);font-weight:900}
+  .col .concl{border:4px solid var(--ink);background:var(--cream-card);font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:32px;line-height:1.18;letter-spacing:-.01em;padding:26px 18px;min-height:150px;display:flex;align-items:center;justify-content:center}
+  .col .foot{margin-top:18px;font-weight:400;font-size:25px;line-height:1.35;color:#7B735F}
+
+  /* ---------- STEP (cream) ---------- */
+  .step .wrap{position:relative;z-index:4;flex:1;display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center;padding:120px 88px 60px}
+  .step .numblock{text-align:center}
+  .step .num{font-family:'Archivo',sans-serif;font-weight:900;font-size:250px;line-height:1;letter-spacing:-.02em;
+    background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step .numlabel{margin-top:24px;font-weight:700;font-size:31px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .step h2{font-family:'Archivo',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.02em;font-size:52px;line-height:1.12;display:inline;
+    background-image:linear-gradient(var(--gold-pale),var(--gold-pale));background-repeat:no-repeat;background-size:100% 6px;background-position:0 97%}
+  .step p{margin-top:34px;font-weight:400;font-size:33px;line-height:1.45;color:var(--ink-soft)}
+  .step p strong{font-weight:600;color:var(--ink)}
+
+  /* ---------- PUNCH (dark) ---------- */
+  .punch{justify-content:center}
+  .punch .wrap{position:relative;z-index:4;padding:0 92px;text-align:left}
+  .punch h2{font-family:'Archivo',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.02em;font-size:66px;line-height:1.14;color:var(--cream-on-dark)}
+  .punch .sub{margin-top:52px;font-weight:500;font-size:38px;line-height:1.4;color:var(--gold-light)}
+
+  /* ---------- FINAL / CTA (cream) ---------- */
+  .final .wrap{position:relative;z-index:4;flex:1;display:flex;flex-direction:column;padding:190px 88px 96px}
+  .final h2{font-family:'Archivo',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.02em;font-size:62px;line-height:1.12}
+  .final .under{margin-top:60px;font-weight:500;font-size:38px;line-height:1.65;color:var(--ink-soft);align-self:flex-start}
+  .final .under span{background-image:linear-gradient(var(--gold-light),var(--gold-light));background-repeat:no-repeat;background-size:100% 4px;background-position:0 100%;padding-bottom:10px}
+  .final .spacer{flex:1}
+  .final .pill{border:4px solid var(--ink);background:var(--cream-card);border-radius:999px;
+    padding:44px 40px;text-align:center;font-weight:700;font-size:41px;color:var(--ink)}
+  .final .pill .g{font-weight:800}
+</style>
+</head>
+<body>
+<div id="deck"></div>
+<script>
+/* Renderiza window.CAROUSEL (injetado pelo render.mjs) ou o EXEMPLO abaixo.
+   Marcação inline: *texto* vira destaque dourado. */
+const md = s => (s||'').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\n/g,'<br>');
+
+const T = {
+  cover: s => `<div class="bgfx"></div><div class="vignette"></div><div class="grain"></div>
+    <div class="wrap">
+      <div class="chip">${s.avatar?`<img src="${s.avatar}" alt="">`:''}<span>${s.handleBig||'@joaofalcao.svi'}</span><span class="check">✓</span></div>
+      <h1 class="display">${md(s.headline)}</h1>
+      ${s.kicker?`<div class="kicker"><span class="arrow">→</span>${md(s.kicker)}</div>`:''}
+    </div>`,
+  story: s => `<div class="bgfx"></div><div class="vignette"></div><div class="grain"></div>
+    <div class="wrap"><div class="lead">${md(s.lead)}</div>${(s.paragraphs||[]).map(p=>`<p>${md(p)}</p>`).join('')}</div>`,
+  text: s => `<div class="wrap">
+      <h2 class="display">${md(s.title)}</h2><div class="rule"></div>
+      ${s.subtitle?`<div class="sub">${md(s.subtitle)}</div>`:''}
+      ${s.stat?`<div class="stat">${s.stat}</div>`:''}
+      ${s.statline?`<div class="statline">${md(s.statline)}</div>`:''}
+      ${(s.paragraphs||[]).map(p=>`<div class="body">${md(p)}</div>`).join('')}
+    </div>`,
+  compare: s => `<div class="wrap">
+      <h2 class="display">${md(s.title)}</h2><div class="rule"></div>
+      ${s.subtitle?`<div class="sub">${md(s.subtitle)}</div>`:''}
+      <div class="cols">
+        ${[s.left,s.right].map((c,i)=>i===1?'':`
+        <div class="col"><div class="label">${c.label}</div>
+          ${c.rows.map(r=>`<div class="row">${md(r)}</div>`).join('')}
+          <div class="down">↓</div><div class="concl">${md(c.conclusion)}</div>
+          ${c.foot?`<div class="foot">${md(c.foot)}</div>`:''}</div>
+        <div class="vs">VS</div>
+        <div class="col"><div class="label">${s.right.label}</div>
+          ${s.right.rows.map(r=>`<div class="row">${md(r)}</div>`).join('')}
+          <div class="down">↓</div><div class="concl">${md(s.right.conclusion)}</div>
+          ${s.right.foot?`<div class="foot">${md(s.right.foot)}</div>`:''}</div>`).join('')}
+      </div>
+    </div>`,
+  step: s => `<div class="wrap">
+      <div class="numblock"><div class="num">${s.num}</div><div class="numlabel">${md(s.label)}</div></div>
+      <div><h2>${md(s.title)}</h2>${(s.paragraphs||[]).map(p=>`<p>${md(p)}</p>`).join('')}</div>
+    </div>`,
+  punch: s => `<div class="bgfx"></div><div class="vignette"></div><div class="grain"></div>
+    <div class="wrap"><h2>${md(s.headline)}</h2>${s.sub?`<div class="sub">${md(s.sub)}</div>`:''}</div>`,
+  final: s => `<div class="wrap">
+      <h2>${md(s.title)}</h2>
+      ${s.under?`<div class="under"><span>${md(s.under)}</span></div>`:''}
+      <div class="spacer"></div>
+      <div class="pill">${md(s.cta)}</div>
+    </div>`
+};
+const DARK = new Set(['cover','story','punch']);
+
+function render(data){
+  const deck = document.getElementById('deck');
+  deck.innerHTML = data.slides.map((s,i)=>{
+    const dark = DARK.has(s.type);
+    return `<div class="slide ${dark?'dark':'light'} ${s.type}" data-slide="${i+1}">
+      <div class="hd"><span>${data.brand||'Movido pela SVI'}</span><span>${data.handle||'@joaofalcao.svi'}</span></div>
+      ${T[s.type](s)}</div>`;
+  }).join('');
+}
+
+const EXEMPLO = {
+  brand:'Movido pela SVI', handle:'@joaofalcao.svi',
+  slides:[
+    {type:'cover', avatar:'../../images/founder-joao.jpg',
+     headline:'Título de capa com *destaque* em dourado', kicker:'Subtítulo da capa em caps.'},
+    {type:'step', num:'01', label:'Etiqueta', title:'Título do passo.', paragraphs:['Parágrafo.']},
+  ]
+};
+render(window.CAROUSEL || EXEMPLO);
+</script>
+</body>
+</html>
