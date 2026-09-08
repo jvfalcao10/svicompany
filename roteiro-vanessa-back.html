@@ -38,9 +38,16 @@
   .facts .big{font-weight:600;font-size:28px;letter-spacing:-.02em;color:var(--gold-bright);line-height:1.1}
   .facts .lbl{font-size:11px;letter-spacing:.5px;color:var(--text-m);margin-top:6px}
   .cena{border:1px solid var(--line);border-radius:var(--radius);margin-top:16px;overflow:hidden;background:rgba(245,241,232,.03)}
-  .cena .top{display:flex;justify-content:space-between;align-items:center;background:rgba(212,168,44,.10);padding:11px 18px}
+  .cena .top{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(212,168,44,.10);padding:11px 18px;flex-wrap:wrap}
   .cena .top h3{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-  .cena .top span{font-size:11px;font-weight:500;letter-spacing:1px;color:var(--text-m)}
+  .cena .top .meta{display:flex;align-items:center;gap:10px}
+  .cena .top .modo{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--gold-dark);border-radius:999px;padding:3px 10px;color:var(--gold-bright)}
+  .cena .top .modo.mudo{border-color:rgba(245,241,232,.25);color:var(--text-m)}
+  .cena .top span.t{font-size:11px;font-weight:500;letter-spacing:1px;color:var(--text-m)}
+  .passos{background:rgba(245,241,232,.04);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin:6px 0 10px}
+  .passos p{font-size:15.5px;padding:7px 0;margin:0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+  .passos p:last-child{border-bottom:none}
+  .passos .n{font-weight:600;color:var(--gold-bright);flex:0 0 auto}
   .cena .body{padding:18px}
   .cena .fala{font-size:17px;color:var(--off-white);font-weight:500;margin-bottom:10px}
   .cena .fala em{font-style:normal;color:var(--gold-bright);font-weight:600}
@@ -96,10 +103,16 @@
 
   <section>
     <h2>Roteiro do vídeo principal <em>(Reels, ~35s)</em></h2>
-    <p>Vanessa grava todas as cenas sem falar, só executando as ações. As falas são gravadas separadas, depois, num ambiente silencioso, e entram por cima na edição (voice-over). A única exceção é a última cena, quando ela olha e fala direto pra câmera. Isso facilita muito a gravação: ela nunca precisa acertar fala e ação ao mesmo tempo.</p>
+    <p>Antes das cenas, o esquema de gravação, porque ele muda tudo:</p>
+    <div class="passos">
+      <p><span class="n">1.</span><span>Vanessa grava todas as cenas <b>sem falar nada</b>. Ela só executa as ações: risca a tabela, cola na parede, olha pra câmera.</span></p>
+      <p><span class="n">2.</span><span>Depois, num canto silencioso, ela grava <b>só as falas</b> no celular, lendo o roteiro. Isso é o voice-over.</span></p>
+      <p><span class="n">3.</span><span>A edição junta os dois: a voz entra por cima das imagens. A única fala feita na hora, olhando pra câmera, é a da última cena.</span></p>
+    </div>
+    <p>Cada cena abaixo tem uma etiqueta dizendo o que acontece com o áudio: <b>sem fala</b> (silêncio), <b>voice-over</b> (voz gravada depois) ou <b>fala pra câmera</b> (ela fala na hora). Assim ninguém precisa decorar nada no set.</p>
 
     <div class="cena">
-      <div class="top"><h3>Abertura — o ato</h3><span>0–2s</span></div>
+      <div class="top"><h3>Abertura — o ato</h3><div class="meta"><span class="modo mudo">sem fala</span><span class="t">0–2s</span></div></div>
       <div class="body">
         <p class="fala"><em>(ninguém fala aqui — silêncio total, sem música)</em></p>
         <p class="dir"><b>Cena:</b> close fechado na tabela de preços impressa. Uma caneta vermelha entra em quadro e risca o preço do procedimento mais desejado da clínica. O único áudio é o som do pincel no papel. Nada de logo, nada de "oi gente". A primeira voz só entra na cena seguinte, em voice-over.</p>
@@ -107,7 +120,7 @@
     </div>
 
     <div class="cena">
-      <div class="top"><h3>Revelação parcial</h3><span>2–7s</span></div>
+      <div class="top"><h3>Revelação parcial</h3><div class="meta"><span class="modo">voice-over</span><span class="t">2–7s</span></div></div>
       <div class="body">
         <p class="fala">"Calma. <em>A gente não vai fechar.</em>"</p>
         <p class="dir"><b>Cena:</b> o quadro abre e revela Vanessa, tranquila, riscando preço por preço da tabela inteira. A fala nega a primeira leitura (fechando? aumentou tudo?) mas ainda não entrega a resposta.</p>
@@ -115,7 +128,7 @@
     </div>
 
     <div class="cena">
-      <div class="top"><h3>A resposta</h3><span>7–14s</span></div>
+      <div class="top"><h3>A resposta</h3><div class="meta"><span class="modo">voice-over</span><span class="t">7–14s</span></div></div>
       <div class="body">
         <p class="fala">"Dia 15 de setembro é o Dia do Cliente. E presente aqui não é caneca: é <em>15% off em qualquer procedimento</em> da clínica."</p>
         <p class="dir"><b>Cena:</b> detalhe da mão escrevendo <b>−15%</b> ao lado de cada preço riscado. No "qualquer procedimento", ela sublinha o título da tabela.</p>
@@ -123,7 +136,7 @@
     </div>
 
     <div class="cena">
-      <div class="top"><h3>Prova</h3><span>14–22s</span></div>
+      <div class="top"><h3>Prova</h3><div class="meta"><span class="modo">voice-over</span><span class="t">14–22s</span></div></div>
       <div class="body">
         <p class="fala">"Qualquer um. <em>Inclusive aquele que você namora desde julho.</em>"</p>
         <p class="dir"><b>Cena:</b> cortes de 1s dos procedimentos reais acontecendo; em cada corte, o preço aparece na tela e é riscado pelo mesmo traço vermelho da abertura, com −15% por cima. O traço vermelho é a assinatura visual que costura o vídeo.</p>
@@ -131,7 +144,7 @@
     </div>
 
     <div class="cena">
-      <div class="top"><h3>Prazo</h3><span>22–29s</span></div>
+      <div class="top"><h3>Prazo</h3><div class="meta"><span class="modo">voice-over</span><span class="t">22–29s</span></div></div>
       <div class="body">
         <p class="fala">"Do dia 15 ao dia 25. <em>Dia 26 eu imprimo a tabela nova,</em> sem nenhum risco."</p>
         <p class="dir"><b>Cena:</b> Vanessa cola a tabela riscada na parede da recepção. A urgência vira imagem: o desconto existe enquanto aquele papel estiver na parede.</p>
@@ -139,7 +152,7 @@
     </div>
 
     <div class="cena">
-      <div class="top"><h3>Chamada</h3><span>29–36s</span></div>
+      <div class="top"><h3>Chamada</h3><div class="meta"><span class="modo">fala pra câmera</span><span class="t">29–36s</span></div></div>
       <div class="body">
         <p class="fala">"Manda <em>CLIENTE</em> no direct e agenda o teu horário <em>antes que a tinta seque.</em>"</p>
         <p class="dir"><b>Cena:</b> Vanessa vira pra câmera pela primeira vez, caneta ainda na mão, meio sorriso. Texto na tela: <b>15% OFF · 15 a 25/09 · direct: CLIENTE</b>. A palavra-chave única mede quantos agendamentos vieram do vídeo.</p>
