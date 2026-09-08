@@ -56,6 +56,10 @@
         }
       ],
       "destination": "/roteiro-vanessa-back.html"
+    },
+    {
+      "source": "/roteiro-2",
+      "destination": "/roteiro-vanessa-back-2.html"
     }
   ],
   "redirects": [
