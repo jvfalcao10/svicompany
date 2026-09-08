@@ -56,13 +56,14 @@
         }
       ],
       "destination": "/roteiro-vanessa-back.html"
-    },
-    {
-      "source": "/roteiro-2",
-      "destination": "/roteiro-vanessa-back-2.html"
     }
   ],
   "redirects": [
+    {
+      "source": "/roteiro-2",
+      "destination": "/roteiro-vanessa-back#roteiro-2",
+      "permanent": false
+    },
     {
       "source": "/crm-kommo",
       "destination": "/crm",
