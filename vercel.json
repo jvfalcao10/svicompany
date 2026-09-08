@@ -46,6 +46,18 @@
       ]
     }
   ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "back-diadocliente.svicompany.com.br"
+        }
+      ],
+      "destination": "/roteiro-vanessa-back.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/crm-kommo",
