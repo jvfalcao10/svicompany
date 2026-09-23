@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Publicar no TikTok · SVI Company</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0608;--card:#141013;--line:#2A2328;--gold:#D4A82C;--gold-b:#F0C744;
+--txt:#F5F2EE;--dim:#9A9299;--err:#E5484D;--ok:#3FB950;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:400 15px/1.55 'DM Sans',system-ui,sans-serif;
+padding:32px 20px 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto}
+header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+header img{height:30px}
+h1{font-size:25px;font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:14px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.card h2{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+color:var(--gold);margin-bottom:16px}
+.who{display:flex;align-items:center;gap:12px;padding:13px;background:#0E0A0C;
+border:1px solid var(--line);border-radius:10px;margin-bottom:18px}
+.who img{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#231d21}
+.who b{display:block;font-size:15px}
+.who span{color:var(--dim);font-size:13px}
+.reel{display:flex;gap:12px;padding:11px;border:1px solid var(--line);border-radius:10px;
+margin-bottom:9px;cursor:pointer;transition:.15s;background:#0E0A0C}
+.reel:hover{border-color:#4a3f46}
+.reel.on{border-color:var(--gold);background:#1a1410}
+.reel.off{opacity:.42;cursor:not-allowed}
+.reel img{width:52px;height:70px;object-fit:cover;border-radius:7px;background:#231d21;flex:0 0 auto}
+.reel p{font-size:13.5px;line-height:1.4;max-height:3.9em;overflow:hidden}
+.reel small{color:var(--dim);font-size:11.5px;display:block;margin-top:5px}
+label{display:block;font-size:13px;font-weight:500;margin:0 0 7px}
+select,textarea{width:100%;background:#0E0A0C;border:1px solid var(--line);color:var(--txt);
+border-radius:9px;padding:11px;font:inherit;font-size:14px}
+select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{resize:vertical;min-height:78px}
+.fld{margin-bottom:17px}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:9px 0;font-size:14px;cursor:pointer}
+.chk input{margin-top:3px;width:16px;height:16px;accent-color:var(--gold);cursor:pointer;flex:0 0 auto}
+.chk.dis{opacity:.4;cursor:not-allowed}
+.chk.dis input{cursor:not-allowed}
+.chk em{display:block;color:var(--dim);font-size:12px;font-style:normal;margin-top:1px}
+.sep{height:1px;background:var(--line);margin:17px 0}
+.nest{margin-left:26px;padding-left:12px;border-left:2px solid var(--line)}
+.legal{font-size:12px;color:var(--dim);line-height:1.5;margin:15px 0 0}
+.legal a{color:var(--gold)}
+button{width:100%;background:var(--gold);color:#120D06;border:0;border-radius:10px;
+padding:14px;font:700 15px 'DM Sans',sans-serif;cursor:pointer;margin-top:18px;transition:.15s}
+button:hover:not(:disabled){background:var(--gold-b)}
+button:disabled{opacity:.34;cursor:not-allowed}
+.msg{padding:13px;border-radius:10px;margin-top:15px;font-size:14px;line-height:1.5;display:none}
+.msg.show{display:block}
+.msg.e{background:#2a1214;border:1px solid #5c2126;color:#ff9ca0}
+.msg.s{background:#0f2416;border:1px solid #1f4a2c;color:#88e0a0}
+.msg.i{background:#151016;border:1px solid var(--line);color:var(--dim)}
+.vid{width:100%;border-radius:10px;background:#000;margin-bottom:15px;display:none;max-height:340px}
+.load{color:var(--dim);font-size:14px;padding:26px 0;text-align:center}
+.warn{font-size:12.5px;color:#d8a657;background:#241a0c;border:1px solid #4a3818;
+border-radius:8px;padding:9px 11px;margin-top:9px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><img src="/logo-branca.png" alt="SVI Company"><h1>Publicar no TikTok</h1></header>
+<p class="sub">Escolha um vídeo do Instagram, defina como ele vai ao ar e publique na conta conectada.</p>
+
+<div id="carregando" class="load">Carregando seus vídeos e os dados da conta TikTok...</div>
+<div id="falha" class="msg e"></div>
+
+<div class="grid" id="app" style="display:none">
+  <div class="card">
+    <h2>1 · Escolha o vídeo</h2>
+    <div id="lista"></div>
+  </div>
+
+  <div class="card">
+    <h2>2 · Como vai ao ar</h2>
+    <div class="who">
+      <img id="avatar" alt="">
+      <div><b id="nick">Carregando</b><span id="user"></span></div>
+    </div>
+    <video id="preview" class="vid" controls playsinline preload="metadata"></video>
+
+    <div class="fld">
+      <label for="titulo">Legenda</label>
+      <textarea id="titulo" maxlength="2150" placeholder="Escreva a legenda do post"></textarea>
+    </div>
+
+    <div class="fld">
+      <label for="priv">Quem pode ver este vídeo</label>
+      <select id="priv">
+        <option value="" selected disabled>Selecione uma opção</option>
+      </select>
+    </div>
+
+    <div class="sep"></div>
+    <label>Interações</label>
+    <label class="chk" id="l-com"><input type="checkbox" id="c-com"><span>Permitir comentários</span></label>
+    <label class="chk" id="l-duet"><input type="checkbox" id="c-duet"><span>Permitir Duet</span></label>
+    <label class="chk" id="l-stitch"><input type="checkbox" id="c-stitch"><span>Permitir Stitch</span></label>
+
+    <div class="sep"></div>
+    <label class="chk"><input type="checkbox" id="c-com-ercial">
+      <span>Divulgar conteúdo comercial<em>Ative se o vídeo promove você mesmo, uma marca ou um produto.</em></span></label>
+    <div class="nest" id="bloco-com" style="display:none">
+      <label class="chk"><input type="checkbox" id="c-marca">
+        <span>Sua marca<em>Promove você, o seu negócio ou o seu produto. O vídeo será marcado como Promotional content.</em></span></label>
+      <label class="chk"><input type="checkbox" id="c-branded">
+        <span>Conteúdo de marca de terceiro<em>Promove outra marca por permuta ou pagamento. Será marcado como Paid partnership e não pode ser privado.</em></span></label>
+      <div class="warn" id="warn-com"></div>
+    </div>
+
+    <p class="legal" id="legal">By posting, you agree to TikTok's
+      <a href="https://www.tiktok.com/legal/page/global/music-usage-confirmation/en" target="_blank" rel="noopener">Music Usage Confirmation</a>.</p>
+
+    <button id="btn" disabled>Publicar no TikTok</button>
+    <div id="msg" class="msg"></div>
+  </div>
+</div>
+</div>
+
+<script>
+const API='https://n8n-n8n-start.wrqknp.easypanel.host/webhook';
+const ROTULOS={PUBLIC_TO_EVERYONE:'Público (todos)',MUTUAL_FOLLOW_FRIENDS:'Amigos (seguidores mútuos)',
+FOLLOWER_OF_CREATOR:'Seguidores',SELF_ONLY:'Somente eu (privado)'};
+let D=null, escolhido=null;
+const $=i=>document.getElementById(i);
+
+function msg(t,k){const m=$('msg');m.textContent=t;m.className='msg show '+k;}
+function limpaMsg(){$('msg').className='msg';}
+
+async function carregar(){
+  try{
+    const r=await fetch(API+'/tiktok-tela',{cache:'no-store'});
+    const d=await r.json();
+    if(!d.ok){$('carregando').style.display='none';
+      $('falha').textContent=d.mensagem||('Não consegui carregar: '+(d.erro||'erro desconhecido'));
+      $('falha').className='msg e show';return;}
+    D=d;montar();
+  }catch(e){
+    $('carregando').style.display='none';
+    $('falha').textContent='Não consegui falar com o servidor. '+e.message;
+    $('falha').className='msg e show';
+  }
+}
+
+function montar(){
+  $('carregando').style.display='none';$('app').style.display='grid';
+  $('nick').textContent=D.criador.nickname||'Conta TikTok';
+  $('user').textContent=D.criador.username?('@'+D.criador.username):'';
+  if(D.criador.avatar)$('avatar').src=D.criador.avatar;
+
+  // O seletor nasce SEM valor escolhido e só com o que a conta permite.
+  const sel=$('priv');
+  (D.privacy_level_options||[]).forEach(o=>{
+    const op=document.createElement('option');op.value=o;op.textContent=ROTULOS[o]||o;sel.appendChild(op);
+  });
+  sel.addEventListener('change',()=>{valida();avisoComercial();});
+
+  // Interação desativada na conta fica travada, como a guideline pede.
+  [['com','comment_disabled'],['duet','duet_disabled'],['stitch','stitch_disabled']].forEach(([k,f])=>{
+    if(D[f]){$('c-'+k).disabled=true;$('c-'+k).checked=false;$('l-'+k).classList.add('dis');
+      $('l-'+k).title='Desativado nas configurações da sua conta TikTok';}
+  });
+
+  const L=$('lista');
+  if(!D.reels.length){L.innerHTML='<p class="load">Nenhum reel encontrado.</p>';return;}
+  D.reels.forEach(r=>{
+    const div=document.createElement('div');
+    const ok=r.publicavel;
+    div.className='reel'+(ok?'':' off');
+    const quando=new Date(r.quando).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+    div.innerHTML='<img src="'+(r.thumb||'')+'" alt=""><div><p>'+
+      (r.legenda||'(sem legenda)').replace(/[<>]/g,'')+'</p><small>'+quando+
+      (r.ja_publicado?' · já publicado':(ok?'':' · '+r.motivo))+'</small></div>';
+    if(ok)div.onclick=()=>escolher(r,div);
+    L.appendChild(div);
+  });
+}
+
+function escolher(r,el){
+  document.querySelectorAll('.reel').forEach(x=>x.classList.remove('on'));
+  el.classList.add('on');escolhido=r;limpaMsg();
+  $('titulo').value=r.legenda_cheia||'';
+  const v=$('preview');v.src=r.media_url||'';v.style.display=r.media_url?'block':'none';
+  valida();
+}
+
+function avisoComercial(){
+  const w=$('warn-com'),marca=$('c-marca').checked,br=$('c-branded').checked,p=$('priv').value;
+  let t='';
+  if(br&&marca)t='Este vídeo será marcado como "Paid partnership".';
+  else if(br)t='Este vídeo será marcado como "Paid partnership".';
+  else if(marca)t='Este vídeo será marcado como "Promotional content".';
+  if(br&&p==='SELF_ONLY')t='Conteúdo de marca de terceiro não pode ser publicado como privado. Escolha outra visibilidade.';
+  w.textContent=t;w.style.display=t?'block':'none';
+}
+
+function valida(){
+  const com=$('c-com-ercial').checked;
+  $('bloco-com').style.display=com?'block':'none';
+  if(!com){$('c-marca').checked=false;$('c-branded').checked=false;}
+  avisoComercial();
+  const p=$('priv').value;
+  let ok=Boolean(escolhido)&&Boolean(p);
+  if(com&&!$('c-marca').checked&&!$('c-branded').checked)ok=false;
+  if($('c-branded').checked&&p==='SELF_ONLY')ok=false;
+  $('btn').disabled=!ok;
+}
+['c-com-ercial','c-marca','c-branded','c-com','c-duet','c-stitch'].forEach(i=>
+  document.addEventListener('change',e=>{if(e.target.id===i)valida();}));
+
+$('btn').onclick=async()=>{
+  if(!escolhido)return;
+  $('btn').disabled=true;msg('Enviando o vídeo para o TikTok...','i');
+  const corpo={ig_id:escolhido.id,escolhas:{
+    titulo:$('titulo').value,
+    privacy_level:$('priv').value,
+    permitir_comentario:$('c-com').checked,
+    permitir_duet:$('c-duet').checked,
+    permitir_stitch:$('c-stitch').checked,
+    comercial:$('c-com-ercial').checked,
+    sua_marca:$('c-marca').checked,
+    branded_content:$('c-branded').checked}};
+  try{
+    // text/plain de proposito: evita o preflight de CORS.
+    const r=await fetch(API+'/tiktok-publicar',{method:'POST',
+      headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(corpo)});
+    const d=await r.json();
+    if(d.ok){msg(d.aviso||'Enviado.','s');
+      const el=document.querySelector('.reel.on');if(el){el.classList.add('off');el.classList.remove('on');el.onclick=null;}
+      escolhido=null;}
+    else{msg(d.mensagem||d.erro||'Não consegui publicar.','e');$('btn').disabled=false;}
+  }catch(e){msg('Falha de rede: '+e.message,'e');$('btn').disabled=false;}
+};
+
+carregar();
+</script>
+</body>
+</html>
