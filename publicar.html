@@ -75,6 +75,15 @@ border-radius:8px;padding:9px 11px;margin-top:9px;display:none}
 <div id="carregando" class="load">Carregando seus vídeos e os dados da conta TikTok...</div>
 <div id="falha" class="msg e"></div>
 
+<div class="card" id="login" style="display:none;max-width:520px">
+  <h2>Conecte sua conta</h2>
+  <p style="font-size:14px;color:var(--dim);margin-bottom:6px" id="login-txt">
+    Para publicar, autorize a SVI Company a postar na sua conta do TikTok.</p>
+  <p style="font-size:12.5px;color:var(--dim);margin-bottom:16px">
+    Pedimos apenas duas permissões: ler o nome do perfil e publicar vídeos.</p>
+  <a id="login-btn" href="#"><button style="margin-top:0">Entrar com TikTok</button></a>
+</div>
+
 <div class="grid" id="app" style="display:none">
   <div class="card">
     <h2>1 · Escolha o vídeo</h2>
@@ -141,7 +150,13 @@ async function carregar(){
   try{
     const r=await fetch(API+'/tiktok-tela',{cache:'no-store'});
     const d=await r.json();
-    if(!d.ok){$('carregando').style.display='none';
+    $('carregando').style.display='none';
+    if(d.precisa_autorizar){
+      $('login').style.display='block';
+      if(d.url_login){$('login-btn').href=d.url_login;}
+      else{$('login-txt').textContent=d.mensagem;$('login-btn').style.display='none';}
+      return;}
+    if(!d.ok){
       $('falha').textContent=d.mensagem||('Não consegui carregar: '+(d.erro||'erro desconhecido'));
       $('falha').className='msg e show';return;}
     D=d;montar();
@@ -153,7 +168,7 @@ async function carregar(){
 }
 
 function montar(){
-  $('carregando').style.display='none';$('app').style.display='grid';
+  $('app').style.display='grid';
   $('nick').textContent=D.criador.nickname||'Conta TikTok';
   $('user').textContent=D.criador.username?('@'+D.criador.username):'';
   if(D.criador.avatar)$('avatar').src=D.criador.avatar;
