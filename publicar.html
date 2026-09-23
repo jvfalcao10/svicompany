@@ -153,8 +153,10 @@ async function carregar(){
     $('carregando').style.display='none';
     if(d.precisa_autorizar){
       $('login').style.display='block';
-      if(d.url_login){$('login-btn').href=d.url_login;}
-      else{$('login-txt').textContent=d.mensagem;$('login-btn').style.display='none';}
+      $('login-txt').textContent=d.mensagem||'Conecte sua conta do TikTok para publicar.';
+      if(d.pronto&&d.url_login){$('login-btn').href=d.url_login;}
+      else{$('login-btn').querySelector('button').disabled=true;
+        if(d.diagnostico)console.warn('[SVI]',d.diagnostico);}
       return;}
     if(!d.ok){
       $('falha').textContent=d.mensagem||('Não consegui carregar: '+(d.erro||'erro desconhecido'));
