@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kickoff de Conteúdo · SVI Company</title>
+<meta name="description" content="Kickoff de conteúdo: cinco minutos pra sua marca sair com a sua cara. SVI Company." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF7EC; --ink:#0A0608; --ink2:#1A1714;
+    --gold:#B98A2E; --gold-soft:#E7D8B5; --mute:#6B6157; --line:#E5DDC9;
+    --card:#FFFFFF; --ok:#2F7D52;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:var(--cream); color:var(--ink2);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  /* top bar */
+  .topbar{
+    position:sticky; top:0; z-index:50; background:rgba(251,247,236,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{max-width:720px; margin:0 auto; padding:14px 20px}
+  .brand{display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .brand b{font-weight:700; letter-spacing:.16em; font-size:13px; color:var(--gold)}
+  .brand span{font-size:12px; color:var(--mute)}
+  .progress{margin-top:10px; height:6px; background:var(--gold-soft); border-radius:99px; overflow:hidden}
+  .progress > i{display:block; height:100%; width:0; background:var(--gold); border-radius:99px; transition:width .35s ease}
+  .step-count{margin-top:7px; font-size:12px; color:var(--mute); display:flex; justify-content:space-between}
+
+  main{max-width:720px; margin:0 auto; padding:28px 20px 120px}
+
+  /* hero (step 0) */
+  .hero-kicker{color:var(--gold); font-weight:600; letter-spacing:.14em; font-size:13px; text-transform:uppercase; text-align:center}
+  h1{font-size:clamp(30px,7vw,46px); line-height:1.05; font-weight:700; color:var(--ink); margin:10px 0 14px; text-align:center}
+  .hero-sub{font-size:16px; color:var(--mute); max-width:54ch; text-align:center; margin:0 auto}
+  /* tela de boas-vindas: tudo centralizado e equilibrado */
+  .step-hero .qlabel{text-align:center}
+  .step-hero input{text-align:center}
+  .step-hero .intro-box{text-align:center; border-left:1px solid var(--line); border-top:3px solid var(--gold)}
+  .intro-box{
+    margin:24px 0; padding:18px 20px; background:var(--card);
+    border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:14px;
+    font-size:15px; text-align:center;
+  }
+  .intro-box b{color:var(--ink)}
+
+  .step{display:none; animation:fade .4s ease}
+  .step.active{display:block}
+  @keyframes fade{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:6px; justify-content:center; text-align:center}
+  .sec-num{font-weight:700; color:var(--gold); font-size:26px; line-height:1}
+  .sec-title{font-weight:700; font-size:21px; color:var(--ink)}
+  .sec-rule{height:3px; width:120px; background:var(--gold); margin:10px auto 22px; border-radius:2px}
+
+  .q{margin-bottom:22px}
+  .q > label.qlabel{display:block; font-weight:600; font-size:16px; color:var(--ink2); margin-bottom:8px; text-align:center}
+  .q .hint{display:block; font-size:13px; color:var(--mute); margin:-4px 0 10px; font-style:italic; text-align:center}
+  textarea, input[type=text], input[type=email], input[type=tel]{
+    width:100%; font-family:inherit; font-size:15.5px; color:var(--ink2);
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; resize:vertical; transition:border-color .2s, box-shadow .2s;
+  }
+  textarea{min-height:84px}
+  textarea:focus, input:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(185,138,46,.14)}
+
+  .opts{display:flex; flex-direction:column; gap:8px; align-items:center}
+  .opt{
+    display:flex; align-items:center; gap:11px; padding:11px 14px; width:100%; max-width:480px;
+    background:var(--card); border:1px solid var(--line); border-radius:12px; cursor:pointer;
+    font-size:15px; transition:border-color .15s, background .15s; text-align:left;
+  }
+  .opt:hover{border-color:var(--gold-soft)}
+  .opt input{accent-color:var(--gold); width:18px; height:18px; flex:none}
+  .opt:has(input:checked){border-color:var(--gold); background:#FBF6E8}
+
+  /* nav */
+  .nav{
+    position:fixed; left:0; right:0; bottom:0; z-index:40;
+    background:rgba(251,247,236,.94); backdrop-filter:blur(8px);
+    border-top:1px solid var(--line); padding:14px 20px;
+  }
+  .nav-inner{max-width:720px; margin:0 auto; display:flex; gap:12px; justify-content:center; align-items:center}
+  button{font-family:inherit; font-weight:600; font-size:15px; cursor:pointer; border-radius:99px; border:1px solid transparent; padding:13px 26px; transition:transform .1s, opacity .2s, background .2s}
+  button:active{transform:scale(.97)}
+  .btn-prev{background:transparent; color:var(--mute); border-color:var(--line)}
+  .btn-prev:hover{color:var(--ink2)}
+  .btn-next{background:var(--ink); color:var(--cream); flex:1; max-width:360px}
+  .btn-next:hover{background:var(--ink2)}
+  .btn-next[disabled]{opacity:.5; cursor:not-allowed}
+  .btn-prev[hidden]{display:none}
+
+  /* thank you */
+  .done{display:none; text-align:center; padding:60px 10px}
+  .done.show{display:block; animation:fade .5s ease}
+  .done .check{width:72px; height:72px; border-radius:50%; background:var(--gold); color:#fff; display:grid; place-items:center; margin:0 auto 22px; font-size:36px}
+  .done h2{font-size:28px; color:var(--ink); margin-bottom:10px}
+  .done p{color:var(--mute); max-width:46ch; margin:0 auto}
+
+  .field-grid{display:grid; gap:14px}
+  @media(min-width:560px){.field-grid.two{grid-template-columns:1fr 1fr}}
+  footer{max-width:720px; margin:0 auto; padding:0 20px 40px; color:var(--mute); font-size:12px; text-align:center}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <b>SVI COMPANY</b>
+      <span id="topStep">Kickoff de Conteúdo</span>
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="step-count"><span id="stepLabel">Boas-vindas</span><span id="stepNum"></span></div>
+  </div>
+</div>
+
+<form id="form" autocomplete="off">
+<main>
+
+  <!-- STEP 0, HERO + IDENTIFICAÇÃO -->
+  <section class="step step-hero active" data-title="Boas-vindas">
+    <div class="hero-kicker">Sistema de Vendas Inteligente</div>
+    <h1>Kickoff de Conteúdo</h1>
+    <p class="hero-sub">Cinco minutos pra sua marca sair com a sua cara. Quem aparece no vídeo é quem responde: são doze perguntas sobre o que você quer dizer, o que nunca quer comentar e como prefere trabalhar.</p>
+    <div class="intro-box">
+      <b>Leva uns 5 minutos.</b> Responda curto e do seu jeito. Cada resposta vira pauta, régua e rotina de gravação. Nada aqui vai pra fora: é material de trabalho da SVI com você.
+      <div style="margin-top:12px"><a id="waAudio" href="https://wa.me/559492404033?text=Vou%20responder%20o%20kickoff%20de%20conte%C3%BAdo%20por%20%C3%A1udio" target="_blank" rel="noopener" style="display:inline-block;padding:10px 18px;border-radius:99px;background:#0A0608;color:#FBF7EC;text-decoration:none;font-weight:600;font-size:14px">Prefere responder por áudio? Manda no WhatsApp</a></div>
+    </div>
+    <div class="q"><label class="qlabel">Empresa / marca</label><input type="text" name="Empresa" required></div>
+    <div class="field-grid two">
+      <div class="q"><label class="qlabel">Quem aparece no vídeo (nome)</label><input type="text" name="Responsavel" required></div>
+      <div class="q"><label class="qlabel">WhatsApp para contato</label><input type="tel" name="WhatsApp" required></div>
+    </div>
+    <div class="field-grid two">
+      <div class="q"><label class="qlabel">Profissão / área</label><input type="text" name="Segmento"></div>
+      <div class="q"><label class="qlabel">Cidade / região</label><input type="text" name="Regiao"></div>
+    </div>
+  </section>
+
+  <!-- Steps injected by JS -->
+  <div id="steps"></div>
+
+  <!-- DONE -->
+  <div class="done" id="done">
+    <div class="check">&#10003;</div>
+    <h2>Recebemos tudo. Obrigado!</h2>
+    <p>A SVI transforma isso em pauta e em rotina de gravação com a sua cara. O próximo passo chega no grupo.</p>
+  </div>
+
+</main>
+</form>
+
+<footer>SVI Company · Sistema de Vendas Inteligente, do criativo ao caixa</footer>
+
+<div class="nav" id="nav">
+  <div class="nav-inner">
+    <button type="button" class="btn-prev" id="prev" hidden>Voltar</button>
+    <button type="button" class="btn-next" id="next">Começar</button>
+  </div>
+</div>
+
+<script>
+// ---- CONFIG ----
+// Supabase (mesmos valores públicos do config.js do site). Insert-only: o site grava, não lê.
+const SUPABASE_URL  = "https://qvkfcvcqlfamyzgqgnrq.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2a2ZjdmNxbGZhbXl6Z3FnbnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMzI1MzYsImV4cCI6MjA2MzYwODUzNn0.VDLMK6z9yynpHRp5o8uULdOlX6ZmRi95kZJdte1oaLM";
+
+// ---- QUESTIONS DATA ----
+const SECTIONS = [
+  { n:1, title:"A marca", qs:[
+    {t:"area", q:"Daqui a 6 meses, como você quer ser reconhecido por quem não te conhece? Uma frase.", hint:"Ex: o advogado que explica a notícia. Pode ser do seu jeito."},
+    {t:"text", q:"Em quais áreas você quer ser visto como referência, em ordem: 1ª, 2ª, 3ª."},
+    {t:"area", q:"Dois ou três perfis que você acha que falam bem em vídeo, de qualquer área. O que você gosta neles?", hint:"Pode ser @ ou nome. Serve pra entendermos seu gosto, não pra copiar."},
+    {t:"area", q:"Alguma palavra, bordão ou jeito seu que precisa aparecer? E algum que não pode de jeito nenhum?"},
+  ]},
+  { n:2, title:"O react", qs:[
+    {t:"area", q:"Que tipo de notícia te dá vontade de comentar na hora? Cite duas ou três recentes.", hint:"Política, agro, economia, caso de repercussão, o que for."},
+    {t:"area", q:"Três temas que você nunca quer comentar, nem que estejam bombando."},
+    {t:"area", q:"Dos vídeos que você já gravou, qual achou bom e qual não gostou? Por quê?", hint:"Se tiver link, cola aqui."},
+    {t:"area", q:"Comentar política e eleição: além de não tomar lado, tem algum limite a mais que precisamos respeitar?", hint:"Pense no seu trabalho, nos seus clientes e na sua cidade."},
+  ]},
+  { n:3, title:"A rotina", qs:[
+    {t:"text", q:"Quanto tempo por semana você tem pra gravar, e em que dia e horário costuma dar?"},
+    {t:"checks", q:"Como você prefere gravar?", opts:["Sozinho no celular, com o cartão da pauta","Com alguém da equipe gravando","Só com a SVI presente","Tanto faz, o que for mais rápido"]},
+    {t:"checks", q:"Como prefere receber a pauta?", opts:["Texto no WhatsApp, todo dia cedo","Áudio no WhatsApp","Lista uma vez por semana","Ligação rápida"]},
+    {t:"text", q:"Quem aprova antes de publicar: só você, ou alguém da equipe pode aprovar por você? Quem?"},
+  ]},
+];
+
+// ---- RENDER ----
+const stepsWrap = document.getElementById('steps');
+let qCounter = 0;
+SECTIONS.forEach(sec=>{
+  const s = document.createElement('section');
+  s.className='step'; s.dataset.title = sec.title;
+  let html = `<div class="sec-head"><span class="sec-num">${String(sec.n).padStart(2,'0')}</span><span class="sec-title">${sec.title}</span></div><div class="sec-rule"></div>`;
+  sec.qs.forEach(q=>{
+    const hint = q.hint?`<span class="hint">${q.hint}</span>`:'';
+    if(q.t==='note'){ html += `<div class="intro-box" style="margin:2px 0 18px">${q.q}</div>`; return; }
+    qCounter++;
+    const name = q.name ? q.name : `${sec.n}.${q.q.slice(0,60)}`.replace(/"/g,'');
+    if(q.t==='area'){
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<textarea name="${name}"></textarea></div>`;
+    } else if(q.t==='text'){
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<input type="text" name="${name}"></div>`;
+    } else if(q.t==='cred'){
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<div class="field-grid two"><input type="text" name="${name}_login" placeholder="Login / usuário / e-mail"><input type="text" name="${name}_senha" placeholder="Senha"></div></div>`;
+    } else if(q.t==='checks'){
+      const opts = q.opts.map(o=>`<label class="opt"><input type="checkbox" name="${name}" value="${o}"><span>${o}</span></label>`).join('');
+      html += `<div class="q"><label class="qlabel">${qCounter}. ${q.q}</label>${hint}<div class="opts">${opts}</div></div>`;
+    }
+  });
+  s.innerHTML = html;
+  stepsWrap.appendChild(s);
+});
+
+// ---- WIZARD ----
+const steps = Array.from(document.querySelectorAll('.step'));
+const total = steps.length;
+let i = 0;
+const bar = document.getElementById('bar');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const stepLabel = document.getElementById('stepLabel');
+const stepNum = document.getElementById('stepNum');
+const nav = document.getElementById('nav');
+
+function show(n){
+  steps[i].classList.remove('active');
+  i = n;
+  steps[i].classList.add('active');
+  bar.style.width = `${(i/(total-1))*100}%`;
+  stepLabel.textContent = steps[i].dataset.title;
+  stepNum.textContent = `${i+1} de ${total}`;
+  prevBtn.hidden = i===0;
+  nextBtn.textContent = i===0 ? 'Começar' : (i===total-1 ? 'Enviar respostas' : 'Próximo');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+prevBtn.addEventListener('click',()=> i>0 && show(i-1));
+nextBtn.addEventListener('click',()=>{
+  // valida só os campos obrigatórios do passo 0
+  if(i===0){
+    const reqs = steps[0].querySelectorAll('[required]');
+    for(const r of reqs){ if(!r.value.trim()){ r.focus(); r.style.borderColor='#c0392b'; return; } }
+  }
+  if(i < total-1){ show(i+1); }
+  else { submit(); }
+});
+
+// ---- SUBMIT (FormSubmit AJAX) ----
+async function submit(){
+  nextBtn.disabled = true; nextBtn.textContent = 'Enviando…';
+  const fd = new FormData(document.getElementById('form'));
+  const flat = {};
+  for(const [k,v] of fd.entries()){ const val=(v||'').toString().trim(); if(val){ flat[k] = flat[k] ? flat[k]+', '+val : val; } }
+  const ID = ['Empresa','Responsavel','WhatsApp','Segmento','Regiao'];
+  const acessos = {}, respostas = {};
+  for(const k in flat){
+    if(ID.includes(k)) continue;
+    if(k.indexOf('acesso_')===0) acessos[k] = flat[k];
+    else respostas[k] = flat[k];
+  }
+  respostas._tipo = 'kickoff-conteudo';
+  const payload = {
+    empresa: flat.Empresa||null, responsavel: flat.Responsavel||null,
+    whatsapp: flat.WhatsApp||null, segmento: 'conteúdo' + (flat.Segmento ? ' · '+flat.Segmento : ''), regiao: flat.Regiao||null,
+    respostas, acessos
+  };
+  try{
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/svi_kickoff`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'apikey': SUPABASE_ANON,
+        'Authorization': `Bearer ${SUPABASE_ANON}`,
+        'Prefer':'return=minimal'
+      },
+      body: JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error('falha '+res.status);
+    // Aciona a Sofia (n8n): cria task de estratégia no ClickUp + avisa o João no WhatsApp.
+    // Só o resumo, nenhuma credencial trafega aqui.
+    fetch('https://n8n-n8n-start.wrqknp.easypanel.host/webhook/kickoff-svi',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        empresa:(payload.empresa||'')+' · kickoff de conteúdo', responsavel:payload.responsavel||'',
+        whatsapp:payload.whatsapp||'', segmento:payload.segmento||'', regiao:payload.regiao||'', tipo:'conteudo'
+      })
+    }).catch(()=>{});
+    finishUI();
+  }catch(e){
+    // fallback: guarda local pra não perder o que o cliente preencheu
+    localStorage.setItem('svi_kickoff_conteudo_backup', JSON.stringify(payload));
+    finishUI();
+  }
+}
+function finishUI(){
+  document.querySelectorAll('.step').forEach(s=>s.style.display='none');
+  document.getElementById('done').classList.add('show');
+  bar.style.width='100%'; stepLabel.textContent='Concluído'; stepNum.textContent='';
+  nav.style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// prefill por URL: ?empresa=&nome=&whatsapp=&segmento=&regiao=
+(function(){
+  try{
+    const u=new URLSearchParams(location.search);
+    const map={empresa:'Empresa',nome:'Responsavel',whatsapp:'WhatsApp',segmento:'Segmento',regiao:'Regiao'};
+    for(const k in map){ const v=u.get(k); if(v){ const el=document.querySelector(`[name="${map[k]}"]`); if(el&&!el.value) el.value=v; } }
+    const nome=u.get('nome'); if(nome){ const h=document.querySelector('.hero-sub'); if(h) h.textContent = nome.split(' ')[0]+', '+h.textContent.charAt(0).toLowerCase()+h.textContent.slice(1); }
+  }catch(e){}
+})();
+show(0);
+</script>
+</body>
+</html>
