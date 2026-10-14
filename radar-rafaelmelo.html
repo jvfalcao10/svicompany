@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Radar do dia · Rafael Melo Advocacia · SVI</title>
+<meta name="description" content="Radar diário de notícias pro react do Dr. Rafael Melo. SVI Company." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EC; --ink:#0A0608; --ink2:#1A1714; --gold:#B98A2E; --gold-soft:#E7D8B5; --mute:#6B6157; --line:#E5DDC9; --card:#FFFFFF; --ok:#2F7D52; --red:#B23A2E; --amb:#B9802E}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink2);line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(251,247,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:720px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand b{font-weight:700;letter-spacing:.16em;font-size:13px;color:var(--gold)}
+  .brand span{display:block;font-size:12px;color:var(--mute)}
+  select{font-family:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink2)}
+  main{max-width:720px;margin:0 auto;padding:24px 20px 80px}
+  h1{font-size:clamp(26px,6vw,36px);line-height:1.08;font-weight:700;color:var(--ink);margin:6px 0 10px}
+  .sub{color:var(--mute);font-size:15px;max-width:60ch}
+  .como{margin:18px 0 26px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;font-size:14.5px}
+  .como b{color:var(--ink)}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px;margin-bottom:18px}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .tag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mute)}
+  .tag.area{color:var(--gold);border-color:var(--gold-soft)}
+  .tag.verde{color:var(--ok);border-color:#CFE3D6}.tag.amarela{color:var(--amb);border-color:#EAD8B5}
+  .num{font-weight:700;color:var(--gold);font-size:13px;letter-spacing:.1em}
+  h2{font-size:21px;line-height:1.2;color:var(--ink);margin:4px 0 8px}
+  .fonte{font-size:13.5px;color:var(--mute);margin-bottom:12px}
+  .fonte a{color:var(--ink2);text-decoration:underline;text-underline-offset:3px;word-break:break-all}
+  .resumo{font-size:15px;margin-bottom:14px}
+  .perg{font-size:16.5px;font-weight:600;color:var(--ink);background:#FBF6E8;border:1px solid var(--gold-soft);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+  .perg small{display:block;font-weight:500;color:var(--mute);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  ol{padding-left:22px;margin-bottom:14px}ol li{margin-bottom:7px;font-size:15px}
+  .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600;margin:10px 0 4px}
+  .nao{color:var(--red);font-size:14.5px}.chk{font-size:14.5px}
+  .tela{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+  .tela span{display:inline-block;align-self:flex-start;padding:6px 12px;border-radius:8px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:14px}
+  .tela .l1{background:var(--ink);color:#fff}.tela .l2{background:var(--gold);color:#fff}
+  .vazio{padding:30px 10px;text-align:center;color:var(--mute)}
+  footer{max-width:720px;margin:0 auto;padding:0 20px 40px;color:var(--mute);font-size:12px;text-align:center}
+  .rule{font-size:13.5px;color:var(--mute);margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand"><b>SVI COMPANY</b><span>Radar do dia · Dr. Rafael Melo</span></div>
+  <select id="dia" aria-label="Escolher o dia"></select>
+</div></div>
+<main>
+  <h1>O que está em alta hoje, com a regra por trás</h1>
+  <p class="sub">Três notícias por dia, cada uma com a fonte, a pergunta que o público faz e os pontos pra você cobrir. A lei quem põe na fala é você.</p>
+  <div class="como"><b>Como usar:</b> escolhe uma, grava um ou dois minutos no celular falando livre, manda no grupo. A SVI edita e coloca no ar em até 48 horas. Comenta a regra, nunca o lado.</div>
+  <div id="lista"><div class="vazio">Carregando o radar…</div></div>
+  <p class="rule">Régua: nada de lado político, caso de cliente, resultado de processo, honorário ou deboche. Nome e OAB/PA 22596 ficam na tela. Provimento 205/2021 da OAB.</p>
+</main>
+<footer>SVI Company · Sistema de Vendas Inteligente</footer>
+<script>
+const URL_SB="https://qvkfcvcqlfamyzgqgnrq.supabase.co/rest/v1/radar_itens";
+const ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2a2ZjdmNxbGZhbXl6Z3FnbnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMzI1MzYsImV4cCI6MjA2MzYwODUzNn0.VDLMK6z9yynpHRp5o8uULdOlX6ZmRi95kZJdte1oaLM";
+const H={apikey:ANON,Authorization:"Bearer "+ANON};
+const $=s=>document.querySelector(s);
+function esc(s){return (s||'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function fmt(d){const [y,m,dd]=d.split('-');return dd+'/'+m+'/'+y;}
+function host(u){try{return new URL(u).hostname.replace(/^www\./,'');}catch(e){return '';}}
+async function dias(){
+  const r=await fetch(URL_SB+"?select=data&cliente=eq.rafael-melo&order=data.desc&limit=200",{headers:H});
+  const rows=await r.json(); const set=[]; rows.forEach(x=>{if(!set.includes(x.data))set.push(x.data);}); return set;
+}
+async function carrega(d){
+  $('#lista').innerHTML='<div class="vazio">Carregando…</div>';
+  const r=await fetch(URL_SB+"?select=*&cliente=eq.rafael-melo&data=eq."+d+"&order=ordem.asc",{headers:H});
+  const it=await r.json();
+  if(!it.length){$('#lista').innerHTML='<div class="vazio">Sem radar neste dia.</div>';return;}
+  $('#lista').innerHTML=it.map((x,i)=>`
+   <article class="item">
+     <div class="tags"><span class="num">${String(x.ordem||i+1).padStart(2,'0')}</span>${x.area?`<span class="tag area">${esc(x.area)}</span>`:''}${x.zona?`<span class="tag ${esc(x.zona)}">zona ${esc(x.zona)}</span>`:''}</div>
+     <h2>${esc(x.manchete)}</h2>
+     <div class="fonte">${x.fonte_url?`<a href="${esc(x.fonte_url)}" target="_blank" rel="noopener">${esc(x.fonte_nome||host(x.fonte_url)||'ver a notícia')}</a>`:'sem link de fonte'}</div>
+     ${x.resumo?`<p class="resumo">${esc(x.resumo)}</p>`:''}
+     ${x.pergunta?`<div class="perg"><small>A pergunta do público</small>${esc(x.pergunta)}</div>`:''}
+     ${(x.pontos&&x.pontos.length)?`<div class="lbl">Os pontos pra cobrir</div><ol>${x.pontos.map(p=>`<li>${esc(p)}</li>`).join('')}</ol>`:''}
+     ${x.nao_entra?`<div class="lbl">Não entra</div><p class="nao">${esc(x.nao_entra)}</p>`:''}
+     ${x.checar?`<div class="lbl">Checar antes de gravar</div><p class="chk">${esc(x.checar)}</p>`:''}
+     ${(x.tela_l1||x.tela_l2)?`<div class="lbl">Na tela</div><div class="tela">${x.tela_l1?`<span class="l1">${esc(x.tela_l1)}</span>`:''}${x.tela_l2?`<span class="l2">${esc(x.tela_l2)}</span>`:''}</div>`:''}
+   </article>`).join('');
+}
+(async()=>{
+  try{
+    const ds=await dias(); const sel=$('#dia');
+    if(!ds.length){$('#lista').innerHTML='<div class="vazio">O primeiro radar ainda não saiu.</div>';sel.style.display='none';return;}
+    const q=new URLSearchParams(location.search).get('data'); const atual=(q&&ds.includes(q))?q:ds[0];
+    sel.innerHTML=ds.map(d=>`<option value="${d}" ${d===atual?'selected':''}>${fmt(d)}</option>`).join('');
+    sel.onchange=()=>{history.replaceState(null,'','?data='+sel.value);carrega(sel.value);};
+    carrega(atual);
+  }catch(e){$('#lista').innerHTML='<div class="vazio">Não deu pra carregar agora. Tenta de novo em um minuto.</div>';}
+})();
+</script>
+</body>
+</html>
