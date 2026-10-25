@@ -1697,6 +1697,14 @@
     .ic-head>.pill-eyebrow{grid-column:1/-1} .ic-head>h2{margin:0; max-width:none} .ic-head>p{margin:0; max-width:none; align-self:end}
     @media (max-width:900px){ .ic-head{grid-template-columns:1fr} }
 
+    /* depoimentos: so empresa na home. Medico tem site proprio */
+    .cases-medico{margin:var(--s-5) 0 0; font-size:var(--t-caption); line-height:1.5;
+      letter-spacing:var(--tr-caption); color:var(--text-dark-m)}
+    .cases-medico a{color:var(--gold-ink); font-weight:600; text-decoration:underline;
+      text-underline-offset:3px; text-decoration-thickness:1px}
+    .cases-medico a:hover{color:var(--text-dark)}
+    .hero-v2 .hero-sub,.case-quote,.cases-head p{text-wrap:pretty}
+
     /* ============ HERO NO CELULAR (25/10/26) ============
        Ultimo bloco do CSS de proposito: nada depois dele desfaz a coluna unica. */
     @media (max-width:1000px){
@@ -1763,7 +1771,7 @@
           <span class="w">Antes</span> <span class="w">de</span> <span class="w">investir</span> <span class="w">mais,</span><br>
           <span class="hl">descubra onde o cliente está se perdendo hoje.</span>
         </h1>
-        <p class="hero-sub stagger">A SVI cuida do que o cliente encontra sobre você no Google, do que ele vê antes de decidir e da conversa até fechar. Clínica, energia solar ou varejo: um método, um time só.</p>
+        <p class="hero-sub stagger">A SVI cuida do que o cliente encontra sobre você no Google, do que ele vê antes de decidir e da conversa até fechar. Clínica, energia solar ou varejo: um método, um time&nbsp;só.</p>
         <div class="hero-cta-row stagger">
           <a href="https://wa.me/5594992404033?text=Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SVI" class="btn-gold" target="_blank" rel="noopener">Solicitar diagnóstico <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           <a href="#cases" class="btn-ghost-dark">Ver a prova</a>
@@ -1772,9 +1780,9 @@
       </div>
       <div class="hero-col-prova stagger">
         <div class="prova-stack">
-          <figure class="pv pv-3"><a href="https://www.instagram.com/p/DKPRbjDRJyT/" target="_blank" rel="noopener" aria-label="Depoimento do Spa Nature no Instagram"><img src="images/case-spanature.jpg" alt="Depoimento do Spa Nature no Instagram" loading="eager" width="512" height="910"></a></figure>
-          <figure class="pv pv-2"><a href="https://www.instagram.com/p/DUrAdTNDl0x/" target="_blank" rel="noopener" aria-label="Depoimento do Dr. Brenno Cangussu no Instagram"><img src="images/case-brenno.jpg" alt="Depoimento do Dr. Brenno Cangussu no Instagram" loading="eager" width="512" height="910"></a></figure>
-          <figure class="pv pv-1"><a href="https://www.instagram.com/p/DVMrB0FjdnW/" target="_blank" rel="noopener" aria-label="Depoimento do Dr. Daniel Peralba no Instagram"><img src="images/case-daniel.jpg" alt="Depoimento do Dr. Daniel Peralba no Instagram" loading="eager" width="512" height="910"></a></figure>
+          <figure class="pv pv-3"><a href="https://www.instagram.com/reel/DKPRbjDRJyT/" target="_blank" rel="noopener" aria-label="Depoimento do Spa Nature no Instagram"><img src="images/case-spanature.jpg" alt="Depoimento do Spa Nature sobre a inauguração com a SVI" loading="eager" width="512" height="910"></a></figure>
+          <figure class="pv pv-2"><a href="https://www.instagram.com/reel/DaXzG1SB1sG/" target="_blank" rel="noopener" aria-label="Vídeo da Exatta Solar no Instagram: 75 projetos vendidos em maio e 55 em junho"><img src="images/case-exatta-projetos.jpg" alt="Vitor, da Exatta Solar, no vídeo dos 130 projetos solares vendidos em dois meses" loading="eager" width="512" height="910"></a></figure>
+          <figure class="pv pv-1"><a href="https://www.instagram.com/reel/DLpl98HNd9W/" target="_blank" rel="noopener" aria-label="Depoimento da Suzy, da Exatta Solar, no Instagram"><img src="images/case-suzy-exatta.jpg" alt="Suzy, fundadora da Exatta Solar, gravando depoimento sobre a SVI" loading="eager" width="512" height="910"></a></figure>
         </div>
         <p class="prova-cap">Depoimentos gravados pelos próprios clientes. Nada de número inventado.</p>
       </div>
@@ -2103,7 +2111,7 @@
         <div class="fs-label"><strong>De mergulho silencioso</strong>, antes da primeira campanha no ar</div>
       </div>
       <div class="float-stat fs-2">
-        <div class="fs-num"><em>60</em>–120<span style="font-size:18px;">dias</span></div>
+        <div class="fs-num"><em>60</em> a 120<span style="font-size:18px;">dias</span></div>
         <div class="fs-label"><strong>Para resultado sério</strong> aparecer. Sem promessa de atalho</div>
       </div>
       <div class="float-stat fs-3">
@@ -2122,93 +2130,94 @@
     <div class="cases-i">
       <div class="cases-head">
         <div class="pill-eyebrow">Clientes que já usam</div>
-        <h2>Quatro clientes.<br>Quatro contextos. <em>Mesmo método.</em></h2>
-        <p>Quem opera com a SVI fala por nós. Cada depoimento abaixo foi gravado pelos próprios clientes, em data e contexto reais.</p>
+        <h2>Energia solar e estética.<br>Negócios diferentes. <em>Mesmo método.</em></h2>
+        <p>Quem opera com a SVI fala por nós. Cada caso abaixo leva ao vídeo original no Instagram, gravado em data e contexto&nbsp;reais.</p>
       </div>
 
       <div class="cases-grid">
 
         <article class="case-card">
-          <a href="https://www.instagram.com/p/DVMrB0FjdnW/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver depoimento do Dr. Daniel Peralba no Instagram">
-            <img src="images/case-daniel.jpg" alt="Dr. Daniel Peralba, cirurgião proctologista, gravando depoimento sobre a SVI" loading="lazy">
-            <span class="case-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </a>
-          <div class="case-content">
-            <span class="case-vertical">Saúde · Cirurgia</span>
-            <p class="case-quote">"Em janeiro e fevereiro já bati o recorde do ano passado inteiro, quando eu tava sozinho."</p>
-            <div class="case-author">
-              <strong>Dr. Daniel Peralba</strong>
-              Médico cirurgião · Proctologia<br>Redenção, PA
-            </div>
-            <a href="https://www.instagram.com/p/DVMrB0FjdnW/" target="_blank" rel="noopener" class="case-watch">
-              Ver depoimento no Instagram →
-            </a>
-          </div>
-        </article>
-
-        <article class="case-card">
-          <a href="https://www.instagram.com/p/DUrAdTNDl0x/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver depoimento do Dr. Brenno Cangussu no Instagram">
-            <img src="images/case-brenno.jpg" alt="Dr. Brenno Cangussu, ortopedista e médico da dor, gravando depoimento sobre a SVI" loading="lazy">
-            <span class="case-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </a>
-          <div class="case-content">
-            <span class="case-vertical">Saúde · Ortopedia</span>
-            <p class="case-quote">"A procura no WhatsApp já melhorou exponencialmente. Eu consigo diferenciar a minha trajetória antes e depois da SVI."</p>
-            <div class="case-author">
-              <strong>Dr. Brenno Cangussu</strong>
-              Médico ortopedista · Medicina da Dor<br>Redenção, PA
-            </div>
-            <a href="https://www.instagram.com/p/DUrAdTNDl0x/" target="_blank" rel="noopener" class="case-watch">
-              Ver depoimento no Instagram →
-            </a>
-          </div>
-        </article>
-
-        <article class="case-card">
-          <a href="https://www.instagram.com/p/DKPRbjDRJyT/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver depoimento do Spa Nature no Instagram">
-            <img src="images/case-spanature.jpg" alt="Equipe do Spa Nature gravando depoimento sobre a inauguração com a SVI" loading="lazy">
-            <span class="case-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </a>
-          <div class="case-content">
-            <span class="case-vertical">Estética · Spa</span>
-            <p class="case-quote">"Recorde nacional de faturamento na inauguração e recorde de seguidores antes mesmo de inaugurar. Antes do problema chegar, eles já tinham a solução."</p>
-            <div class="case-author">
-              <strong>Spa Nature</strong>
-              Inauguração · Redenção, PA
-            </div>
-            <a href="https://www.instagram.com/p/DKPRbjDRJyT/" target="_blank" rel="noopener" class="case-watch">
-              Ver depoimento no Instagram →
-            </a>
-          </div>
-        </article>
-
-        <article class="case-card">
-          <a href="https://www.instagram.com/p/DLpl98HNd9W/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver depoimento da Exatta Solar no Instagram">
-            <img src="images/case-exatta.jpg" alt="Suzy, da Exatta Solar, gravando depoimento sobre a SVI" loading="lazy">
+          <a href="https://www.instagram.com/reel/DLpl98HNd9W/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver depoimento da Suzy, da Exatta Solar, no Instagram">
+            <img src="images/case-suzy-exatta.jpg" alt="Suzy, fundadora da Exatta Solar, gravando depoimento sobre a SVI" loading="lazy" width="512" height="910">
             <span class="case-play" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </span>
           </a>
           <div class="case-content">
             <span class="case-vertical">Energia Solar</span>
-            <p class="case-quote">"Já tinha trabalhado com outras empresas que deixaram a desejar. Estava desacreditada. Vieram com uma proposta que me desafiou e realmente surpreendeu."</p>
+            <p class="case-quote">"O suporte foi o grande diferencial, uma vez que nós já havíamos trabalhado com outras empresas que deixaram a desejar e eu já estava desacreditada dessa questão de mídia, de redes sociais."</p>
             <div class="case-author">
               <strong>Suzy · Exatta Solar</strong>
-              Operação ativa há 6 meses
+              Fundadora
             </div>
-            <a href="https://www.instagram.com/p/DLpl98HNd9W/" target="_blank" rel="noopener" class="case-watch">
+            <a href="https://www.instagram.com/reel/DLpl98HNd9W/" target="_blank" rel="noopener" class="case-watch">
               Ver depoimento no Instagram →
             </a>
           </div>
         </article>
 
+        <article class="case-card">
+          <a href="https://www.instagram.com/reel/DKPRbjDRJyT/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver depoimento do Spa Nature no Instagram">
+            <img src="images/case-spanature.jpg" alt="Equipe do Spa Nature gravando depoimento sobre a inauguração com a SVI" loading="lazy" width="512" height="910">
+            <span class="case-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </a>
+          <div class="case-content">
+            <span class="case-vertical">Estética · Spa</span>
+            <p class="case-quote">"Sem a assessoria da SVI, realmente a nossa inauguração não teria sido o sucesso que foi."</p>
+            <div class="case-author">
+              <strong>Spa Nature</strong>
+              Inauguração · Redenção, PA
+            </div>
+            <a href="https://www.instagram.com/reel/DKPRbjDRJyT/" target="_blank" rel="noopener" class="case-watch">
+              Ver depoimento no Instagram →
+            </a>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <a href="https://www.instagram.com/reel/DXwrvPvtXLw/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver no Instagram o relato do pedido fechado pela Exatta Solar com o CRM com IA">
+            <img src="images/case-exatta-crm.jpg" alt="João Falcão contando a ligação do Danilo, da Exatta Solar, depois do relatório do CRM com IA" loading="lazy" width="512" height="910">
+            <span class="case-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </a>
+          <div class="case-content">
+            <span class="case-vertical">Energia Solar · CRM com IA</span>
+            <p class="case-quote">"João, depois daquele relatório que você mandou, liguei pro cliente e já fechei o pedido."</p>
+            <div class="case-author">
+              <strong>Danilo · Exatta Solar</strong>
+              Uma venda em menos de 24 horas
+            </div>
+            <a href="https://www.instagram.com/reel/DXwrvPvtXLw/" target="_blank" rel="noopener" class="case-watch">
+              Ver o relato no Instagram →
+            </a>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <a href="https://www.instagram.com/reel/DaXzG1SB1sG/" target="_blank" rel="noopener" class="case-thumb" aria-label="Ver no Instagram o vídeo dos projetos vendidos pela Exatta Solar">
+            <img src="images/case-exatta-projetos.jpg" alt="Vitor, da Exatta Solar, no vídeo dos 130 projetos solares vendidos em dois meses" loading="lazy" width="512" height="910">
+            <span class="case-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </a>
+          <div class="case-content">
+            <span class="case-vertical">Energia Solar · Vendas</span>
+            <p class="case-quote">Foram 75 projetos vendidos em maio e mais 55 em junho.</p>
+            <div class="case-author">
+              <strong>Vitor · Exatta Solar</strong>
+              Confirma os números no vídeo
+            </div>
+            <a href="https://www.instagram.com/reel/DaXzG1SB1sG/" target="_blank" rel="noopener" class="case-watch">
+              Ver o vídeo no Instagram →
+            </a>
+          </div>
+        </article>
+
       </div>
+      <p class="cases-medico">Atende médico ou clínica? <a href="https://medicos.svicompany.com.br">medicos.svicompany.com.br</a></p>
     </div>
   </section>
 
