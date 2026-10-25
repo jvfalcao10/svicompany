@@ -1521,11 +1521,13 @@
   
     /* o H1 novo e mais longo que o antigo: coluna mais larga e corpo um pouco menor
        pra fechar em 4 linhas em vez de 6, sem perder o impacto */
-    .hero-wrap{grid-template-columns:1.18fr .82fr}
+    /* 25/10/26: as duas colunas ficam SO no desktop. Sem media query esta regra
+       anulava a coluna unica do celular e o H1 caia numa faixa de 175px */
+    @media (min-width:1001px){ .hero-wrap{grid-template-columns:1.18fr .82fr} }
     .hero-col-text{max-width:680px}
     .hero-v2 .hero-title{font-size:clamp(40px, 5.4vw, 68px)}
     .hero-v2 .hero-sub{max-width:560px}
-    @media (max-width:1000px){ .hero-col-text{max-width:none} }
+    @media (max-width:1000px){ .hero-wrap{grid-template-columns:1fr} .hero-col-text{max-width:none} }
 
   
     .hero-trust{margin:var(--s-3) 0 var(--s-7); font-size:var(--t-caption);
@@ -1694,6 +1696,29 @@
     .ic-head{text-align:left!important; display:grid; grid-template-columns:1.12fr .88fr; column-gap:clamp(28px,4.5vw,72px); align-items:end}
     .ic-head>.pill-eyebrow{grid-column:1/-1} .ic-head>h2{margin:0; max-width:none} .ic-head>p{margin:0; max-width:none; align-self:end}
     @media (max-width:900px){ .ic-head{grid-template-columns:1fr} }
+
+    /* ============ HERO NO CELULAR (25/10/26) ============
+       Ultimo bloco do CSS de proposito: nada depois dele desfaz a coluna unica. */
+    @media (max-width:1000px){
+      .hero-wrap{grid-template-columns:minmax(0,1fr)!important; gap:var(--s-7)}
+      .hero-col-prova{width:100%; max-width:440px; margin:0 auto}
+      .prova-cap{text-align:center}
+    }
+    @media (max-width:600px){
+      .hero-v2{padding:96px 20px 64px}
+      .eyebrow-rule{gap:var(--s-2); letter-spacing:.12em!important; margin-bottom:var(--s-4)}
+      .eyebrow-rule span{width:24px}
+      .hero-v2 .hero-title{font-size:clamp(32px, 9.4vw, 42px)!important; line-height:1.04!important; margin-bottom:var(--s-4)}
+      .hero-v2 .hero-title .hl{margin-top:.12em; padding-bottom:.1em}
+      .hero-v2 .hero-sub{font-size:17px; margin-bottom:var(--s-5)}
+      .hero-v2 .hero-cta-row{display:flex; flex-direction:column; align-items:stretch; gap:var(--s-3)}
+      .hero-v2 .hero-cta-row a{width:100%; justify-content:center}
+      .hero-trust{margin:var(--s-3) 0 0; text-align:center}
+      .hero-col-prova{max-width:360px}
+      .prova-stack{aspect-ratio:1/1.08!important}
+      .pv-1,.pv-2,.pv-3{width:52%}
+      .pv-1{left:0} .pv-2{left:24%} .pv-3{left:48%}
+    }
 
   </style>
 </head>
