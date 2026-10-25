@@ -93,13 +93,373 @@
       "permanent": true
     },
     {
-      "source": "/blog",
-      "destination": "https://medicos.svicompany.com.br/blog",
+      "source": "/blog/10-perguntas-economia-consultorio",
+      "destination": "https://medicos.svicompany.com.br/blog/10-perguntas-economia-consultorio",
       "permanent": true
     },
     {
-      "source": "/blog/:path*",
-      "destination": "https://medicos.svicompany.com.br/blog/:path*",
+      "source": "/blog/aeo-como-virar-resposta-na-ia",
+      "destination": "https://medicos.svicompany.com.br/blog/aeo-como-virar-resposta-na-ia",
+      "permanent": true
+    },
+    {
+      "source": "/blog/agencia-de-marketing-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/agencia-de-marketing-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/agencia-de-marketing-medico-no-para",
+      "destination": "https://medicos.svicompany.com.br/blog/agencia-de-marketing-medico-no-para",
+      "permanent": true
+    },
+    {
+      "source": "/blog/agencia-freelancer-ou-equipe-propria",
+      "destination": "https://medicos.svicompany.com.br/blog/agencia-freelancer-ou-equipe-propria",
+      "permanent": true
+    },
+    {
+      "source": "/blog/agenda-cheia-consultorio",
+      "destination": "https://medicos.svicompany.com.br/blog/agenda-cheia-consultorio",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-overviews-visoes-gerais-com-ia",
+      "destination": "https://medicos.svicompany.com.br/blog/ai-overviews-visoes-gerais-com-ia",
+      "permanent": true
+    },
+    {
+      "source": "/blog/backend-consulta-procedimento",
+      "destination": "https://medicos.svicompany.com.br/blog/backend-consulta-procedimento",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chatgpt-indicou-medicos-teste-svi",
+      "destination": "https://medicos.svicompany.com.br/blog/chatgpt-indicou-medicos-teste-svi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ciclo-svi",
+      "destination": "https://medicos.svicompany.com.br/blog/ciclo-svi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-atrair-pacientes-particulares",
+      "destination": "https://medicos.svicompany.com.br/blog/como-atrair-pacientes-particulares",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-conseguir-mais-pacientes",
+      "destination": "https://medicos.svicompany.com.br/blog/como-conseguir-mais-pacientes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-fidelizar-pacientes",
+      "destination": "https://medicos.svicompany.com.br/blog/como-fidelizar-pacientes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-funciona-a-assessoria-svi",
+      "destination": "https://medicos.svicompany.com.br/blog/como-funciona-a-assessoria-svi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-saber-se-o-consultorio-aparece-na-ia",
+      "destination": "https://medicos.svicompany.com.br/blog/como-saber-se-o-consultorio-aparece-na-ia",
+      "permanent": true
+    },
+    {
+      "source": "/blog/convenio-ou-particular-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/convenio-ou-particular-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cpl-barato-marketing-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/cpl-barato-marketing-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-para-clinica-medica",
+      "destination": "https://medicos.svicompany.com.br/blog/crm-para-clinica-medica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/custo-por-consulta-realizada",
+      "destination": "https://medicos.svicompany.com.br/blog/custo-por-consulta-realizada",
+      "permanent": true
+    },
+    {
+      "source": "/blog/depoimentos-medicos-svi-company",
+      "destination": "https://medicos.svicompany.com.br/blog/depoimentos-medicos-svi-company",
+      "permanent": true
+    },
+    {
+      "source": "/blog/economia-do-paciente",
+      "destination": "https://medicos.svicompany.com.br/blog/economia-do-paciente",
+      "permanent": true
+    },
+    {
+      "source": "/blog/eeat-ymyl-conteudo-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/eeat-ymyl-conteudo-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/erros-de-marketing-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/erros-de-marketing-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/geo-otimizacao-para-ia-generativa",
+      "destination": "https://medicos.svicompany.com.br/blog/geo-otimizacao-para-ia-generativa",
+      "permanent": true
+    },
+    {
+      "source": "/blog/google-meu-negocio-para-medicos",
+      "destination": "https://medicos.svicompany.com.br/blog/google-meu-negocio-para-medicos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/instagram-para-medicos",
+      "destination": "https://medicos.svicompany.com.br/blog/instagram-para-medicos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/llms-txt-site-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/llms-txt-site-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-de-conteudo-para-medicos",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-de-conteudo-para-medicos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-medico-cfm",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-medico-cfm",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-medico-em-redencao-pa",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-medico-em-redencao-pa",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-medico-em-xinguara-pa",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-medico-em-xinguara-pa",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-medico-vale-a-pena",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-medico-vale-a-pena",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-cardiologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-cardiologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-cirurgiao",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-cirurgiao",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-cirurgiao-plastico",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-cirurgiao-plastico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-cirurgiao-vascular",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-cirurgiao-vascular",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-clinica-medica",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-clinica-medica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-clinico-geral",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-clinico-geral",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-dermatologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-dermatologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-endocrinologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-endocrinologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-gastroenterologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-gastroenterologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-ginecologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-ginecologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-mastologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-mastologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-medicina-esportiva",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-medicina-esportiva",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-neurologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-neurologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-nutrologo",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-nutrologo",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-oftalmologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-oftalmologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-ortopedista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-ortopedista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-otorrinolaringologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-otorrinolaringologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-pediatra",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-pediatra",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-pneumologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-pneumologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-proctologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-proctologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-psiquiatra",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-psiquiatra",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-reumatologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-reumatologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-para-urologista",
+      "destination": "https://medicos.svicompany.com.br/blog/marketing-para-urologista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/medico-aparecer-google-e-ia",
+      "destination": "https://medicos.svicompany.com.br/blog/medico-aparecer-google-e-ia",
+      "permanent": true
+    },
+    {
+      "source": "/blog/medico-sem-rqe-pode-dizer-especialista",
+      "destination": "https://medicos.svicompany.com.br/blog/medico-sem-rqe-pode-dizer-especialista",
+      "permanent": true
+    },
+    {
+      "source": "/blog/modo-ia-do-google-e-o-consultorio",
+      "destination": "https://medicos.svicompany.com.br/blog/modo-ia-do-google-e-o-consultorio",
+      "permanent": true
+    },
+    {
+      "source": "/blog/no-show-consultorio",
+      "destination": "https://medicos.svicompany.com.br/blog/no-show-consultorio",
+      "permanent": true
+    },
+    {
+      "source": "/blog/onde-o-paciente-se-perde",
+      "destination": "https://medicos.svicompany.com.br/blog/onde-o-paciente-se-perde",
+      "permanent": true
+    },
+    {
+      "source": "/blog/quanto-custa-marketing-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/quanto-custa-marketing-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/quanto-investir-em-marketing-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/quanto-investir-em-marketing-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/quanto-vale-um-paciente",
+      "destination": "https://medicos.svicompany.com.br/blog/quanto-vale-um-paciente",
+      "permanent": true
+    },
+    {
+      "source": "/blog/raio-x-gratuito-do-consultorio",
+      "destination": "https://medicos.svicompany.com.br/blog/raio-x-gratuito-do-consultorio",
+      "permanent": true
+    },
+    {
+      "source": "/blog/reativacao-de-pacientes",
+      "destination": "https://medicos.svicompany.com.br/blog/reativacao-de-pacientes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/roas-clinica-medica",
+      "destination": "https://medicos.svicompany.com.br/blog/roas-clinica-medica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/schema-markup-para-consultorio",
+      "destination": "https://medicos.svicompany.com.br/blog/schema-markup-para-consultorio",
+      "permanent": true
+    },
+    {
+      "source": "/blog/seo-local-consultorio-ranking-do-mapa",
+      "destination": "https://medicos.svicompany.com.br/blog/seo-local-consultorio-ranking-do-mapa",
+      "permanent": true
+    },
+    {
+      "source": "/blog/seo-para-medicos",
+      "destination": "https://medicos.svicompany.com.br/blog/seo-para-medicos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/site-no-topo-sem-cliques",
+      "destination": "https://medicos.svicompany.com.br/blog/site-no-topo-sem-cliques",
+      "permanent": true
+    },
+    {
+      "source": "/blog/site-para-medico",
+      "destination": "https://medicos.svicompany.com.br/blog/site-para-medico",
+      "permanent": true
+    },
+    {
+      "source": "/blog/svi-company-marketing-para-medicos",
+      "destination": "https://medicos.svicompany.com.br/blog/svi-company-marketing-para-medicos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/trafego-pago-para-medicos",
+      "destination": "https://medicos.svicompany.com.br/blog/trafego-pago-para-medicos",
       "permanent": true
     }
   ]

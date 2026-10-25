@@ -1,0 +1,404 @@
+{
+  "dataPublicacao": "2026-10-25",
+  "artigos": [
+    {
+      "slug": "gestor-de-trafego",
+      "tag": "Tráfego pago",
+      "metaTitle": "Gestor de Tráfego: o Que Faz e Quando Contratar",
+      "h1": "O que faz um gestor de tráfego e quando sua empresa precisa de um?",
+      "desc": "Gestor de tráfego cria, publica e mede os anúncios da empresa no Google e no Meta. Veja o que ele entrega e quando vale contratar.",
+      "leitura": "5 min",
+      "resposta": "Gestor de tráfego é o profissional que cria, publica e ajusta os anúncios de uma empresa em plataformas como Google e Meta, e mede se eles trazem contatos e vendas. Uma empresa precisa de um quando já sabe o que vende, tem quem atenda o cliente que chega e quer previsibilidade além da indicação.",
+      "secoes": [
+        ["O que um gestor de tráfego faz no dia a dia?", [
+          "Ele configura as contas de anúncio, define público e região, escreve ou orienta o texto e o criativo, liga a medição e acompanha os números. Medir, aqui, quer dizer saber quantas pessoas clicaram, quantas chamaram no WhatsApp e quantas viraram venda. O próprio Google Ads trata a medição de conversões como o que mostra o que acontece depois do clique no anúncio.",
+          "Parte do trabalho é cortar o que não traz contato. Anúncio, público ou região que gasta verba sem gerar conversa é pausado, e o dinheiro vai para o que responde."
+        ]],
+        ["O gestor de tráfego vende para a empresa?", [
+          "Não. Ele traz contatos, e quem transforma contato em venda é o atendimento. Se o cliente chama e a resposta demora, o melhor anúncio perde o contato para o concorrente que respondeu primeiro.",
+          "Por isso o tráfego pago e o atendimento andam juntos. Para a primeira resposta não depender de alguém de plantão, existe o <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA no WhatsApp ligado ao CRM</a>."
+        ]],
+        ["Quando uma empresa precisa de um gestor de tráfego?", [
+          "A conta fecha quando três coisas já existem:",
+          "LIST:A empresa sabe o que vende e para quem, com uma oferta que dá para explicar em uma frase.|Alguém responde o WhatsApp no mesmo dia, de preferência em minutos.|Existe uma ideia de quanto vale um cliente, para decidir quanto da margem pode virar verba de anúncio.",
+          "Se a oferta ainda está indefinida ou ninguém atende, o anúncio só deixa o problema mais caro. Nesse caso, o primeiro passo é arrumar a casa, e um bom gestor diz isso antes de gastar a sua verba."
+        ]],
+        ["Gestor de tráfego, agência ou fazer sozinho?", [
+          "Fazer sozinho é possível para uma campanha simples, mas toma tempo e o erro sai da verba. O gestor autônomo costuma servir bem a um escopo curto e bem definido. A agência junta mais frentes, como site, ficha do Google, conteúdo e atendimento, e faz sentido quando o problema não está só no anúncio.",
+          "Se a dúvida é entre gestor e agência, o artigo <a href='/blog/agencia-de-trafego-pago-como-escolher'>como escolher uma agência de tráfego pago</a> traz as perguntas para fazer antes de fechar."
+        ]],
+        ["Como contratar um bom gestor de tráfego?", [
+          "Pergunte quais conversões ele vai medir, quem terá acesso à conta de anúncios, como será o relatório e o que ele faz quando a campanha não responde. Desconfie de quem promete número de contatos ou de vendas antes de conhecer o seu negócio, porque o leilão dos anúncios depende de concorrência, oferta e atendimento, e nenhum gestor controla isso sozinho.",
+          "Em Redenção e no Sul do Pará, a SVI Company faz esse trabalho como <a href='/gestor-de-trafego-pago-em-redencao'>gestora de tráfego pago em Redenção</a>, com acompanhamento diário da conta."
+        ]]
+      ],
+      "faq": [
+        ["Quanto custa um gestor de tráfego?", "O valor varia com o escopo e com o modelo de cobrança de cada profissional ou agência. Peça o escopo por escrito e confira se o honorário aparece separado da verba de anúncio."],
+        ["A verba de anúncio vai para o gestor?", "Não. A verba é paga à plataforma, como Google ou Meta. O honorário é o valor do trabalho do gestor, e os dois não se misturam."],
+        ["O gestor de tráfego garante vendas?", "Não. Ele controla a conta, o público, o criativo e a medição. Preço, oferta e atendimento também decidem se o contato vira venda."]
+      ],
+      "fontes": [
+        ["Google Ads: Sobre a medição de conversões", "https://support.google.com/google-ads/answer/1722022?hl=pt-BR"],
+        ["Central de Ajuda da Meta: Sobre os leilões de anúncios", "https://pt-br.facebook.com/business/help/430291176997542?locale=pt_BR"]
+      ],
+      "rel": ["o-que-e-trafego-pago", "agencia-de-trafego-pago-como-escolher", "funil-de-vendas-para-negocio-local"]
+    },
+    {
+      "slug": "o-que-e-trafego-pago",
+      "tag": "Tráfego pago",
+      "metaTitle": "O Que É Tráfego Pago e Como Funciona no Negócio Local",
+      "h1": "O que é tráfego pago e como funciona para um negócio local?",
+      "desc": "Tráfego pago é a compra de visitas e contatos por anúncios no Google e no Meta. Entenda como funciona, a diferença para o orgânico e por onde começar.",
+      "leitura": "6 min",
+      "resposta": "Tráfego pago é a compra de visitas e contatos por meio de anúncios, em que a empresa paga a uma plataforma como Google ou Meta para mostrar sua mensagem a pessoas selecionadas. Para um negócio local, funciona bem quando o anúncio leva a um canal em que alguém responde rápido, como o WhatsApp.",
+      "secoes": [
+        ["Como funciona o tráfego pago no Google e no Meta?", [
+          "Nas duas plataformas, o anúncio entra em um leilão a cada oportunidade de exibição. A Meta explica que vence o anúncio de maior valor total, resultado da combinação entre o lance, a taxa estimada de ação (a chance de a pessoa reagir ao anúncio) e a qualidade do anúncio. Isso quer dizer que um anúncio mais relevante pode vencer outro que ofereceu mais dinheiro.",
+          "No Google, a lógica é parecida. O Índice de Qualidade das campanhas de pesquisa avalia a taxa de cliques esperada, a relevância do anúncio e a experiência na página de destino. Anúncio claro, que leva a uma página coerente, tende a custar menos por contato."
+        ]],
+        ["Qual a diferença entre tráfego pago e tráfego orgânico?", [
+          "Tráfego orgânico é o que chega sem pagar pela exibição: a ficha do Google bem cuidada, o site, o Instagram. Ele se acumula com o tempo. Tráfego pago é comprado, liga e desliga na hora, e some quando a verba acaba.",
+          "Os dois se completam. A SVI Company cuida da parte orgânica, como ficha do Google e site, e da parte paga, e trata as duas como o mesmo caminho do cliente."
+        ]],
+        ["Google Ads ou Meta Ads: qual usar primeiro?", [
+          "O Google alcança quem já está procurando, como alguém que digita gestor de tráfego em Redenção. A intenção está na busca. A Meta, que reúne Instagram e Facebook, alcança pessoas que não estavam procurando e podem se interessar ao ver o anúncio, por isso pede um criativo que chame atenção.",
+          "Para serviço que as pessoas buscam quando precisam, o Google costuma abrir a conta. Para produto ou serviço de desejo, em que é preciso despertar a vontade, a Meta ajuda mais. A divisão certa sai do diagnóstico do negócio e do histórico da conta, não de regra fixa. Veja como isso funciona na prática em <a href='/gestor-de-trafego-pago-em-redencao'>gestor de tráfego pago em Redenção</a>."
+        ]],
+        ["Quanto investir em tráfego pago?", [
+          "Não existe valor correto para todos. A conta parte de quanto vale um cliente para a empresa, de quantos contatos são necessários para fechar um cliente e do que sobra de margem. Quem passa um número redondo sem conhecer o seu negócio está chutando.",
+          "Uma regra prática: comece com uma verba que permita juntar dados suficientes para decidir e que a empresa suporte perder, se o teste não responder. Depois ajuste com o que o painel mostrar."
+        ]],
+        ["Como saber se o tráfego pago deu certo?", [
+          "Curtida e alcance não pagam conta. O que importa é quantos contatos de qualidade chegaram, quantos viraram atendimento e quantos viraram venda. Para isso, a conta precisa medir a conversa no WhatsApp, a ligação ou o formulário, e o CRM precisa registrar o desfecho. O artigo sobre <a href='/blog/funil-de-vendas-para-negocio-local'>funil de vendas para negócio local</a> mostra como acompanhar cada etapa."
+        ]]
+      ],
+      "faq": [
+        ["Tráfego pago funciona para negócio pequeno?", "Funciona quando a oferta é clara e o atendimento responde rápido. Sem isso, o anúncio traz contato que se perde e a verba some."],
+        ["Preciso de site para anunciar?", "Nem sempre. O anúncio pode levar direto ao WhatsApp. O site ajuda quando o cliente pesquisa antes de chamar e é o que o Google lê para entender a empresa."],
+        ["Tráfego pago substitui a ficha do Google?", "Não. A ficha do Google é gratuita e atende a busca local de quem está perto. O anúncio e a ficha trabalham juntos."]
+      ],
+      "fontes": [
+        ["Central de Ajuda da Meta: Sobre os leilões de anúncios", "https://pt-br.facebook.com/business/help/430291176997542?locale=pt_BR"],
+        ["Google Ads: Sobre o Índice de Qualidade de campanhas de pesquisa", "https://support.google.com/google-ads/answer/6167118?hl=pt-BR"],
+        ["Google Ads: Seu guia do Google Ads", "https://support.google.com/google-ads/answer/6146252?hl=pt-BR"]
+      ],
+      "rel": ["gestor-de-trafego", "agencia-de-trafego-pago-como-escolher", "funil-de-vendas-para-negocio-local"]
+    },
+    {
+      "slug": "agencia-de-trafego-pago-como-escolher",
+      "tag": "Tráfego pago",
+      "metaTitle": "Agência de Tráfego Pago: Como Escolher a Certa",
+      "h1": "Como escolher uma agência de tráfego pago?",
+      "desc": "Perguntas para fazer antes de contratar uma agência de tráfego pago: conta de anúncios, medição, relatório e sinais de promessa vazia.",
+      "leitura": "5 min",
+      "resposta": "Para escolher uma agência de tráfego pago, confira quem será dono da conta de anúncios, como a medição é feita e se o relatório mostra contatos e vendas, não só cliques. Desconfie de quem promete número de contatos ou de vendas antes de conhecer o seu negócio.",
+      "secoes": [
+        ["O que uma agência de tráfego pago entrega?", [
+          "O pacote básico tem a estrutura das campanhas, a criação dos anúncios, a medição das conversões e um relatório periódico. Uma agência mais completa também cuida do que acontece antes e depois do clique: a página de destino, o atendimento no WhatsApp e o registro no CRM.",
+          "Vale perguntar o que está dentro do escopo, porque tráfego pago sem atendimento organizado costuma entregar contato que se perde."
+        ]],
+        ["Quais perguntas fazer antes de contratar?", [
+          "Leve esta lista para a conversa:",
+          "LIST:A conta de anúncios fica no nome da minha empresa, com acesso para mim?|Quais conversões serão medidas: mensagem no WhatsApp, ligação, formulário, venda?|Como e quando recebo o relatório, e o que ele mostra além de cliques?|Quem escreve e produz os criativos, e quem os aprova?|O que acontece com a conta e com os dados se eu encerrar o contrato?",
+          "As respostas mostram se a agência trabalha com transparência. Quem enrola na pergunta sobre acesso à conta está dizendo algo importante."
+        ]],
+        ["Como saber se a agência está vendendo uma promessa vazia?", [
+          "Alguns sinais se repetem: garantia de resultado, número de contatos prometido antes de qualquer diagnóstico, nenhuma pergunta sobre ticket, margem ou atendimento, e uma fórmula pronta que serviria para qualquer empresa.",
+          "Plataformas como Google e Meta funcionam por leilão. Ninguém compra uma posição garantida, e o resultado depende também da oferta e da resposta ao cliente."
+        ]],
+        ["Agência, freelancer ou consultor: quando cada um serve?", [
+          "O freelancer costuma atender bem um escopo curto, como montar e acompanhar uma campanha. O consultor ajuda a decidir estratégia. A agência faz sentido quando o problema envolve várias frentes ao mesmo tempo, como presença no Google, anúncio, conteúdo e atendimento.",
+          "A escolha muda com o tamanho do problema. O texto sobre o que faz um <a href='/blog/gestor-de-trafego'>gestor de tráfego</a> ajuda a separar o que é anúncio do que é outra coisa."
+        ]],
+        ["Existe agência de tráfego pago em Redenção?", [
+          "Sim. A SVI Company fica na Av. Santa Tereza, 110, 2º Piso, Sala 02, em Redenção, e atende empresas, comércio e clínicas de Redenção e do Sul do Pará. O trabalho está descrito em <a href='/gestor-de-trafego-pago-em-redencao'>gestor de tráfego pago em Redenção</a>, e o começo é um diagnóstico gratuito."
+        ]]
+      ],
+      "faq": [
+        ["Contrato longo é obrigatório?", "Varia de agência para agência. Leia a cláusula de saída antes de assinar e peça o prazo e as regras de cancelamento por escrito."],
+        ["O que um bom relatório mostra?", "Verba investida, contatos recebidos, custo por contato, o que foi ajustado e por quê. Relatório que mostra só alcance e curtidas não responde se a venda aconteceu."],
+        ["A agência de tráfego pago cuida do atendimento?", "Em geral não. A SVI integra o anúncio ao <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e ao CRM no WhatsApp</a>, para que o contato do anúncio seja respondido e registrado."]
+      ],
+      "fontes": [
+        ["Central de Ajuda da Meta: Sobre os leilões de anúncios", "https://pt-br.facebook.com/business/help/430291176997542?locale=pt_BR"],
+        ["Google Ads: Sobre a medição de conversões", "https://support.google.com/google-ads/answer/1722022?hl=pt-BR"]
+      ],
+      "rel": ["gestor-de-trafego", "o-que-e-trafego-pago", "crm-no-whatsapp"]
+    },
+    {
+      "slug": "o-que-e-agente-de-ia",
+      "tag": "Inteligência artificial",
+      "metaTitle": "O Que É um Agente de IA e Como Funciona no Atendimento",
+      "h1": "O que é um agente de IA e como ele funciona no atendimento de uma empresa?",
+      "desc": "Agente de IA conversa com o cliente no WhatsApp, qualifica e agenda. Veja o que ele faz, o que não deve fazer e o que a LGPD pede.",
+      "leitura": "6 min",
+      "resposta": "Agente de IA é um programa que conversa com o cliente em linguagem natural, entende o que ele quer e executa tarefas definidas pela empresa, como responder dúvidas, qualificar o contato e agendar. Diferente de um chatbot de menu, ele interpreta frases livres, mas só deve agir dentro das regras e das informações que a empresa deu a ele.",
+      "secoes": [
+        ["Como um agente de IA funciona no atendimento?", [
+          "O cliente manda uma mensagem no WhatsApp. O agente lê, consulta as informações cadastradas da empresa, como serviços, horários e regras, responde, pergunta o que falta e registra o contato no CRM. Quando a conversa pede uma decisão humana, ele passa para a equipe com o histórico pronto.",
+          "A qualidade da resposta vem do que a empresa colocou nele. Um agente com informação errada responde errado, rápido e com educação."
+        ]],
+        ["O que um agente de IA pode fazer por uma empresa local?", [
+          "LIST:Responder a primeira mensagem, inclusive fora do horário da equipe.|Qualificar o contato: o que a pessoa procura, de onde fala, quando precisa.|Agendar visita, consulta ou atendimento.|Registrar tudo no CRM, com a origem do contato.|Retomar a conversa com quem parou de responder.",
+          "É o tipo de tarefa repetitiva que toma tempo da equipe e que, quando falha, faz o cliente chamar o concorrente. O serviço completo está descrito em <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp para empresas e clínicas</a>."
+        ]],
+        ["O que um agente de IA não deve fazer?", [
+          "Não deve decidir fora das regras, prometer preço ou prazo que a empresa não autorizou, nem dar orientação técnica sensível. Em clínica, isso inclui diagnóstico e conduta: o agente organiza o atendimento e a equipe responde sobre saúde.",
+          "A LGPD, a Lei nº 13.709/2018, também pesa aqui. O princípio da transparência (art. 6º, VI) pede informações claras ao titular sobre como seus dados são tratados e por quem, e o art. 20 garante ao titular o direito de pedir a revisão de decisões tomadas unicamente por tratamento automatizado de dados. Por isso, o atendimento precisa sempre deixar um caminho para falar com uma pessoa."
+        ]],
+        ["Agente de IA precisa de CRM?", [
+          "Precisa, se a empresa quer memória e controle. Sem registro, a conversa se perde, ninguém sabe em que etapa o cliente está e não dá para medir o que o anúncio trouxe. Com o CRM, cada contato tem origem, responsável e histórico. O artigo <a href='/blog/crm-no-whatsapp'>CRM no WhatsApp</a> explica como montar o funil."
+        ]],
+        ["Quanto tempo leva para colocar um agente de IA no ar?", [
+          "Depende do tamanho do atendimento. O que mais pesa não é a tecnologia, e sim levantar as perguntas reais que os clientes fazem, as regras da empresa e o ponto em que a conversa passa para uma pessoa. Quanto melhor esse mapeamento, melhor o agente responde no primeiro dia."
+        ]]
+      ],
+      "faq": [
+        ["Agente de IA substitui o atendente?", "Não. Ele assume a primeira resposta, a qualificação e o registro. As decisões e as conversas que exigem julgamento continuam com a equipe."],
+        ["Agente de IA funciona em clínica?", "Funciona, com limites claros: sem diagnóstico, sem conduta clínica e sem promessa de resultado. Ele organiza o agendamento e passa o resto para a equipe."],
+        ["Qual a diferença para um chatbot?", "O chatbot segue menus fixos. O agente interpreta mensagens livres. A comparação completa está em <a href='/blog/chatbot-ou-agente-de-ia-no-whatsapp'>chatbot ou agente de IA no WhatsApp</a>."]
+      ],
+      "fontes": [
+        ["Lei nº 13.709/2018 (LGPD), texto oficial no Planalto", "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"],
+        ["Autoridade Nacional de Proteção de Dados (ANPD)", "https://www.gov.br/anpd/pt-br"]
+      ],
+      "rel": ["chatbot-ou-agente-de-ia-no-whatsapp", "crm-no-whatsapp", "inteligencia-artificial-para-vendas"]
+    },
+    {
+      "slug": "chatbot-ou-agente-de-ia-no-whatsapp",
+      "tag": "Inteligência artificial",
+      "metaTitle": "Chatbot ou Agente de IA no WhatsApp: Qual a Diferença",
+      "h1": "Chatbot ou agente de IA no WhatsApp: qual a diferença e qual escolher?",
+      "desc": "Chatbot segue menus fixos; agente de IA interpreta mensagens livres. Veja quando cada um serve no WhatsApp da empresa.",
+      "leitura": "5 min",
+      "resposta": "O chatbot tradicional segue um roteiro fixo de menus e botões, enquanto o agente de IA interpreta a mensagem livre do cliente e decide a resposta dentro de regras definidas. Para atendimento com perguntas variadas, o agente costuma resolver mais; para um fluxo curto e previsível, o chatbot de menu basta.",
+      "secoes": [
+        ["Como funciona um chatbot de WhatsApp com menus?", [
+          "O cliente recebe opções como digite 1 para orçamento ou digite 2 para horários, e cada escolha leva a uma resposta pronta. É previsível e fácil de controlar.",
+          "O limite aparece quando a pessoa escreve fora do roteiro. Uma frase solta, uma dúvida diferente ou um áudio não cabem no menu, e a conversa trava ou volta ao início."
+        ]],
+        ["Como o agente de IA lida com mensagens livres?", [
+          "O agente lê a frase do jeito que o cliente escreveu, identifica a intenção e responde com base nas informações da empresa. Ele também pergunta o que falta, por exemplo a região ou o serviço procurado, e registra as respostas no CRM.",
+          "Em compensação, exige mais cuidado na preparação: base de informações correta, regras claras e conversas revisadas depois que ele entra no ar."
+        ]],
+        ["Quando o chatbot de menu ainda serve?", [
+          "Serve para tarefas curtas e previsíveis: confirmar um horário, avisar que a equipe está fora do expediente, mandar um endereço ou um link. Se o atendimento tem poucas opções e quase nenhuma variação, o menu resolve sem complicar."
+        ]],
+        ["Quando escolher um agente de IA?", [
+          "Quando os clientes perguntam coisas variadas, quando é preciso qualificar o contato antes de passar para a equipe ou quando o agendamento depende de uma conversa. É o caso de clínicas, lojas com muitos produtos e empresas de serviço com orçamento. A SVI descreve a entrega em <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp</a>."
+        ]],
+        ["Qual o risco de o agente errar e como reduzir?", [
+          "O risco existe. Modelos de linguagem podem responder com segurança algo que não está certo. A forma de reduzir é limitar o que o agente pode dizer ao que está na base da empresa, definir quando ele passa a conversa para uma pessoa e ler as conversas nas primeiras semanas para corrigir o que escapar."
+        ]],
+        ["O que a política do WhatsApp exige de qualquer automação?", [
+          "Chatbot ou agente, a regra é a mesma: a empresa precisa de permissão (opt-in) para enviar mensagens por iniciativa própria, e deve deixar claro o nome da empresa e que a pessoa aceita receber contato. Quem chamou primeiro está em outra situação, porque iniciou a conversa. Detalhes em <a href='/blog/automacao-de-whatsapp-sem-bloqueio'>automação de WhatsApp sem bloqueio</a>."
+        ]]
+      ],
+      "faq": [
+        ["Qual é mais barato, chatbot ou agente de IA?", "Depende do escopo. Peça sempre o custo de implantação, o de operação e o das plataformas separados, para comparar com clareza."],
+        ["Dá para começar com chatbot e migrar depois?", "Dá. Quem começa com menus e percebe que os clientes escrevem fora do roteiro pode evoluir para um agente, aproveitando as perguntas que já apareceram."],
+        ["O agente de IA fala como uma pessoa?", "Fala de forma natural, mas não deve fingir ser uma pessoa. O cliente precisa saber que é um atendimento automatizado e ter um caminho para falar com a equipe."]
+      ],
+      "fontes": [
+        ["WhatsApp Business: Política Empresarial", "https://business.whatsapp.com/policy?lang=pt_BR"],
+        ["Meta for Developers: Receber aceitação (opt-in) para o WhatsApp", "https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in"]
+      ],
+      "rel": ["o-que-e-agente-de-ia", "automacao-de-whatsapp-sem-bloqueio", "crm-no-whatsapp"]
+    },
+    {
+      "slug": "crm-no-whatsapp",
+      "tag": "CRM e vendas",
+      "metaTitle": "CRM no WhatsApp: Como Funciona e Como Montar o Funil",
+      "h1": "O que é CRM no WhatsApp e como montar o funil?",
+      "desc": "CRM no WhatsApp registra cada conversa em um funil, com origem, etapa e responsável. Veja como montar e o que registrar.",
+      "leitura": "6 min",
+      "resposta": "CRM no WhatsApp é um sistema que registra cada conversa e cada cliente em um funil, para a empresa saber de onde veio o contato, em que etapa ele está e quem precisa responder. Ele resolve o contato perdido em conversa solta, que acontece quando o atendimento vive só no celular de alguém.",
+      "secoes": [
+        ["Para que serve um CRM ligado ao WhatsApp?", [
+          "Um CRM guarda, para cada contato, a origem, o interesse, o responsável, o histórico e a próxima ação. No WhatsApp, isso evita a situação comum em que o cliente é atendido por uma pessoa, depois por outra, e ninguém sabe o que já foi dito.",
+          "Aqui CRM significa gestão de relacionamento com o cliente, em inglês Customer Relationship Management. Não tem relação com o Conselho Regional de Medicina, que usa a mesma sigla."
+        ]],
+        ["Como montar o funil de um CRM no WhatsApp?", [
+          "O funil deve seguir o processo real da empresa. Um desenho comum para negócio local:",
+          "LIST:Contato novo: chegou a primeira mensagem.|Qualificado: a equipe sabe o que a pessoa quer e se faz sentido atender.|Agendado ou proposta enviada: há um próximo passo marcado.|Fechado: o cliente comprou ou compareceu.|Perdido: não fechou, com o motivo anotado.",
+          "Etapa é o ponto em que o cliente está no processo, e não uma tarefa da equipe. Quando tarefa vira etapa, o funil enche de colunas e ninguém o usa."
+        ]],
+        ["O que registrar em cada contato?", [
+          "Origem (anúncio, Google, indicação), interesse, responsável, etapa e, nos perdidos, o motivo. A LGPD pede que o tratamento de dados pessoais se limite ao mínimo necessário (art. 6º, III), então o cadastro não precisa de campos que a empresa não vai usar."
+        ]],
+        ["Como o CRM se liga ao tráfego pago?", [
+          "Quando o contato vem de um anúncio, o CRM guarda de qual campanha ele veio. Só assim a empresa descobre qual anúncio traz venda e qual traz apenas conversa. É a base do trabalho descrito em <a href='/gestor-de-trafego-pago-em-redencao'>gestor de tráfego pago em Redenção</a>."
+        ]],
+        ["O CRM funciona junto com um agente de IA?", [
+          "Funciona e é o desenho mais útil. O agente responde, qualifica e registra no CRM, e a equipe assume o que pede decisão humana. A entrega completa está em <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp</a>."
+        ]]
+      ],
+      "faq": [
+        ["CRM é só para empresa grande?", "Não. O CRM serve a qualquer negócio em que o cliente chega por mais de um canal e a venda depende de retorno. Veja quando vale para a empresa pequena em <a href='/blog/crm-para-pequena-empresa'>CRM para pequena empresa</a>."],
+        ["Qual CRM usar?", "A SVI implanta o Kommo. O desenho do funil pesa mais do que a ferramenta: um bom funil em qualquer plataforma séria funciona melhor que um funil genérico na plataforma mais cara."],
+        ["O CRM precisa de permissão do cliente para guardar os dados?", "O tratamento de dados pessoais precisa de uma base legal prevista na LGPD (art. 7º) e de transparência com o titular. A empresa deve definir isso com apoio jurídico para o seu caso."]
+      ],
+      "fontes": [
+        ["Lei nº 13.709/2018 (LGPD), texto oficial no Planalto", "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"],
+        ["WhatsApp Business: Política Empresarial", "https://business.whatsapp.com/policy?lang=pt_BR"]
+      ],
+      "rel": ["crm-para-pequena-empresa", "funil-de-vendas-para-negocio-local", "o-que-e-agente-de-ia"]
+    },
+    {
+      "slug": "automacao-de-whatsapp-sem-bloqueio",
+      "tag": "WhatsApp",
+      "metaTitle": "Automação de WhatsApp Sem Bloqueio: o Que a Política Exige",
+      "h1": "Como automatizar o WhatsApp da empresa sem ser bloqueado?",
+      "desc": "Para automatizar o WhatsApp sem bloqueio, a empresa precisa de opt-in e de mensagens que o cliente espera. Veja o que a política oficial exige.",
+      "leitura": "6 min",
+      "resposta": "Para automatizar o WhatsApp sem ser bloqueado, a empresa precisa de permissão (opt-in) de quem vai receber a mensagem, enviar conteúdo que a pessoa espera e oferecer um jeito simples de parar de receber. A política do WhatsApp Business exige isso, e o número que ignora as regras pode perder qualidade e sofrer limite de envio.",
+      "secoes": [
+        ["O que o WhatsApp exige para a empresa enviar mensagens?", [
+          "A empresa deve obter opt-in antes de mandar mensagens por iniciativa própria. A permissão pode ser geral, não apenas para o WhatsApp, desde que a empresa cumpra a lei aplicável. Ela precisa deixar claro que a pessoa aceita receber contato e informar o nome da empresa de quem vai receber.",
+          "A documentação oficial cita como métodos aceitos o SMS, o site, o telefone e o papel assinado presencialmente. A responsabilidade de coletar e guardar essa permissão é da empresa."
+        ]],
+        ["O que faz um número ser limitado ou bloqueado?", [
+          "As pessoas podem bloquear ou denunciar uma empresa, e podem optar por parar de receber mensagens de marketing. Segundo a Meta, os sistemas do WhatsApp limitam o envio de empresas cuja qualidade fica baixa por um período prolongado.",
+          "Na prática, mensagem que o cliente não esperava, enviada em volume, é o caminho mais curto para a queda de qualidade do número."
+        ]],
+        ["Posso mandar mensagem em massa para uma lista comprada?", [
+          "Não. Sem opt-in, a política do WhatsApp não permite, e a LGPD exige uma base legal para tratar dados pessoais (art. 7º). Lista comprada não tem permissão de quem está nela.",
+          "O caminho seguro é construir a própria base: contatos de clientes e de pessoas que pediram para ser avisadas, com o registro de onde veio a permissão."
+        ]],
+        ["Como automatizar com segurança?", [
+          "LIST:Priorize responder quem chamou primeiro, pois a conversa foi iniciada pelo cliente.|Registre o opt-in no CRM, com data e origem.|Separe as categorias de mensagem, como avisos de agenda e ofertas, e peça aceite para cada uma, como a Meta recomenda.|Deixe a saída clara: quem quiser parar de receber precisa conseguir isso com uma palavra.|Leia as conversas e a qualidade do número com frequência, principalmente no início.",
+          "Nenhuma empresa pode prometer risco zero de bloqueio, porque a decisão final é da plataforma. O que se faz é reduzir o risco ao cumprir a política."
+        ]],
+        ["Quem cuida da automação de WhatsApp com agente de IA?", [
+          "A SVI Company monta o atendimento automatizado dentro da política e ligado ao CRM, como descrito em <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp</a>. A diferença entre menu e agente aparece em <a href='/blog/chatbot-ou-agente-de-ia-no-whatsapp'>chatbot ou agente de IA</a>."
+        ]]
+      ],
+      "faq": [
+        ["Posso usar ferramentas não oficiais de disparo?", "Elas podem violar os termos do WhatsApp e aumentam o risco para o número. Leia os termos e a política empresarial antes de escolher qualquer ferramenta."],
+        ["Preciso do opt-in se o cliente me chamou primeiro?", "Quem inicia a conversa já está em contato com a empresa. O opt-in importa para mensagens que a empresa envia por iniciativa própria. Em caso de dúvida, confira a política vigente."],
+        ["O que acontece se várias pessoas me denunciarem?", "A qualidade do número cai, e o WhatsApp pode limitar o envio. Por isso o conteúdo esperado e a opção de sair importam tanto quanto o volume."]
+      ],
+      "fontes": [
+        ["WhatsApp Business: Política Empresarial", "https://business.whatsapp.com/policy?lang=pt_BR"],
+        ["Meta for Developers: Receber aceitação (opt-in) para o WhatsApp", "https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in"],
+        ["Lei nº 13.709/2018 (LGPD), texto oficial no Planalto", "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"]
+      ],
+      "rel": ["chatbot-ou-agente-de-ia-no-whatsapp", "crm-no-whatsapp", "o-que-e-agente-de-ia"]
+    },
+    {
+      "slug": "funil-de-vendas-para-negocio-local",
+      "tag": "CRM e vendas",
+      "metaTitle": "Funil de Vendas para Negócio Local: Etapas e Medição",
+      "h1": "O que é funil de vendas e como montar um para um negócio local?",
+      "desc": "Funil de vendas é o caminho do primeiro contato até a compra. Veja as etapas para negócio local, onde ele vaza e como medir.",
+      "leitura": "6 min",
+      "resposta": "Funil de vendas é o caminho que o cliente percorre do primeiro contato até a compra, dividido em etapas que a empresa consegue ver e medir. Para negócio local, as etapas mais úteis costumam ser contato novo, conversa qualificada, visita ou proposta, fechamento e pós-venda.",
+      "secoes": [
+        ["Quais são as etapas de um funil de vendas local?", [
+          "O desenho muda com o negócio, mas a espinha é parecida:",
+          "LIST:Contato novo: alguém chamou no WhatsApp, ligou ou preencheu um formulário.|Conversa qualificada: a equipe entendeu o que a pessoa quer e se pode atendê-la.|Visita, agendamento ou proposta: existe um próximo passo marcado.|Fechamento: a venda aconteceu.|Pós-venda: avaliação, retorno e indicação.",
+          "O pós-venda fecha o ciclo porque a avaliação e a indicação trazem novos contatos, o que alimenta de novo o topo."
+        ]],
+        ["Onde o funil costuma vazar?", [
+          "Os pontos mais comuns são a demora na primeira resposta, a falta de retorno para quem não respondeu, o agendamento que não é confirmado e a ausência de registro do motivo da perda. Sem registro, a empresa culpa o anúncio por um problema que está no atendimento.",
+          "Antes de aumentar a verba de anúncio, vale olhar essas quatro portas. Aumentar a entrada de um funil furado só aumenta o desperdício."
+        ]],
+        ["Como medir cada etapa do funil?", [
+          "Mede-se a passagem entre as etapas: de todos os contatos que entraram, quantos foram qualificados, de quantos qualificados, quantos agendaram, e assim por diante. Exemplo de conta, não dado de cliente: se entraram 40 contatos e 10 agendaram, 25% dos contatos chegaram ao agendamento.",
+          "Essa leitura mostra onde está o gargalo. Se muitos contatos entram e poucos são qualificados, o problema pode estar no anúncio ou na primeira resposta. Se muitos são qualificados e poucos fecham, o problema está mais perto da proposta."
+        ]],
+        ["Como o tráfego pago entra no funil?", [
+          "O anúncio alimenta o topo, e o CRM registra a origem para que cada campanha seja medida até a venda, não só até o clique. O Google Ads e a API de Conversões da Meta existem justamente para devolver à plataforma o que aconteceu depois do contato. O trabalho está em <a href='/gestor-de-trafego-pago-em-redencao'>gestor de tráfego pago em Redenção</a>."
+        ]],
+        ["Como o CRM e o agente de IA sustentam o funil?", [
+          "O CRM mantém o funil visível e o agente garante que a primeira resposta, a qualificação e o retorno aconteçam sem depender da memória de alguém. Veja o desenho em <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp</a> e no artigo <a href='/blog/crm-no-whatsapp'>CRM no WhatsApp</a>."
+        ]]
+      ],
+      "faq": [
+        ["Funil de vendas serve para loja física?", "Serve. Mesmo quando a venda acontece no balcão, existe uma etapa antes: o cliente pesquisa, chama, visita. Registrar isso mostra o que traz gente para a porta."],
+        ["Quantas etapas o funil deve ter?", "As que refletem o processo real, e poucas. Funil com muitas etapas que ninguém atualiza vira planilha abandonada."],
+        ["Qual a diferença entre funil e CRM?", "O funil é o desenho das etapas. O CRM é o sistema em que ele roda, com contatos, histórico e responsáveis."]
+      ],
+      "fontes": [
+        ["Google Ads: Sobre a medição de conversões", "https://support.google.com/google-ads/answer/1722022?hl=pt-BR"],
+        ["Meta for Developers: API de Conversões", "https://developers.facebook.com/docs/marketing-api/conversions-api"]
+      ],
+      "rel": ["crm-no-whatsapp", "gestor-de-trafego", "crm-para-pequena-empresa"]
+    },
+    {
+      "slug": "crm-para-pequena-empresa",
+      "tag": "CRM e vendas",
+      "metaTitle": "CRM para Pequena Empresa: Quando Vale a Pena",
+      "h1": "CRM para pequena empresa: quando vale a pena?",
+      "desc": "CRM para pequena empresa vale quando há contato por vários canais e venda perdida por falta de retorno. Veja o que avaliar antes de escolher.",
+      "leitura": "5 min",
+      "resposta": "CRM para pequena empresa vale a pena quando os contatos chegam por mais de um canal e a empresa perde vendas por falta de retorno, porque o sistema registra cliente, etapa e responsável em um só lugar. Se o volume é baixo e uma pessoa se lembra de todos, uma planilha organizada ainda resolve.",
+      "secoes": [
+        ["Quando uma pequena empresa precisa de CRM?", [
+          "Alguns sinais indicam a hora: contatos chegando pelo WhatsApp, pelo Instagram e pelo telefone ao mesmo tempo; mais de uma pessoa atendendo; clientes que pedem orçamento e somem sem que ninguém volte a falar com eles; e a dúvida sobre de onde vêm os melhores clientes.",
+          "Aqui CRM é gestão de relacionamento com o cliente. A sigla não se refere ao Conselho Regional de Medicina."
+        ]],
+        ["O que o CRM resolve que a planilha não resolve?", [
+          "A planilha depende de alguém lançar tudo à mão e não avisa ninguém. O CRM recebe o contato direto do anúncio ou do site com a origem marcada, lembra o retorno, mostra o funil para todos e guarda o histórico mesmo quando a pessoa que atendia sai da empresa."
+        ]],
+        ["O que avaliar ao escolher um CRM?", [
+          "LIST:Integra com o WhatsApp e com os anúncios da empresa.|Permite desenhar o funil do seu processo, sem obrigar etapas genéricas.|A equipe consegue usar no dia a dia, sem treinamento longo.|Os dados podem ser exportados se a empresa mudar de sistema.|Há alguém responsável por sustentá-lo depois da implantação."
+        ]],
+        ["Por que tanto CRM acaba abandonado?", [
+          "O motivo costuma ser o mesmo: funil genérico que não reflete o processo, contatos que entram soltos, sem origem e sem responsável, e ausência de quem ajuste o sistema depois. Comprar a licença não é ter um sistema de vendas. O sistema precisa ser desenhado e mantido."
+        ]],
+        ["Como a SVI implanta o CRM?", [
+          "A SVI Company monta o funil com o processo da empresa, liga o WhatsApp e a origem dos anúncios e treina a equipe. O CRM trabalha com o agente de IA, descrito em <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp</a>. Para entender o desenho do funil, leia <a href='/blog/crm-no-whatsapp'>CRM no WhatsApp</a>."
+        ]]
+      ],
+      "faq": [
+        ["Preciso de CRM se tenho poucos clientes?", "Se uma pessoa guarda tudo de cabeça e nenhum cliente se perde, ainda não. Quando começam a faltar retornos, o CRM passa a valer o custo."],
+        ["CRM guarda dados pessoais. Isso é um problema?", "É um dever. A LGPD exige base legal, transparência e segurança no tratamento (arts. 6º e 7º). Guarde só o que a empresa vai usar e controle quem acessa."],
+        ["Posso usar o CRM sem anúncio?", "Pode. O CRM organiza qualquer origem de contato, de indicação a Instagram. O anúncio só acrescenta mais entrada."]
+      ],
+      "fontes": [
+        ["Lei nº 13.709/2018 (LGPD), texto oficial no Planalto", "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"],
+        ["Autoridade Nacional de Proteção de Dados (ANPD)", "https://www.gov.br/anpd/pt-br"]
+      ],
+      "rel": ["crm-no-whatsapp", "funil-de-vendas-para-negocio-local", "o-que-e-agente-de-ia"]
+    },
+    {
+      "slug": "inteligencia-artificial-para-vendas",
+      "tag": "Inteligência artificial",
+      "metaTitle": "Inteligência Artificial para Vendas: Onde Usar Primeiro",
+      "h1": "Como usar inteligência artificial para vender mais em uma empresa?",
+      "desc": "IA nas vendas ajuda a responder, qualificar e retomar contatos. Veja onde usar primeiro, os riscos e como medir se ajudou.",
+      "leitura": "6 min",
+      "resposta": "A inteligência artificial ajuda nas vendas, principalmente, a responder o primeiro contato, qualificar quem chamou e retomar quem não voltou. Ela não substitui o vendedor na negociação, e o resultado depende de a empresa ter um processo comercial claro antes de ligar a IA.",
+      "secoes": [
+        ["Onde usar inteligência artificial primeiro nas vendas?", [
+          "Comece pelo atendimento inicial. É onde a empresa mais perde: o contato chega fora do horário, a resposta demora e a pessoa chama o concorrente. Um <a href='/blog/o-que-e-agente-de-ia'>agente de IA</a> no WhatsApp cobre essa porta e registra o contato no CRM.",
+          "Depois vêm a qualificação, o agendamento e o retorno automático de quem parou de responder. Cada passo a mais só faz sentido quando o anterior funciona."
+        ]],
+        ["Que informações a IA precisa para vender bem?", [
+          "Precisa do que a empresa realmente oferece: serviços, regras, horários, perguntas frequentes e o que fazer quando a dúvida foge do roteiro. Quanto mais fiel for essa base, menos a IA improvisa. IA sem processo por trás só acelera a confusão."
+        ]],
+        ["Quais são os riscos de usar IA em vendas?", [
+          "Responder errado com segurança, prometer preço ou prazo indevido, tratar dados pessoais sem cuidado e esconder do cliente que ele fala com uma máquina. A LGPD pede transparência e dá ao titular o direito de pedir revisão de decisões automatizadas (arts. 6º e 20). A política do WhatsApp exige permissão para mensagens enviadas por iniciativa da empresa, tema de <a href='/blog/automacao-de-whatsapp-sem-bloqueio'>automação de WhatsApp sem bloqueio</a>."
+        ]],
+        ["E em empresas de saúde?", [
+          "A IA organiza o atendimento, mas não faz diagnóstico nem indica conduta, e o texto de comunicação segue as regras do conselho profissional. Para médicos, a publicidade segue a Resolução CFM nº 2.336/2023. A frente médica da SVI tem site próprio, em medicos.svicompany.com.br."
+        ]],
+        ["Como medir se a IA ajudou nas vendas?", [
+          "Compare, antes e depois, o tempo até a primeira resposta, o número de contatos qualificados, de agendamentos e de vendas. Se a primeira resposta ficou rápida e o agendamento não subiu, o gargalo está em outra etapa. A SVI faz esse acompanhamento diário no <a href='/agente-de-ia-e-crm-no-whatsapp'>agente de IA e CRM no WhatsApp</a>."
+        ]]
+      ],
+      "faq": [
+        ["IA substitui o vendedor?", "Não. Ela cobre a primeira resposta, a qualificação e o retorno. A negociação e o fechamento continuam com pessoas."],
+        ["Por onde uma empresa pequena deve começar com IA?", "Pelo atendimento no WhatsApp, onde o contato do anúncio chega e onde mais se perde venda por demora."],
+        ["IA em vendas exige cuidado com a LGPD?", "Exige. Dados pessoais precisam de base legal, o cliente deve ser informado e é preciso oferecer caminho para falar com uma pessoa."]
+      ],
+      "fontes": [
+        ["Lei nº 13.709/2018 (LGPD), texto oficial no Planalto", "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"],
+        ["WhatsApp Business: Política Empresarial", "https://business.whatsapp.com/policy?lang=pt_BR"],
+        ["Conselho Federal de Medicina: Resolução CFM nº 2.336/2023", "https://sistemas.cfm.org.br/normas/visualizar/resolucoes/BR/2023/2336"]
+      ],
+      "rel": ["o-que-e-agente-de-ia", "chatbot-ou-agente-de-ia-no-whatsapp", "funil-de-vendas-para-negocio-local"]
+    }
+  ]
+}
