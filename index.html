@@ -1728,6 +1728,32 @@
       .pv-1{left:0} .pv-2{left:24%} .pv-3{left:48%}
     }
 
+
+    /* Ciclo SVI animado: a luz percorre as 5 etapas e volta ao Aparecer, sem fim (25/10/2026) */
+    @keyframes cicloPonto{0%{background:var(--dg-bg);box-shadow:0 0 0 0 rgba(212,168,44,0)}3%{background:var(--dg-dot);box-shadow:0 0 0 6px rgba(212,168,44,.22),0 0 18px rgba(212,168,44,.55)}13%{background:var(--dg-dot);box-shadow:0 0 0 6px rgba(212,168,44,.22),0 0 18px rgba(212,168,44,.55)}18%,100%{background:var(--dg-bg);box-shadow:0 0 0 0 rgba(212,168,44,0)}}
+    @keyframes cicloTitulo{0%{color:var(--dg-label)}3%,13%{color:var(--dg-dot)}18%,100%{color:var(--dg-label)}}
+    @keyframes cicloLuzX{0%{background-position:-60% 0}16%{background-position:160% 0}100%{background-position:160% 0}}
+    @keyframes cicloLuzY{0%{background-position:0 -60%}16%{background-position:0 160%}100%{background-position:0 160%}}
+    @keyframes cicloVolta{0%,76%{border-color:var(--dg-line);box-shadow:0 0 0 0 rgba(212,168,44,0)}82%,94%{border-color:var(--dg-dot);box-shadow:0 0 0 5px rgba(212,168,44,.16),0 0 22px rgba(212,168,44,.4)}100%{border-color:var(--dg-line);box-shadow:0 0 0 0 rgba(212,168,44,0)}}
+    @keyframes cicloRetorno{0%,76%{border-color:var(--dg-line)}82%,94%{border-color:rgba(240,199,71,.9)}100%{border-color:var(--dg-line)}}
+    .dg-loop .dg-chain>li{background-image:linear-gradient(90deg,transparent,var(--dg-dot),transparent);background-repeat:no-repeat;background-origin:border-box;background-clip:border-box;background-size:45% 1.5px;background-position:-60% 0}
+    .sec.reveal.in .dg-loop .dg-chain>li{animation:cicloLuzX 7s linear infinite}
+    .sec.reveal.in .dg-loop .dg-chain>li::before{animation:cicloPonto 7s ease-in-out infinite}
+    .sec.reveal.in .dg-loop .dg-chain>li .dg-t{animation:cicloTitulo 7s ease-in-out infinite}
+    .sec.reveal.in .dg-loop .dg-loop-label{animation:cicloVolta 7s ease-in-out infinite}
+    .sec.reveal.in .dg-loop::before{animation:cicloRetorno 7s ease-in-out infinite}
+    .sec.reveal.in .dg-loop .dg-chain>li:nth-child(2),.sec.reveal.in .dg-loop .dg-chain>li:nth-child(2)::before,.sec.reveal.in .dg-loop .dg-chain>li:nth-child(2) .dg-t{animation-delay:1.1s}
+    .sec.reveal.in .dg-loop .dg-chain>li:nth-child(3),.sec.reveal.in .dg-loop .dg-chain>li:nth-child(3)::before,.sec.reveal.in .dg-loop .dg-chain>li:nth-child(3) .dg-t{animation-delay:2.2s}
+    .sec.reveal.in .dg-loop .dg-chain>li:nth-child(4),.sec.reveal.in .dg-loop .dg-chain>li:nth-child(4)::before,.sec.reveal.in .dg-loop .dg-chain>li:nth-child(4) .dg-t{animation-delay:3.3s}
+    .sec.reveal.in .dg-loop .dg-chain>li:nth-child(5),.sec.reveal.in .dg-loop .dg-chain>li:nth-child(5)::before,.sec.reveal.in .dg-loop .dg-chain>li:nth-child(5) .dg-t{animation-delay:4.4s}
+    @media (max-width:960px){
+      .dg-loop .dg-chain>li{background-image:linear-gradient(180deg,transparent,var(--dg-dot),transparent);background-size:1.5px 45%;background-position:0 -60%}
+      .sec.reveal.in .dg-loop .dg-chain>li{animation-name:cicloLuzY}
+      .dg-loop .dg-chain>li:last-child{background-image:none}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .dg-loop .dg-chain>li,.dg-loop .dg-chain>li::before,.dg-loop .dg-t,.dg-loop .dg-loop-label,.dg-loop::before{animation:none!important;background-image:none!important}
+    }
   </style>
 </head>
 <body>
