@@ -1,0 +1,184 @@
+{
+ "kicker": "Para dono de clínica que já anuncia",
+ "intro": "A pessoa chamou pelo anúncio e já escreveu o que quer. Daqui pra frente, é a resposta da recepção que faz a conversa virar horário marcado ou esfriar. Esta é a fórmula que usamos com as clínicas que atendemos, com as regras e três modelos pra copiar.",
+ "secoes": [
+  {
+   "h2": "O que a pessoa pediu, o valor e duas opções de dia e hora",
+   "h2_em": "duas opções de dia e hora",
+   "ps": [
+    "As três partes vão juntas, por escrito, logo na primeira resposta. Cadastro e reserva ficam pra depois que ela escolher o horário.",
+    "Quem chega pelo anúncio costuma escrever logo de cara o exame, a consulta ou o nome do médico, ainda mais quando o anúncio já leva uma mensagem pronta. Responder por essa frase mostra que alguém leu, e a pessoa não precisa explicar tudo de novo.",
+    "Muitas vezes é exatamente a pergunta que ela fez. Quem pergunta o valor e recebe outra coisa sente que está sendo enrolado.",
+    "Informar valor e forma de pagamento é permitido pela Resolução CFM 2.336/2023. O que continua proibido é prometer resultado.",
+    "É a parte que puxa o agendamento. Valor sozinho vira \"vou ver e te falo\". Com duas opções prontas, a pessoa não precisa pensar em qual horário pedir, só escolher."
+   ],
+   "movs": [
+    {
+     "t": "O que a pessoa pediu",
+     "ps": [
+      [
+       "",
+       "Quem chega pelo anúncio costuma escrever logo de cara o exame, a consulta ou o nome do médico, ainda mais quando o anúncio já leva uma mensagem pronta. Responder por essa frase mostra que alguém leu, e a pessoa não precisa explicar tudo de novo."
+      ]
+     ]
+    },
+    {
+     "t": "O valor",
+     "ps": [
+      [
+       "",
+       "Muitas vezes é exatamente a pergunta que ela fez. Quem pergunta o valor e recebe outra coisa sente que está sendo enrolado."
+      ],
+      [
+       "Informar valor e forma de pagamento é permitido pela Resolução CFM 2.336/2023.",
+       "O que continua proibido é prometer resultado."
+      ]
+     ]
+    },
+    {
+     "t": "Duas opções de dia e hora",
+     "ps": [
+      [
+       "",
+       "É a parte que puxa o agendamento. Valor sozinho vira \"vou ver e te falo\". Com duas opções prontas, a pessoa não precisa pensar em qual horário pedir, só escolher."
+      ]
+     ]
+    }
+   ],
+   "nao": [
+    "\"Temos horários disponíveis.\"",
+    "\"Fico à disposição.\"",
+    "\"Qualquer dúvida estou aqui.\""
+   ],
+   "sim": [
+    "\"Tenho quarta às 9h ou às 14h. Qual fica melhor pra você?\""
+   ],
+   "modelos": [],
+   "nota": ""
+  },
+  {
+   "h2": "As 5 regras da recepção",
+   "h2_em": "da recepção",
+   "ps": [
+    "No horário de atendimento, nenhuma conversa espera mais que isso. Quem procura exame ou consulta costuma chamar mais de uma clínica, e a resposta que chega primeiro já sai na frente.",
+    "O que chegou à noite ou no fim de semana é a primeira tarefa do dia, começando pela conversa mais antiga.",
+    "A fórmula inteira vai na primeira mensagem. Pra quem já escreveu o que quer, um \"como posso ajudar?\" só faz a pessoa repetir o pedido.",
+    "Se a clínica usa robô de triagem e ele pergunta de novo o que a pessoa procura, a recepção não espera ela escolher no menu. Responde pelo que ela escreveu.",
+    "Pedir dados, documento ou pagamento antes de a pessoa escolher o horário faz a conversa parar no meio.",
+    "Primeiro ela escolhe o dia e a hora. Aí sim a recepção pede o cadastro e, se a clínica cobra reserva, explica pra que ela serve.",
+    "Se a pessoa parou de responder, a recepção volta uma vez, no dia seguinte, falando do que ela pediu e do ponto em que a conversa parou.",
+    "Quem perguntou de um exame quer ouvir sobre esse exame, e não receber a lista de tudo que a clínica faz.",
+    "Marcou o horário, o card vai pra etapa de agendado no mesmo momento, com a data da consulta ou do exame. Desistiu, o card sai como perdido, com o motivo.",
+    "É esse registro que mostra quantas conversas viraram paciente na cadeira e onde a clínica está perdendo gente: preço, horário, distância ou um serviço que ela não tem."
+   ],
+   "movs": [
+    {
+     "t": "Resposta em até 20 minutos",
+     "ps": [
+      [
+       "",
+       "No horário de atendimento, nenhuma conversa espera mais que isso. Quem procura exame ou consulta costuma chamar mais de uma clínica, e a resposta que chega primeiro já sai na frente."
+      ],
+      [
+       "O que chegou à noite ou no fim de semana é a primeira tarefa do dia,",
+       "começando pela conversa mais antiga."
+      ]
+     ]
+    },
+    {
+     "t": "Primeira resposta completa",
+     "ps": [
+      [
+       "",
+       "A fórmula inteira vai na primeira mensagem. Pra quem já escreveu o que quer, um \"como posso ajudar?\" só faz a pessoa repetir o pedido."
+      ],
+      [
+       "Se a clínica usa robô de triagem",
+       "e ele pergunta de novo o que a pessoa procura, a recepção não espera ela escolher no menu. Responde pelo que ela escreveu."
+      ]
+     ]
+    },
+    {
+     "t": "Cadastro e reserva só depois da escolha",
+     "ps": [
+      [
+       "",
+       "Pedir dados, documento ou pagamento antes de a pessoa escolher o horário faz a conversa parar no meio."
+      ],
+      [
+       "Primeiro ela escolhe o dia e a hora.",
+       "Aí sim a recepção pede o cadastro e, se a clínica cobra reserva, explica pra que ela serve."
+      ]
+     ]
+    },
+    {
+     "t": "Volta em 24 horas pelo que ficou pendente",
+     "ps": [
+      [
+       "",
+       "Se a pessoa parou de responder, a recepção volta uma vez, no dia seguinte, falando do que ela pediu e do ponto em que a conversa parou."
+      ],
+      [
+       "Quem perguntou de um exame quer ouvir sobre esse exame,",
+       "e não receber a lista de tudo que a clínica faz."
+      ]
+     ]
+    },
+    {
+     "t": "Card movido na hora",
+     "ps": [
+      [
+       "",
+       "Marcou o horário, o card vai pra etapa de agendado no mesmo momento, com a data da consulta ou do exame. Desistiu, o card sai como perdido, com o motivo."
+      ],
+      [
+       "É esse registro que mostra quantas conversas viraram paciente na cadeira",
+       "e onde a clínica está perdendo gente: preço, horário, distância ou um serviço que ela não tem."
+      ]
+     ]
+    }
+   ],
+   "modelos": [],
+   "nota": ""
+  },
+  {
+   "h2": "Três modelos pra copiar",
+   "h2_em": "pra copiar",
+   "ps": [
+    "Troque o que está entre colchetes pelo dado real da sua agenda antes de enviar. Onde tem linha em branco, mande em outra mensagem, porque duas mensagens curtas são lidas e um bloco comprido a pessoa rola."
+   ],
+   "movs": [],
+   "modelos": [
+    {
+     "tag": "Exame",
+     "msg": "Oi, [nome]! O [exame] custa R$ [valor], ou R$ [valor no Pix] no Pix. [Uma informação útil: preparo, prazo do resultado ou o que a pessoa precisa trazer.]\n\nTenho [dia e hora] ou [dia e hora], qual fica melhor pra você?"
+    },
+    {
+     "tag": "Consulta",
+     "msg": "Oi, [nome]! [Dr. ou Dra. nome] atende aqui na [dia da semana ou data]. A consulta custa R$ [valor].\n\nTenho [hora] ou [hora], qual prefere?"
+    },
+    {
+     "tag": "Volta em 24 horas",
+     "msg": "Oi, [nome]! O horário de [dia e hora] continua livre pro seu [exame ou consulta]. Quer que eu reserve pra você?"
+    }
+   ],
+   "nota": "Se a conversa parou no cadastro, troque a pergunta do fim por: \"Falta só o cadastro pra garantir [dia e hora]. Ficou alguma dúvida?\""
+  },
+  {
+   "h2": "E antes da conversa chegar?",
+   "h2_em": "",
+   "ps": [
+    "A fórmula cuida da conversa que já chegou. O Raio-X olha o passo anterior: como a sua clínica aparece hoje pra quem procura no Google e na IA. Leva poucos minutos."
+   ],
+   "movs": [],
+   "modelos": [],
+   "nota": "",
+   "cta": {
+    "h": "E antes da conversa chegar?",
+    "p": "A fórmula cuida da conversa que já chegou. O Raio-X olha o passo anterior: como a sua clínica aparece hoje pra quem procura no Google e na IA. Leva poucos minutos.",
+    "href": "https://diagnostico.svicompany.com.br/",
+    "btn": "Fazer o Raio-X da minha clínica"
+   }
+  }
+ ]
+}
