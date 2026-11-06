@@ -9,7 +9,7 @@ window.SVI_CONFIG = {
   ADMIN_PASSWORD: 'svidoctor123',
 
   // Ad tracking
-  META_PIXEL_ID: '',
+  META_PIXEL_ID: '1010100498078285',
   GOOGLE_GTAG_ID: '',
   GOOGLE_CONVERSION_LABEL: '',
 
