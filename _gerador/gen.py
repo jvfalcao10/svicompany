@@ -170,8 +170,12 @@ def faq_ld(faq):
             "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in faq]}
 
 
-def head(title, desc, path, ogdesc=None, ldblocks=(), tipo="website", geo=False):
+PIXEL = u'<script src="/pixel.js" defer></script>\n'
+
+
+def head(title, desc, path, ogdesc=None, ldblocks=(), tipo="website", geo=False, extra=u"", og_img=None):
     url = BASE + path
+    og_url, og_w, og_h = og_img or (BASE + "/images/og-image.jpg?v=2", 1200, 630)
     h = [u'<!DOCTYPE html>', u'<html lang="pt-BR">', u'<head>', u'  <meta charset="UTF-8">',
          u'  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">',
          u'  <title>%s</title>' % esc(title),
@@ -188,14 +192,14 @@ def head(title, desc, path, ogdesc=None, ldblocks=(), tipo="website", geo=False)
           u'  <meta property="og:description" content="%s">' % attr(ogdesc or desc),
           u'  <meta property="og:locale" content="pt_BR">',
           u'  <meta property="og:site_name" content="SVI Company">',
-          u'  <meta property="og:image" content="%s/images/og-image.jpg?v=2">' % BASE,
-          u'  <meta property="og:image:width" content="1200">', u'  <meta property="og:image:height" content="630">',
+          u'  <meta property="og:image" content="%s">' % og_url,
+          u'  <meta property="og:image:width" content="%d">' % og_w, u'  <meta property="og:image:height" content="%d">' % og_h,
           u'  <meta name="twitter:card" content="summary_large_image">',
           u'  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">',
           u'  <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png">',
           u'  <link rel="apple-touch-icon" sizes="192x192" href="/images/favicon-192.png">']
     out = u"\n".join(h) + u"\n" + u"".join(ld(b) for b in ldblocks)
-    out += u"  <style>%s  </style>\n</head>\n<body>\n" % CSS
+    out += u"  <style>%s  </style>\n%s</head>\n<body>\n" % (CSS, extra)
     return out
 
 
@@ -228,6 +232,16 @@ def faq_html(faq, classe=u""):
 
 def lista(txt):
     return u"<ul>" + u"".join(u"<li>%s</li>" % i for i in txt[5:].split("|")) + u"</ul>"
+
+
+def tabela(txt):
+    """TABLE:cab1|cab2||lin1col1|lin1col2||... (estilo inline para não mexer no CSS das páginas que já existem)"""
+    linhas = [l.split("|") for l in txt[6:].split("||")]
+    cel = u"border:1px solid rgba(245,241,232,.12);padding:10px 12px;text-align:left;vertical-align:top"
+    cab = u"".join(u'<th style="%s;color:#F7F2E7;background:#1A1218">%s</th>' % (cel, c) for c in linhas[0])
+    corpo = u"".join(u"<tr>" + u"".join(u'<td style="%s;color:#DCD1B8">%s</td>' % (cel, c) for c in l) + u"</tr>" for l in linhas[1:])
+    return (u'      <div style="overflow-x:auto;margin:0 0 20px"><table style="width:100%%;border-collapse:collapse;font-size:15px;line-height:1.45">'
+            u"<thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>" % (cab, corpo))
 
 
 # secao: páginas de serviço
@@ -283,7 +297,7 @@ def gerar_pagina(p, artigos):
         blocos.append(servico)
     blocos.append(faq_ld(p["faq"]))
     blocos.append(breadcrumb([("Início", BASE + "/"), (plain(p["h1"]), BASE + path)]))
-    h = head(p["title"], p["desc"], path, p.get("ogDesc"), blocos, geo=True)
+    h = head(p["title"], p["desc"], path, p.get("ogDesc"), blocos, geo=True, extra=PIXEL)
     corpo = [nav(), u'  <header class="hero">\n    <div class="wrap">\n      <p class="eyebrow">%s</p>\n      <h1>%s</h1>\n      <p class="lead">%s</p>\n'
              u'      <a class="btn" href="%s" target="_blank" rel="noopener">%s</a>\n'
              u'      <a class="btn btn-o" href="#perguntas">Ver perguntas frequentes</a>\n    </div>\n  </header>\n'
@@ -306,12 +320,13 @@ def data_extenso(iso):
 def gerar_artigo(a, dados, todos):
     slug = a["slug"]
     path = "/blog/" + slug
-    iso = dados["dataPublicacao"]
+    iso = a.get("dataPublicacao", dados["dataPublicacao"])
     titulo = a["metaTitle"] + u" | SVI Company"
+    capa = a.get("capa")
     artigo = {"@context": "https://schema.org", "@type": "Article", "headline": plain(a["h1"]), "description": a["desc"],
               "inLanguage": "pt-BR", "datePublished": iso, "dateModified": iso, "articleSection": a["tag"],
               "mainEntityOfPage": {"@type": "WebPage", "@id": BASE + path},
-              "image": BASE + "/images/og-image.jpg",
+              "image": BASE + (capa or "/images/og-image.jpg"),
               "author": {"@type": "Person", "name": AUTOR, "sameAs": [IG_AUTOR], "jobTitle": "Fundador da SVI Company",
                          "worksFor": {"@type": "Organization", "name": "SVI Company", "url": BASE + "/"}},
               "publisher": {"@type": "Organization", "name": "SVI Company", "url": BASE + "/",
@@ -319,16 +334,20 @@ def gerar_artigo(a, dados, todos):
               "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".resposta"]},
               "citation": [{"@type": "CreativeWork", "name": n, "url": u} for n, u in a["fontes"]]}
     blocos = [artigo, faq_ld(a["faq"]), breadcrumb([("Início", BASE + "/"), ("Blog", BASE + "/blog"), (plain(a["h1"]), BASE + path)])]
-    h = head(titulo, a["desc"], path, None, blocos, tipo="article")
+    h = head(titulo, a["desc"], path, None, blocos, tipo="article", og_img=(BASE + capa, 1600, 900) if capa else None)
     corpo = [nav()]
+    fig = u""
+    if capa:
+        fig = (u'      <figure style="margin:0 0 30px"><img src="%s" alt="%s" width="1600" height="900" fetchpriority="high" '
+               u'style="display:block;width:100%%;height:auto;border-radius:14px;border:1px solid rgba(245,241,232,.12)"></figure>\n' % (capa, attr(a["capaAlt"])))
     corpo.append(u'  <main class="art">\n    <div class="narrow">\n      <p class="crumb"><a href="/">Início</a> / <a href="/blog">Blog</a> / %s</p>\n'
                  u'      <span class="tag">%s</span>\n      <h1>%s</h1>\n'
                  u'      <p class="meta">Por %s, fundador da SVI Company · %s · %s de leitura</p>\n'
-                 u'      <div class="resposta">%s</div>\n' % (esc(a["tag"]), esc(a["tag"]), a["h1"], AUTOR, data_extenso(iso), a["leitura"], a["resposta"]))
+                 u'%s      <div class="resposta">%s</div>\n' % (esc(a["tag"]), esc(a["tag"]), a["h1"], AUTOR, data_extenso(iso), a["leitura"], fig, a["resposta"]))
     for h2, paras in a["secoes"]:
         corpo.append(u"      <h2>%s</h2>" % h2)
         for p in paras:
-            corpo.append(lista(p) if p.startswith("LIST:") else u"      <p>%s</p>" % p)
+            corpo.append(lista(p) if p.startswith("LIST:") else tabela(p) if p.startswith("TABLE:") else u"      <p>%s</p>" % p)
     corpo.append(u'      <div class="fontes"><h2>Fontes oficiais</h2><ul>%s</ul></div>' %
                  u"".join(u'<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (u, esc(n)) for n, u in a["fontes"]))
     corpo.append(u'      <div class="faqb"><h2>Perguntas frequentes</h2>\n      %s</div>' % faq_html(a["faq"]))
@@ -392,8 +411,42 @@ def checar(arquivos):
     return ok
 
 
+def atualizar_sitemap(blog):
+    """Acrescenta ao sitemap.xml os artigos do blog que ainda não estão lá e atualiza o lastmod de /blog.
+    Não mexe nas outras linhas."""
+    p = os.path.join(RAIZ, "sitemap.xml")
+    linhas = io.open(p, encoding="utf-8").read().split("\n")
+    xml = "\n".join(linhas)
+    datas = [(a["slug"], a.get("dataPublicacao", blog["dataPublicacao"])) for a in blog["artigos"]]
+    novos = [(s, d) for s, d in datas if "<loc>%s/blog/%s</loc>" % (BASE, s) not in xml]
+    if novos:
+        ult = max(i for i, l in enumerate(linhas) if "<loc>%s/blog/" % BASE in l)
+        linhas[ult + 1:ult + 1] = [u"  <url><loc>%s/blog/%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>"
+                                   % (BASE, s, d) for s, d in novos]
+    maisnova = max(d for s, d in datas)
+    linhas = [re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>%s</lastmod>" % maisnova, l) if "<loc>%s/blog</loc>" % BASE in l else l for l in linhas]
+    io.open(p, "w", encoding="utf-8").write("\n".join(linhas))
+    print("sitemap.xml: %d artigo(s) novo(s)" % len(novos))
+
+
+def atualizar_llms(blog):
+    """Reescreve só a lista de artigos da seção ## Blog do llms.txt, na ordem do blog.json."""
+    p = os.path.join(RAIZ, "llms.txt")
+    txt = io.open(p, encoding="utf-8").read()
+    m = re.search(r"## Blog[^\n]*\n(?:(?!- )[^\n]*\n)*?((?:- [^\n]*\n)+)", txt)
+    if not m:
+        print("llms.txt sem a seção ## Blog, nada mudou")
+        return
+    lista = u"".join(u"- %s: %s/blog/%s\n" % (plain(a["h1"]), BASE, a["slug"]) for a in blog["artigos"])
+    io.open(p, "w", encoding="utf-8").write(txt[:m.start(1)] + lista + txt[m.end(1):])
+    print("llms.txt: %d artigo(s) na seção do blog" % len(blog["artigos"]))
+
+
 def main():
     blog = json.load(io.open(os.path.join(AQUI, "blog.json"), encoding="utf-8"))
+    sem_capa = [a["slug"] for a in blog["artigos"] if a.get("capa") and not os.path.exists(os.path.join(RAIZ, a["capa"].lstrip("/")))]
+    if sem_capa:
+        sys.exit("capa não encontrada: %s" % ", ".join(sem_capa))
     pag = json.load(io.open(os.path.join(AQUI, "paginas.json"), encoding="utf-8"))
     todos = {a["slug"]: a for a in blog["artigos"]}
     saida = {}
@@ -413,6 +466,8 @@ def main():
     print("escritos:", len(saida))
     for rel in sorted(saida):
         print(" ", rel)
+    atualizar_sitemap(blog)
+    atualizar_llms(blog)
 
 
 if __name__ == "__main__":

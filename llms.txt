@@ -1,6 +1,6 @@
 # SVI Company
 
-> A SVI Company é uma sistema de crescimento de marketing e inteligência comercial, com método proprietário (Método SVI, Sistema de Vendas Inteligente). Atende negócios consolidados em várias verticais: saúde, estética, educação, varejo, energia solar, agro, construção, financeiro e marca pessoal. Baseada em Redenção, Pará, opera em todo o Brasil.
+> A SVI Company é um sistema de crescimento de marketing e inteligência comercial, com método proprietário (Método SVI, Sistema de Vendas Inteligente). Atende negócios consolidados em várias verticais: saúde, estética, educação, varejo, energia solar, agro, construção, financeiro e marca pessoal. Baseada em Redenção, Pará, opera em todo o Brasil.
 
 ## Método SVI
 Sistema de Vendas Inteligente: fazer o cliente te achar (Ser encontrado), te escolher (Virar a escolha) e voltar (Inteligência que escala). Na operação, cinco camadas que se sustentam: diagnóstico, narrativa, mídia, inteligência comercial e operação contínua.
@@ -18,6 +18,16 @@ A SVI tem uma frente dedicada a médicos e clínicas, com site e blog próprios:
 
 ## Blog (tráfego pago, IA e vendas para negócios locais)
 Índice: https://svicompany.com.br/blog . Autor: João Vitor Falcão, fundador. Cada artigo responde a pergunta nas duas primeiras frases e cita fonte oficial quando fala de regra.
+- Black Friday 2026 é em 27 de novembro: o que o comércio de Redenção e região ainda dá tempo de fazer?: https://svicompany.com.br/blog/black-friday-2026-comercio-local
+- Quanto custa fazer tráfego pago para uma empresa local e como calcular a sua verba?: https://svicompany.com.br/blog/quanto-custa-trafego-pago
+- Como contratar um gestor de tráfego sem perder o controle da sua conta de anúncios?: https://svicompany.com.br/blog/contratar-gestor-de-trafego
+- O Google vai mostrar anúncios no Modo IA no Brasil: o que muda para a empresa local?: https://svicompany.com.br/blog/anuncios-no-modo-ia-do-google-no-brasil
+- Como fazer a sua empresa aparecer no mapa do Google em Redenção?: https://svicompany.com.br/blog/como-aparecer-no-google-maps-em-redencao
+- O WhatsApp passou a cobrar pelas respostas das empresas? O que mudou em outubro de 2026: https://svicompany.com.br/blog/cobranca-whatsapp-business-outubro-2026
+- Agente de IA no WhatsApp para empresa: usar a IA do próprio aplicativo ou um agente ligado ao CRM?: https://svicompany.com.br/blog/agente-de-ia-no-whatsapp-para-empresa
+- 13º salário de 2026: quando o dinheiro chega e como o comércio local pode se preparar?: https://svicompany.com.br/blog/13-salario-2026-vendas-de-fim-de-ano
+- Como funciona o tráfego pago para empresas de Xinguara e das cidades vizinhas?: https://svicompany.com.br/blog/gestor-de-trafego-pago-em-xinguara
+- A Meta muda os termos para quem anuncia em 20 de novembro: o que conferir no seu site e na sua conta?: https://svicompany.com.br/blog/novos-termos-da-meta-para-anunciantes
 - O que faz um gestor de tráfego e quando sua empresa precisa de um?: https://svicompany.com.br/blog/gestor-de-trafego
 - O que é tráfego pago e como funciona para um negócio local?: https://svicompany.com.br/blog/o-que-e-trafego-pago
 - Como escolher uma agência de tráfego pago?: https://svicompany.com.br/blog/agencia-de-trafego-pago-como-escolher
