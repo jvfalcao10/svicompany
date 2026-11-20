@@ -5,9 +5,6 @@ window.SVI_CONFIG = {
   SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2a2ZjdmNxbGZhbXl6Z3FnbnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMzI1MzYsImV4cCI6MjA2MzYwODUzNn0.VDLMK6z9yynpHRp5o8uULdOlX6ZmRi95kZJdte1oaLM',
   LEADS_TABLE: 'svi_doctor_leads',
 
-  // Admin
-  ADMIN_PASSWORD: 'svidoctor123',
-
   // Ad tracking
   META_PIXEL_ID: '1010100498078285',
   GOOGLE_GTAG_ID: '',
