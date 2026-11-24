@@ -13,7 +13,7 @@
       "schema": {
         "serviceType": "Gestão de tráfego pago",
         "serviceName": "Gestor de tráfego pago em Redenção",
-        "serviceDesc": "Gestão de anúncios no Google e no Meta para empresas, comércio e clínicas de Redenção e do Sul do Pará, com medição de contatos, acompanhamento diário e relatório toda sexta."
+        "serviceDesc": "Gestão de anúncios no Google e no Meta para empresas, comércio e clínicas de Redenção e do Sul do Pará, com medição de contatos, acompanhamento diário e relatório semanal, para você saber onde o seu dinheiro está sendo investido."
       },
       "secoes": [
         {"tipo": "cards", "h2": "O que o gestor de tráfego da SVI faz", "sub": "Anúncio bom depende do que acontece antes e depois do clique. O trabalho cobre o caminho inteiro, da conta de anúncios até a conversa no WhatsApp.", "itens": [
@@ -22,7 +22,7 @@
           ["Anúncios no Meta", "Instagram e Facebook, para mostrar a empresa a quem ainda não estava procurando, com criativo que chama atenção e filtra o cliente certo."],
           ["Medição de contatos", "A conta mede a conversa no WhatsApp, a ligação e o formulário. Sem medir o contato, não dá para saber o que a verba comprou."],
           ["Criativo e texto", "Peças e textos pensados para a oferta da empresa, com a mensagem clara e sem promessa que a empresa não possa cumprir."],
-          ["Acompanhamento diário e relatório", "A conta é olhada todos os dias. Toda sexta chega o relatório, com a verba investida, os contatos recebidos e o que foi ajustado."]
+          ["Acompanhamento diário e relatório", "A conta é olhada todos os dias. O relatório é semanal, para você saber onde o seu dinheiro está sendo investido, com os contatos recebidos e o que foi ajustado."]
         ]},
         {"tipo": "texto", "h2": "Google ou Meta: como a SVI decide", "paras": [
           "O Google alcança quem procura. O Meta alcança quem ainda não procurou, mas pode se interessar. Para serviço que as pessoas buscam quando precisam, a conta costuma começar pelo Google. Para oferta que pede desejo e imagem, o Meta ajuda mais.",
@@ -40,7 +40,7 @@
           ["Proposta", "Escopo, prazo e valor por escrito, antes de qualquer assinatura."],
           ["Mergulho de 15 dias", "Funil, oferta e atendimento mapeados antes de a verba entrar."],
           ["Campanha no ar", "Conta, medição e anúncios publicados, com os contatos indo para o WhatsApp e o CRM."],
-          ["Acompanhamento diário", "A conta é ajustada com base no que os números mostram, e o relatório chega toda sexta."]
+          ["Acompanhamento diário", "A conta é ajustada com base no que os números mostram, e o relatório é semanal."]
         ]},
         {"tipo": "artigos", "h2": "Para ler antes de decidir", "sub": "Artigos do blog sobre contratar e medir tráfego pago.", "slugs": ["gestor-de-trafego", "agencia-de-trafego-pago-como-escolher", "o-que-e-trafego-pago", "funil-de-vendas-para-negocio-local"]},
         {"tipo": "nap", "h2": "Onde fica a SVI Company", "sub": "Base em Redenção, com atendimento em cidades do Sul do Pará. Veja a lista em <a href='/onde-a-svi-atende-no-sul-do-para'>onde a SVI atende</a>."}
